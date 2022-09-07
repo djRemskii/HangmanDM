@@ -16,6 +16,8 @@ public class HangmanDM {
     public static void main(String[] args) {
         // TODO code application logic here
 	System.out.println("HangmanDM.java has started.");
+        MainScreen.main(null);
+        System.out.println("MainScreen.java has started.");
     }
     
 }
