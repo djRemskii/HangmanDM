@@ -6,7 +6,7 @@ package hangmandm;
 
 /**
  *
- * @author TheGe
+ * @author djRemskii
  */
 public class HangmanDM {
 
@@ -15,6 +15,7 @@ public class HangmanDM {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+	System.out.println("HangmanDM.java has started.");
     }
     
 }
