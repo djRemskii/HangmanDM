@@ -32,9 +32,11 @@ public class MainScreen extends javax.swing.JFrame {
         startupPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        creditPanel = new javax.swing.JPanel();
+        menuPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        creditsPanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,38 +75,59 @@ public class MainScreen extends javax.swing.JFrame {
                     .addContainerGap(249, Short.MAX_VALUE)))
         );
 
-        creditPanel.setPreferredSize(new java.awt.Dimension(600, 400));
+        menuPanel.setPreferredSize(new java.awt.Dimension(600, 400));
 
         jLabel3.setText("MAIN SCREEN DO STUFF HERE");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("CREDITS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout creditPanelLayout = new javax.swing.GroupLayout(creditPanel);
-        creditPanel.setLayout(creditPanelLayout);
-        creditPanelLayout.setHorizontalGroup(
-            creditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(creditPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(267, 267, 267)
                 .addComponent(jLabel3)
                 .addContainerGap(169, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(114, 114, 114))
         );
-        creditPanelLayout.setVerticalGroup(
-            creditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(creditPanelLayout.createSequentialGroup()
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGap(166, 166, 166)
                 .addComponent(jLabel3)
                 .addGap(97, 97, 97)
                 .addComponent(jButton1)
                 .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        creditsPanel.setPreferredSize(new java.awt.Dimension(600, 400));
+
+        jLabel4.setText("CREDITS");
+
+        javax.swing.GroupLayout creditsPanelLayout = new javax.swing.GroupLayout(creditsPanel);
+        creditsPanel.setLayout(creditsPanelLayout);
+        creditsPanelLayout.setHorizontalGroup(
+            creditsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(creditsPanelLayout.createSequentialGroup()
+                .addGap(208, 208, 208)
+                .addComponent(jLabel4)
+                .addContainerGap(347, Short.MAX_VALUE))
+        );
+        creditsPanelLayout.setVerticalGroup(
+            creditsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(creditsPanelLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(jLabel4)
+                .addContainerGap(259, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -115,7 +138,12 @@ public class MainScreen extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(creditPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(creditsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -124,7 +152,12 @@ public class MainScreen extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(creditPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(creditsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -136,6 +169,8 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        menuPanel.setVisible(false);
+        creditsPanel.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -169,6 +204,8 @@ public class MainScreen extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainScreen().setVisible(true);
+                menuPanel.setVisible(false);
+                creditsPanel.setVisible(false);
             }
         });
         
@@ -178,14 +215,17 @@ public class MainScreen extends javax.swing.JFrame {
             Logger.getLogger(HangmanDM.class.getName()).log(Level.SEVERE, null, ex);
         }
         startupPanel.setVisible(false);
+        menuPanel.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JPanel creditPanel;
+    private static javax.swing.JPanel creditsPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private static javax.swing.JPanel menuPanel;
     private static javax.swing.JPanel startupPanel;
     // End of variables declaration//GEN-END:variables
 }
