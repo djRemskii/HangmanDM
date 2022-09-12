@@ -32,18 +32,13 @@ public class MainScreen extends javax.swing.JFrame {
         startupPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        creditPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        startupPanel.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                startupPanelAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
+        startupPanel.setPreferredSize(new java.awt.Dimension(600, 400));
 
         jLabel1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         jLabel1.setText("CREATED BY : DANKMEMERS");
@@ -61,14 +56,14 @@ public class MainScreen extends javax.swing.JFrame {
                 .addGap(180, 180, 180))
             .addGroup(startupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startupPanelLayout.createSequentialGroup()
-                    .addContainerGap(69, Short.MAX_VALUE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2)
                     .addGap(42, 42, 42)))
         );
         startupPanelLayout.setVerticalGroup(
             startupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startupPanelLayout.createSequentialGroup()
-                .addContainerGap(245, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(136, 136, 136))
             .addGroup(startupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,29 +73,70 @@ public class MainScreen extends javax.swing.JFrame {
                     .addContainerGap(249, Short.MAX_VALUE)))
         );
 
+        creditPanel.setPreferredSize(new java.awt.Dimension(600, 400));
+
+        jLabel3.setText("MAIN SCREEN DO STUFF HERE");
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout creditPanelLayout = new javax.swing.GroupLayout(creditPanel);
+        creditPanel.setLayout(creditPanelLayout);
+        creditPanelLayout.setHorizontalGroup(
+            creditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(creditPanelLayout.createSequentialGroup()
+                .addGap(267, 267, 267)
+                .addComponent(jLabel3)
+                .addContainerGap(169, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creditPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(114, 114, 114))
+        );
+        creditPanelLayout.setVerticalGroup(
+            creditPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(creditPanelLayout.createSequentialGroup()
+                .addGap(166, 166, 166)
+                .addComponent(jLabel3)
+                .addGap(97, 97, 97)
+                .addComponent(jButton1)
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(startupPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(startupPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(creditPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(startupPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(creditPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        startupPanel.getAccessibleContext().setAccessibleDescription("");
+        startupPanel.getAccessibleContext().setAccessibleParent(startupPanel);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void startupPanelAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_startupPanelAncestorAdded
-        try {
-            // TODO add your handling code here:
-            Thread.sleep(3000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        startupPanel.setVisible(false);
-    }//GEN-LAST:event_startupPanelAncestorAdded
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,11 +171,21 @@ public class MainScreen extends javax.swing.JFrame {
                 new MainScreen().setVisible(true);
             }
         });
+        
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(HangmanDM.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        startupPanel.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private static javax.swing.JPanel creditPanel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel startupPanel;
+    private javax.swing.JLabel jLabel3;
+    private static javax.swing.JPanel startupPanel;
     // End of variables declaration//GEN-END:variables
 }
