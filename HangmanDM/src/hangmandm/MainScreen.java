@@ -35,46 +35,54 @@ public class MainScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        startupPanel.setPreferredSize(new java.awt.Dimension(600, 400));
+        startupPanel.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                startupPanelAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
-        jLabel1.setText("CREATED BY: Dankmemers");
+        jLabel1.setText("CREATED BY : DANKMEMERS");
 
         jLabel2.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
-        jLabel2.setText("CS2450 HANGMAN GAME");
+        jLabel2.setText("CS2450 HANGMANG PROJECT");
 
         javax.swing.GroupLayout startupPanelLayout = new javax.swing.GroupLayout(startupPanel);
         startupPanel.setLayout(startupPanelLayout);
         startupPanelLayout.setHorizontalGroup(
             startupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startupPanelLayout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addContainerGap(182, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(181, 181, 181))
+                .addGap(180, 180, 180))
             .addGroup(startupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startupPanelLayout.createSequentialGroup()
-                    .addContainerGap(104, Short.MAX_VALUE)
+                    .addContainerGap(69, Short.MAX_VALUE)
                     .addComponent(jLabel2)
-                    .addGap(89, 89, 89)))
+                    .addGap(42, 42, 42)))
         );
         startupPanelLayout.setVerticalGroup(
             startupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, startupPanelLayout.createSequentialGroup()
-                .addContainerGap(254, Short.MAX_VALUE)
+                .addContainerGap(245, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(127, 127, 127))
+                .addGap(136, 136, 136))
             .addGroup(startupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(startupPanelLayout.createSequentialGroup()
-                    .addGap(111, 111, 111)
+                    .addGap(114, 114, 114)
                     .addComponent(jLabel2)
-                    .addContainerGap(252, Short.MAX_VALUE)))
+                    .addContainerGap(249, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(startupPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(startupPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,6 +91,16 @@ public class MainScreen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startupPanelAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_startupPanelAncestorAdded
+        try {
+            // TODO add your handling code here:
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        startupPanel.setVisible(false);
+    }//GEN-LAST:event_startupPanelAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -115,12 +133,6 @@ public class MainScreen extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainScreen().setVisible(true);
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                startupPanel.setVisible(false);
             }
         });
     }

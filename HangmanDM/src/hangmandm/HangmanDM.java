@@ -21,6 +21,7 @@ public class HangmanDM {
 	System.out.println("HangmanDM.java has started.");
         MainScreen.main(args);
         System.out.println("MainScreen.java has started.");
+        
     }
     
 }
