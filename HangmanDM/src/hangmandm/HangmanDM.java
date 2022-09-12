@@ -4,6 +4,9 @@
  */
 package hangmandm;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author djRemskii
@@ -16,7 +19,7 @@ public class HangmanDM {
     public static void main(String[] args) {
         // TODO code application logic here
 	System.out.println("HangmanDM.java has started.");
-        MainScreen.main(null);
+        MainScreen.main(args);
         System.out.println("MainScreen.java has started.");
     }
     
