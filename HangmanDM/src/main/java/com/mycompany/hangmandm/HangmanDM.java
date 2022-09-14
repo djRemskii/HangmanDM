@@ -14,7 +14,7 @@ import javax.swing.*;
 
 /**
  *
- * @author TheGe
+ * @author djRemskii
  */
 public class HangmanDM{
     
