@@ -7,7 +7,7 @@ import javax.swing.*;
 
 /**
  *
- * @author TheGe
+ * @author djRemskii
  */
 public class CreditsPanel extends javax.swing.JPanel {
 

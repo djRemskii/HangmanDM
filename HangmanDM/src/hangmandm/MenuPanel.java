@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author TheGe
+ * @author djRemskii
  */
 public class MenuPanel extends javax.swing.JPanel {
 

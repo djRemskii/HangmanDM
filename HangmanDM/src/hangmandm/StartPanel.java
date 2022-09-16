@@ -6,7 +6,7 @@ package hangmandm;
 
 /**
  *
- * @author TheGe
+ * @author djRemskii
  */
 public class StartPanel extends javax.swing.JPanel {
 
