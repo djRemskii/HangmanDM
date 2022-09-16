@@ -58,7 +58,7 @@ public class CreditsPanel extends javax.swing.JPanel {
         jLabel4.setText("Jeremy (remi) Ong - 015192944");
 
         jLabel5.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
-        jLabel5.setText("Kevin Hoang - 015835223");
+        jLabel5.setText("Kevin Hoang - 014835223");
 
         jLabel6.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         jLabel6.setText("Samuel Araya - 015502890");
