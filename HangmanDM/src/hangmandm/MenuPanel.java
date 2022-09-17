@@ -6,10 +6,18 @@ package hangmandm;
 
 import javax.swing.JFrame;
 
-/**
- *
- * @author djRemskii
- */
+/***************************************************************  
+*  file: MenuPanel.java 
+*  author: D. Menkir  
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.0  
+*  date last modified: 9/17/2022 
+*  
+*  purpose: This panel is the menu of our program. It holds the Play,
+*  High Score, and Credits buttons. It also has a picture in it.
+*  
+****************************************************************/  
 public class MenuPanel extends javax.swing.JPanel {
 
     /**
@@ -20,6 +28,8 @@ public class MenuPanel extends javax.swing.JPanel {
         
     }
 
+    // method: initComponents  
+    // purpose: initializes variables.  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -89,15 +99,21 @@ public class MenuPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    // method: jButton3ActionPerformed  
+    // purpose: ActionPerformed method to navigate to the hangman game.
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    // method: jButton2ActionPerformed  
+    // purpose: ActionPerformed method to navigate to the high scores.
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    // method: jButton2ActionPerformed  
+    // purpose: ActionPerformed method to navigate to the credits.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Sends user to credits page
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
