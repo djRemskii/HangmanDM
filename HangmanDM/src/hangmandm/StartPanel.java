@@ -4,10 +4,17 @@
  */
 package hangmandm;
 
-/**
- *
- * @author djRemskii
- */
+/***************************************************************  
+*  file: StartPanel.java 
+*  author: J. Ong 
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.0  
+*  date last modified: 9/18/2022 
+*  
+*  purpose: This panel creates the start screen, then disappears after 3 seconds to the main menu.
+*  
+****************************************************************/ 
 public class StartPanel extends javax.swing.JPanel {
 
     /**
