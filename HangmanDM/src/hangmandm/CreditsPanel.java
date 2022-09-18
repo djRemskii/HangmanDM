@@ -5,10 +5,17 @@
 package hangmandm;
 import javax.swing.*;
 
-/**
- *
- * @author djRemskii
- */
+/***************************************************************  
+*  file: CreditsPanel.java 
+*  author: J. Ong 
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.0  
+*  date last modified: 9/18/2022 
+*  
+*  purpose: This panel holds the credits for the HangmanDM game. Names and Bronco IDS are included.
+*  
+****************************************************************/ 
 public class CreditsPanel extends javax.swing.JPanel {
 
     /**
@@ -114,8 +121,10 @@ public class CreditsPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    // method: jButton1ActionPerformed  
+    // purpose: ActionPerformed method to return user to the main menu panel MenuPanel.java
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Returns user to main menu
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_jButton1ActionPerformed
 
