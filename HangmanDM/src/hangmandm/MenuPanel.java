@@ -118,7 +118,8 @@ public class MenuPanel extends javax.swing.JPanel {
     // method: jButton3ActionPerformed  
     // purpose: ActionPerformed method to navigate to the hangman game.
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "game");
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // method: jButton2ActionPerformed  

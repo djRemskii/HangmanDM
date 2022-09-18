@@ -62,6 +62,7 @@ public class HangmanDM{
         frame.add(new CreditsPanel(), "credits");
         frame.add(new HighScoresPanel(), "high scores");
         frame.add(new ClockTestPanel(), "clock test");
+        frame.add(new GamingPanel(), "game");
         
         //sets the panel on top
         cardLayout.show(frame.getContentPane(), "start");
