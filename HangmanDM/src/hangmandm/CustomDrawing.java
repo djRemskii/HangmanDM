@@ -22,10 +22,12 @@ import javax.swing.*;
  */
 public class CustomDrawing extends JPanel {
     private BufferedImage pic;
+    private String image;
     
-    public CustomDrawing(){
+    public CustomDrawing(String input){
         setBorder(BorderFactory.createLineBorder(Color.black));
         pic = null;
+        image = input;
     }
     
     @Override
@@ -38,7 +40,7 @@ public class CustomDrawing extends JPanel {
         super.paintComponent(g);        
  
         try{ 
-            pic = ImageIO.read(new File("src\\squidward dabbing.png")); 
+            pic = ImageIO.read(new File(image)); 
             }
         catch(IOException e){} 
         g.drawImage(pic,50,50, 100, 100, this); 
