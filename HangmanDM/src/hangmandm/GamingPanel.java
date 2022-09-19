@@ -3,8 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package hangmandm;
-//import java.time.format.DateTimeFormatter;  
-//import java.time.LocalDateTime;    
+
 import java.util.Random;
 
 
@@ -33,36 +32,26 @@ public class GamingPanel extends javax.swing.JPanel {
         initComponents();
         
     }
-     
-    private void lifeCheck(int life  )
+    public getScore()
     {
-        if(life == 6)
-        {
-            //checks life and changes hangman symbol 
-        }
-        else if (life == 5)
-        {
-            
-        }
-        else if (life == 4)
-        {
-            
-        }
-        else if (life == 3)
-        {
-            
-        }
-        else if (life == 2)
-        {
-            
-        }  
-        else if (life == 1)
-        {
-            
-        }
-        else if (life == 0)
-        {
-            
+        return score; 
+    }
+    private void lifeCheck(int life)
+    {
+        switch (life) {
+            case 6 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman1.png")));
+            //checks life and changes hangman symbol
+            case 5 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman2.png")));
+            case 4 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman3.png")));
+            case 3 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman4.png")));
+            case 2 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman5.png")));
+            case 1 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman6.png")));
+            case 0 -> {
+                jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman7.png")));
+                //game over code
+            }
+            default -> {
+            }    
         }
     }
      private void spacer(String prob)
@@ -470,14 +459,14 @@ public class GamingPanel extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel10)
                                 .addComponent(jLabel2)))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -489,15 +478,15 @@ public class GamingPanel extends javax.swing.JPanel {
                         .addComponent(jLabel16)
                         .addComponent(jLabel17)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel3))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
