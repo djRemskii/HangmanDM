@@ -38,31 +38,31 @@ public class GamingPanel extends javax.swing.JPanel {
     {
         if(life == 6)
         {
-            //checks life and changes hangman symbol 
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("hangman1.png")));
         }
         else if (life == 5)
         {
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("hangman2.png")));
         }
         else if (life == 4)
         {
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("hangman3.png")));
         }
         else if (life == 3)
         {
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("hangman4.png")));
         }
         else if (life == 2)
         {
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("hangman5.png")));
         }  
         else if (life == 1)
         {
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("hangman6.png")));
         }
         else if (life == 0)
         {
-            
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("hangman7.png")));
         }
     }
      private void spacer(String prob)
