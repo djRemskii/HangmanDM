@@ -64,6 +64,8 @@ public class HangmanDM{
         frame.add(new ClockTestPanel(), "clock test");
         frame.add(new GamingPanel(), "game");
         
+        //add the end page tied to the skip button
+        //frame.add(new GamingPanel(), "end");
         //sets the panel on top
         cardLayout.show(frame.getContentPane(), "start");
         
