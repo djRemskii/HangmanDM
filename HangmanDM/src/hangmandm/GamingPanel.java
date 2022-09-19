@@ -21,15 +21,13 @@ public class GamingPanel extends javax.swing.JPanel {
         Random random_method = new Random();
         initComponents();
         randomVessel = random_method.nextInt(LIST.length);
-        word = LIST[randomVessel];
+        word = "cemetery";
+                //LIST[randomVessel];
         System.out.println(word);
         spacer(word);
+        corr = 0;
         lives = 6;
-        if(lives == 6)
-        {
-            
-            //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
-        }
+        
         score = 100;
              
     }
@@ -68,6 +66,13 @@ public class GamingPanel extends javax.swing.JPanel {
             }    
         }
     }
+        private void correct()
+        {
+        if( corr == word.length())
+            {
+                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+            }
+        }
      private void spacer(String prob)
     {   
         switch (prob) {
@@ -555,16 +560,20 @@ public class GamingPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
             switch (word) {
             case "abstract" -> {
                 jLabel11.setText("b");
                 jButton2.setEnabled(false);
+                corr++;
+                correct();
             }
             case "climbing" -> {
                 jLabel14.setText("b");
                 jButton2.setEnabled(false);
+                corr++;
+                correct();
             }
             default -> {
                 jButton2.setEnabled(false);
@@ -589,18 +598,26 @@ public class GamingPanel extends javax.swing.JPanel {
                 
                 jLabel10.setText("C");
                 jButton3.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "climbing" -> {
                 jLabel10.setText("C");
                 jButton3.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "abstract" -> {
                 jLabel16.setText("c");
                 jButton3.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "pharmacy" -> {
                 jLabel16.setText("c");
                 jButton3.setEnabled(false);
+                 corr++;
+                 correct();
             }
             default -> {
                 jButton3.setEnabled(false);
@@ -635,14 +652,23 @@ public class GamingPanel extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         switch (word) {
             case "abstract" -> {
-                jLabel15.setText("A");
-                jLabel10.setText("a");
+                jLabel15.setText("a");
+                jLabel10.setText("A");
                 jButton5.setEnabled(false);
+                 corr++;
+                 correct();
+                 corr++;
+                 correct();
             }
             case "pharmacy" -> {
                 jLabel12.setText("a");
                 jLabel15.setText("a");
                 jButton5.setEnabled(false);
+                corr++;
+                correct();
+                corr++;
+                correct();
+               
             }
             default -> {
                 jButton5.setEnabled(false);
@@ -650,7 +676,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 lives = lives - 1;
                 lifeCheck(lives);
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
-                if( lives == 0)
+                if( lives == 0 )
                 {
                     skipButtonActionPerformed(evt);
                 }
@@ -663,12 +689,23 @@ public class GamingPanel extends javax.swing.JPanel {
         switch (word) {
             case "cemetery" -> {
                jLabel11.setText("e");
-               jLabel11.setText("e");
+               jLabel13.setText("e");
+               jLabel15.setText("e");
                jButton6.setEnabled(false);
+                corr++;
+                correct();
+                corr++;
+                correct();
+                corr++;
+                correct();
+                       
             }
             case "nurse" -> {
                jLabel14.setText("e");
                jButton6.setEnabled(false);
+                corr++;
+                correct();
+              
             }
             default -> {
                 jButton6.setEnabled(false);
@@ -676,7 +713,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 lives = lives - 1;
                 lifeCheck(lives);
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
-                if( lives == 0)
+                if( lives == 0 )
                 {
                     skipButtonActionPerformed(evt);
                 }
@@ -695,7 +732,7 @@ public class GamingPanel extends javax.swing.JPanel {
         lives = lives - 1;
         lifeCheck(lives);
         System.out.println("Wrong, please try again" + lives + " more lives left.");
-        if( lives == 0)
+        if( lives == 0 )
         {
             skipButtonActionPerformed(evt);
         }
@@ -706,6 +743,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jLabel17.setText("g");
           jButton8.setEnabled(false);
+           corr++;
+           correct();
         }
         else 
         {
@@ -730,6 +769,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
             jLabel11.setText("h");
             jButton11.setEnabled(false);
+             corr++;
+             correct();
         }
         else 
         {
@@ -753,6 +794,10 @@ public class GamingPanel extends javax.swing.JPanel {
           jLabel12.setText("i");    
           jLabel15.setText("i");
           jButton10.setEnabled(false);
+           corr++;
+           correct();
+           corr++;
+           correct();
           
         }
         else 
@@ -803,6 +848,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jLabel11.setText("l");
           jButton13.setEnabled(false);
+           corr++;
+           correct();
         }
         else 
         {
@@ -824,16 +871,22 @@ public class GamingPanel extends javax.swing.JPanel {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         switch (word) {
             case "cemetery" -> {
-                jLabel10.setText("m");
+                jLabel12.setText("m");
                 jButton14.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "climbing" -> {
                 jLabel13.setText("m");
                 jButton14.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "pharmacy" -> {
                 jLabel14.setText("m");
                 jButton14.setEnabled(false);
+                 corr++;
+                 correct();
             }
             default -> {
                 jButton14.setEnabled(false);
@@ -856,10 +909,14 @@ public class GamingPanel extends javax.swing.JPanel {
             case "nurse" -> {
                 jLabel10.setText("N");
                 jButton15.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "climbing" -> {
                 jLabel16.setText("n");
                 jButton15.setEnabled(false);
+                 corr++;
+                 correct();
             }
             default -> {
                 jButton15.setEnabled(false);
@@ -908,18 +965,26 @@ public class GamingPanel extends javax.swing.JPanel {
             case "nurse" -> {
                 jLabel12.setText("r");
                 jButton18.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "cemetery" -> {
                 jLabel16.setText("r");
                 jButton18.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "abstract" -> {
                 jLabel14.setText("r");
                 jButton18.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "pharmacy" -> {
                 jLabel13.setText("r");
                 jButton18.setEnabled(false);
+                 corr++;
+                 correct();
             }
             default -> {
                 jButton18.setEnabled(false);
@@ -942,10 +1007,14 @@ public class GamingPanel extends javax.swing.JPanel {
             case "abstract" -> {
                 jLabel12.setText("s");
                 jButton19.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "nurse" -> {
                 jLabel13.setText("s");
                 jButton19.setEnabled(false);
+                 corr++;
+                 correct();
             }
             default -> {
                 jButton19.setEnabled(false);
@@ -967,11 +1036,19 @@ public class GamingPanel extends javax.swing.JPanel {
         switch (word) {
             case "abstract" -> {
                 jLabel17.setText("t");
+                jLabel13.setText("t");
                 jButton20.setEnabled(false);
+                 corr++;
+                 correct();
+                 corr++;
+                 correct();
+                
             }
             case "cemetery" -> {
                 jLabel14.setText("t");
                 jButton20.setEnabled(false);
+                 corr++;
+                 correct();
             }
             default -> {
                 jButton20.setEnabled(false);
@@ -994,6 +1071,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jLabel11.setText("u"); 
           jButton21.setEnabled(false);
+           corr++;
+           correct();
         }
         else 
         {
@@ -1034,6 +1113,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jLabel10.setText("P"); 
           jButton23.setEnabled(false);
+           corr++;
+           correct();
         }
         else 
         {
@@ -1081,10 +1162,14 @@ public class GamingPanel extends javax.swing.JPanel {
             case "pharmacy" -> {
                 jLabel17.setText("y");
                 jButton26.setEnabled(false);
+                 corr++;
+                 correct();
             }
             case "cemetery" -> {
-                jLabel16.setText("y");
+                jLabel17.setText("y");
                 jButton26.setEnabled(false);
+                 corr++;
+                 correct();
             }
             default -> {
                 jButton26.setEnabled(false);
@@ -1116,20 +1201,21 @@ public class GamingPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton27ActionPerformed
 
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
-       // if( lives == 0)
-       // {
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
-       // }
-       // else
-       // {
-           // score = 0;
-           // lives = 0;
-           // HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), " high scores");
-      //  }
+        if( lives == 0)
+        {
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+        }
+         else
+        {
+            score = 0;
+            lives = 0;
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+        }
     }//GEN-LAST:event_skipButtonActionPerformed
      
     private int lives;
     private int score;
+    private int corr;
     private int randomVessel;
     private String word;
     private final String [] LIST = {"abstract","cemetery","nurse","pharmacy","climbing"};
