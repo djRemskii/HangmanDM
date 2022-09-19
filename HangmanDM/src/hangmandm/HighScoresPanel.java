@@ -4,10 +4,17 @@
  */
 package hangmandm;
 import javax.swing.*;
-/**
- *
- * @author kevin
- */
+/***************************************************************  
+*  file: HighScoresPanel.java 
+*  author: Kevin Hoang  
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.0  
+*  date last modified: 9/18/2022 
+*  
+*  purpose: This panel shows the highscores.
+*  
+****************************************************************/  
 public class HighScoresPanel extends javax.swing.JPanel {
 
     /**
@@ -16,6 +23,8 @@ public class HighScoresPanel extends javax.swing.JPanel {
     public HighScoresPanel() {
         initComponents();
     }
+    //method: initComponents
+    //purpose: initilizes variables
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,7 +48,7 @@ public class HighScoresPanel extends javax.swing.JPanel {
 
         button1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button1.setFont(new java.awt.Font("Stencil", 0, 14)); // NOI18N
-        button1.setLabel("BACK");
+        button1.setLabel("EXIT");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
