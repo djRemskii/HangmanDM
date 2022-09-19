@@ -39,7 +39,7 @@ public class HighScoresPanel extends javax.swing.JPanel {
 
         button1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         button1.setFont(new java.awt.Font("Stencil", 0, 14)); // NOI18N
-        button1.setLabel("BACK");
+        button1.setLabel("EXIT");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
