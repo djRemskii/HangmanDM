@@ -15,6 +15,7 @@ public class end extends javax.swing.JPanel {
      */
     public end() {
        // score.getScore;
+       score = 5;
         initComponents();
     }
 

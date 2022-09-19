@@ -141,7 +141,7 @@ public class MenuPanel extends javax.swing.JPanel {
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "clock test");
     }//GEN-LAST:event_jButton4ActionPerformed
      /////////DELETE ME LATER////////////
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

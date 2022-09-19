@@ -65,9 +65,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Your Score"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Your Score"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="java.awt.Button" name="button1">
       <Properties>
