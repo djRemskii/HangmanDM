@@ -546,6 +546,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton2.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //BBBBBBBBBBBBBBB
             }
         //BBBBBBBBBBBBBBB
@@ -576,6 +577,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton3.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
             }   
         }
         //show it on label
@@ -587,6 +589,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton4.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -605,6 +608,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton5.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //AAAAAAAAA
             }
         //AAAAAAAAA
@@ -626,6 +630,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton6.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //EEEEEEEEEEEEEEEEEE
             }
         //EEEEEEEEEEEEEEEEEE
@@ -640,6 +645,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton7.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -652,7 +658,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jButton8.setEnabled(false);
           score = score - 10;
-          lives = lives - 1;   
+          
+          System.out.println("Wrong, please try again" + lives + "more lives left.");
         }
 
     //GGGGGGGGGGGGGGGG
@@ -670,7 +677,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jButton9.setEnabled(false);
           score = score - 10;
-          lives = lives - 1;   
+          lives = lives - 1;
+          System.out.println("Wrong, please try again" + lives + " more lives left.");
         }
 
     //HHHHHHHHHHHHHHHHHHHHHHHHH
@@ -688,7 +696,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jButton10.setEnabled(false);
           score = score - 10;
-          lives = lives - 1;   
+          lives = lives - 1;
+          System.out.println("Wrong, please try again" + lives + " more lives left.");
         }  
 
     //IIIIIIIIIIIIIIIIIII
@@ -700,6 +709,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton11.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -707,6 +717,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton12.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -719,7 +730,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jButton13.setEnabled(false);
           score = score - 10;
-          lives = lives - 1;   
+          lives = lives - 1; 
+          System.out.println("Wrong, please try again" + lives + " more lives left.");
         }    
 
     //LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
@@ -744,6 +756,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton14.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //MMMMMMMMMMMMMMMMMMMMMMM
             }
         //MMMMMMMMMMMMMMMMMMMMMMM
@@ -765,6 +778,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton15.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //NNNNNNNNNNNNNNNNNNNNN
             }
         //NNNNNNNNNNNNNNNNNNNNN
@@ -777,8 +791,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton16.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
-        System.out.println(score);
-        System.out.println(lives);
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
@@ -786,9 +799,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton17.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
-        System.out.println(score);
-        System.out.println(lives);
-        
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
@@ -813,6 +824,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton18.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //RRRRRRRRRRRRRRRRRRRRRRRRR
             }
         //RRRRRRRRRRRRRRRRRRRRRRRRR
@@ -834,6 +846,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton19.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //SSSSSSSSSSSSSSSSSSS
             }
         //SSSSSSSSSSSSSSSSSSS
@@ -855,6 +868,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton20.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //TTTTTTTTTTTTTTTTTTTTT
             }
         //TTTTTTTTTTTTTTTTTTTTT
@@ -872,7 +886,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jButton21.setEnabled(false);
           score = score - 10;
-          lives = lives - 1;   
+          lives = lives - 1;
+          System.out.println("Wrong, please try again" + lives + " more lives left.");
         }
 
     //UUUUUUUUUUUUUUUUUUUUUUUU
@@ -883,7 +898,8 @@ public class GamingPanel extends javax.swing.JPanel {
         
           jButton22.setEnabled(false);
           score = score - 10;
-          lives = lives - 1;   
+          lives = lives - 1;
+          System.out.println("Wrong, please try again" + lives + " more lives left.");
         
 
     //VVVVVVVVVVVVVVVVVV
@@ -900,7 +916,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jButton23.setEnabled(false);
           score = score - 10;
-          lives = lives - 1;   
+          lives = lives - 1;
+          System.out.println("Wrong, please try again" + lives + " more lives left.");
         }  
 
     //PPPPPPPPPPPPPPPPPPPPPP
@@ -911,12 +928,14 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton24.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         jButton25.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
@@ -933,6 +952,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton26.setEnabled(false);
                 score = score - 10;
                 lives = lives - 1;
+                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 //YYYYYYYYYYYYYYYYYYYYYY
             }
         //YYYYYYYYYYYYYYYYYYYYYY
@@ -945,8 +965,14 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton27.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
+        System.out.println("Wrong, please try again" + lives + " more lives left.");
     }//GEN-LAST:event_jButton27ActionPerformed
-   
+     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
+        // TODO add your handling code here:
+        score = 0;
+        lives = 0;
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+    }//GEN-LAST:event_skipButtonActionPerformed
     private int lives;
     private int score;
     private int randomVessel;
