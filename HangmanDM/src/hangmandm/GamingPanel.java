@@ -3,21 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package hangmandm;
-<<<<<<< HEAD
 //import java.time.format.DateTimeFormatter;  
 //import java.time.LocalDateTime;    
 import java.util.Random;
 
-=======
-
-//BELOW IMPORTS ARE FOR CLOCK
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime;  
-import javax.swing.Timer;
-//
->>>>>>> 60499c2805a6fc3bd530339d1ba772edae2b58b1
 
 
 /**
@@ -26,7 +15,6 @@ import javax.swing.Timer;
  */
 public class GamingPanel extends javax.swing.JPanel {
 
-<<<<<<< HEAD
      
      
     public GamingPanel() 
@@ -36,49 +24,58 @@ public class GamingPanel extends javax.swing.JPanel {
         word = LIST[randomVessel];
         System.out.println(word);
         spacer(word);
-=======
-    //Below variables are for the clock
-    //Clock code written by J. Ong
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
-    LocalDateTime now = LocalDateTime.now();
-    //
-    
-    //Actionlistener updateClockAction updates the clock every 1000ms
-    ActionListener updateClockAction = new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-            // Assumes clock is a JLabel
-            now = LocalDateTime.now();
-            jLabel2.setText(dtf.format(now)); 
-        }
-    };
-    //
-    
-    /**
-     * Creates new form GamingPanel
-     */
-    public GamingPanel() 
-    {   
-        //Below code creates the clock
-        Timer t = new Timer(1000, updateClockAction);
-        t.start();
-        //
-        
->>>>>>> 60499c2805a6fc3bd530339d1ba772edae2b58b1
         lives = 6;
         score = 100;
+        if( lives == 0)
+        {
+            //end game
+        }
         initComponents();
         
     }
-    
-    private void spacer(String prob)
+     
+    private void lifeCheck(int life  )
+    {
+        if(life == 6)
+        {
+            //checks life and changes hangman symbol 
+        }
+        else if (life == 5)
+        {
+            
+        }
+        else if (life == 4)
+        {
+            
+        }
+        else if (life == 3)
+        {
+            
+        }
+        else if (life == 2)
+        {
+            
+        }  
+        else if (life == 1)
+        {
+            
+        }
+        else if (life == 0)
+        {
+            
+        }
+    }
+     private void spacer(String prob)
     {
          switch (prob) {
              case "nurse" -> {
-                 jLabel15.setEnabled(false);
-                 jLabel16.setEnabled(false);
-                 jLabel17.setEnabled(false);
+                 jLabel15.setIcon(null);
+                 jLabel16.setIcon(null);
+                 jLabel17.setIcon(null);
+                 jLabel8.setIcon(null);
+                 jLabel9.setIcon(null); 
+                 jButton3.setIcon(null);
              }
-             case "cemetry" -> jLabel17.setEnabled(false);
              default -> {
              }
          }
@@ -97,6 +94,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -123,7 +121,6 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
-<<<<<<< HEAD
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -139,9 +136,6 @@ public class GamingPanel extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-=======
-        jLabel2 = new javax.swing.JLabel();
->>>>>>> 60499c2805a6fc3bd530339d1ba772edae2b58b1
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -153,11 +147,8 @@ public class GamingPanel extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Hangman1.png"))); // NOI18N
 
-<<<<<<< HEAD
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LINE.png"))); // NOI18N
 
-=======
->>>>>>> 60499c2805a6fc3bd530339d1ba772edae2b58b1
         jButton2.setText("B");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,7 +331,6 @@ public class GamingPanel extends javax.swing.JPanel {
             }
         });
 
-<<<<<<< HEAD
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LINE.png"))); // NOI18N
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LINE.png"))); // NOI18N
@@ -370,21 +360,20 @@ public class GamingPanel extends javax.swing.JPanel {
         jLabel16.setText("jLabel16");
 
         jLabel17.setText("jLabel17");
-=======
-        jLabel2.setText(dtf.format(now));
->>>>>>> 60499c2805a6fc3bd530339d1ba772edae2b58b1
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
                                 .addGap(16, 16, 16)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -482,75 +471,10 @@ public class GamingPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel10)
                                 .addComponent(jLabel2)))))
                 .addContainerGap(34, Short.MAX_VALUE))
-=======
-                                .addComponent(jButton13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton14)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton23)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton17)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton20)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton22))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(98, 98, 98)
-                                .addComponent(jButton24)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton27)))
-                        .addContainerGap(278, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton9)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton12))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addGap(155, 155, 155))))))
->>>>>>> 60499c2805a6fc3bd530339d1ba772edae2b58b1
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
                 .addGap(68, 68, 68)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65)
@@ -575,16 +499,6 @@ public class GamingPanel extends javax.swing.JPanel {
                     .addComponent(jLabel9)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel2)))
-                .addGap(18, 18, 18)
->>>>>>> 60499c2805a6fc3bd530339d1ba772edae2b58b1
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5)
                     .addComponent(jButton2)
@@ -596,7 +510,9 @@ public class GamingPanel extends javax.swing.JPanel {
                     .addComponent(jButton9)
                     .addComponent(jButton10)
                     .addComponent(jButton11)
-                    .addComponent(jButton12))
+                    .addComponent(jButton12)
+                    .addComponent(jButton13)
+                    .addComponent(jButton14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton17)
@@ -604,29 +520,27 @@ public class GamingPanel extends javax.swing.JPanel {
                     .addComponent(jButton19)
                     .addComponent(jButton20)
                     .addComponent(jButton21)
-                    .addComponent(jButton15)
-                    .addComponent(jButton16)
-                    .addComponent(jButton23)
                     .addComponent(jButton22)
-                    .addComponent(jButton13)
-                    .addComponent(jButton14))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton24)
                     .addComponent(jButton25)
                     .addComponent(jButton26)
-                    .addComponent(jButton27))
-                .addContainerGap(103, Short.MAX_VALUE))
+                    .addComponent(jButton27)
+                    .addComponent(jButton15)
+                    .addComponent(jButton16)
+                    .addComponent(jButton23))
+                .addGap(73, 73, 73))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         switch (word) {
             case "abstract" -> {
-                jLabel11.setText("b");              
+                jLabel11.setText("b");
+                jButton2.setEnabled(false);
             }
             case "climbing" -> {
                 jLabel14.setText("b");
+                jButton2.setEnabled(false);
             }
             default -> {
                 jButton2.setEnabled(false);
@@ -641,18 +555,22 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         switch (word) {
-            case "cemetry" -> {
+            case "cemetery" -> {
                 
                 jLabel10.setText("C");
+                jButton3.setEnabled(false);
             }
             case "climbing" -> {
                 jLabel10.setText("C");
+                jButton3.setEnabled(false);
             }
             case "abstract" -> {
                 jLabel16.setText("c");
+                jButton3.setEnabled(false);
             }
             case "pharmacy" -> {
                 jLabel16.setText("c");
+                jButton3.setEnabled(false);
             }
             default -> {
                 jButton3.setEnabled(false);
@@ -676,10 +594,12 @@ public class GamingPanel extends javax.swing.JPanel {
             case "abstract" -> {
                 jLabel15.setText("A");
                 jLabel10.setText("a");
+                jButton5.setEnabled(false);
             }
             case "pharmacy" -> {
                 jLabel12.setText("a");
                 jLabel15.setText("a");
+                jButton5.setEnabled(false);
             }
             default -> {
                 jButton5.setEnabled(false);
@@ -693,12 +613,14 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         switch (word) {
-            case "cemetry" -> {
+            case "cemetery" -> {
                jLabel11.setText("e");
                jLabel11.setText("e");
+               jButton6.setEnabled(false);
             }
             case "nurse" -> {
                jLabel14.setText("e");
+               jButton6.setEnabled(false);
             }
             default -> {
                 jButton6.setEnabled(false);
@@ -718,14 +640,13 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton7.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
-        System.out.println(score);
-        System.out.println(lives);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
          if (word.equals("climbing"))
         {
           jLabel17.setText("g");
+          jButton8.setEnabled(false);
         }
         else 
         {
@@ -743,6 +664,7 @@ public class GamingPanel extends javax.swing.JPanel {
          if (word.equals("pharmacy"))
         {
             jLabel11.setText("h");
+            jButton11.setEnabled(false);
         }
         else 
         {
@@ -759,6 +681,8 @@ public class GamingPanel extends javax.swing.JPanel {
         {
           jLabel12.setText("i");    
           jLabel15.setText("i");
+          jButton10.setEnabled(false);
+          
         }
         else 
         {
@@ -776,8 +700,6 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton11.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
-        System.out.println(score);
-        System.out.println(lives);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -785,14 +707,13 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton12.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
-        System.out.println(score);
-        System.out.println(lives);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
      if (word.equals("climbing"))
         {
-          jLabel11.setText("l");          
+          jLabel11.setText("l");
+          jButton13.setEnabled(false);
         }
         else 
         {
@@ -807,9 +728,18 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         switch (word) {
-            case "cemetry" -> jLabel10.setText("m");
-            case "climbing" -> jLabel13.setText("m");
-            case "pharmacy" -> jLabel14.setText("m");
+            case "cemetery" -> {
+                jLabel10.setText("m");
+                jButton14.setEnabled(false);
+            }
+            case "climbing" -> {
+                jLabel13.setText("m");
+                jButton14.setEnabled(false);
+            }
+            case "pharmacy" -> {
+                jLabel14.setText("m");
+                jButton14.setEnabled(false);
+            }
             default -> {
                 jButton14.setEnabled(false);
                 score = score - 10;
@@ -822,18 +752,23 @@ public class GamingPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-         if (word.equals("nurse"))
-        {
-          jLabel10.setText("N");
+        switch (word) {
+            case "nurse" -> {
+                jLabel10.setText("N");
+                jButton15.setEnabled(false);
+            }
+            case "climbing" -> {
+                jLabel16.setText("n");
+                jButton15.setEnabled(false);
+            }
+            default -> {
+                jButton15.setEnabled(false);
+                score = score - 10;
+                lives = lives - 1;
+                //NNNNNNNNNNNNNNNNNNNNN
+            }
+        //NNNNNNNNNNNNNNNNNNNNN
         }
-        else 
-        {
-          jButton15.setEnabled(false);
-          score = score - 10;
-          lives = lives - 1;   
-        }
-
-    //NNNNNNNNNNNNNNNNNNNNN
         
     }//GEN-LAST:event_jButton15ActionPerformed
 
@@ -858,10 +793,22 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         switch (word) {
-            case "nurse" -> jLabel12.setText("r");
-            case "cemetry" -> jLabel16.setText("r");
-            case "abstract" -> jLabel14.setText("r");
-            case "pharmacy" -> jLabel13.setText("r");
+            case "nurse" -> {
+                jLabel12.setText("r");
+                jButton18.setEnabled(false);
+            }
+            case "cemetery" -> {
+                jLabel16.setText("r");
+                jButton18.setEnabled(false);
+            }
+            case "abstract" -> {
+                jLabel14.setText("r");
+                jButton18.setEnabled(false);
+            }
+            case "pharmacy" -> {
+                jLabel13.setText("r");
+                jButton18.setEnabled(false);
+            }
             default -> {
                 jButton18.setEnabled(false);
                 score = score - 10;
@@ -875,8 +822,14 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         switch (word) {
-            case "abstract" -> jLabel12.setText("s");
-            case "nurse" -> jLabel13.setText("s");
+            case "abstract" -> {
+                jLabel12.setText("s");
+                jButton19.setEnabled(false);
+            }
+            case "nurse" -> {
+                jLabel13.setText("s");
+                jButton19.setEnabled(false);
+            }
             default -> {
                 jButton19.setEnabled(false);
                 score = score - 10;
@@ -890,8 +843,14 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         switch (word) {
-            case "abstract" -> jLabel17.setText("t");
-            case "cemetery" -> jLabel14.setText("t");
+            case "abstract" -> {
+                jLabel17.setText("t");
+                jButton20.setEnabled(false);
+            }
+            case "cemetery" -> {
+                jLabel14.setText("t");
+                jButton20.setEnabled(false);
+            }
             default -> {
                 jButton20.setEnabled(false);
                 score = score - 10;
@@ -906,7 +865,8 @@ public class GamingPanel extends javax.swing.JPanel {
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
          if (word.equals("nurse"))
         {
-          jLabel11.setText("u");           
+          jLabel11.setText("u"); 
+          jButton21.setEnabled(false);
         }
         else 
         {
@@ -933,7 +893,8 @@ public class GamingPanel extends javax.swing.JPanel {
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
        if (word.equals("pharmacy"))
         {
-          jLabel10.setText("P");           
+          jLabel10.setText("P"); 
+          jButton23.setEnabled(false);
         }
         else 
         {
@@ -960,8 +921,14 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         switch (word) {
-            case "pharmacy" -> jLabel17.setText("y");
-            case "cemetry" -> jLabel16.setText("y");
+            case "pharmacy" -> {
+                jLabel17.setText("y");
+                jButton26.setEnabled(false);
+            }
+            case "cemetery" -> {
+                jLabel16.setText("y");
+                jButton26.setEnabled(false);
+            }
             default -> {
                 jButton26.setEnabled(false);
                 score = score - 10;
@@ -978,8 +945,6 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton27.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
-        System.out.println(score);
-        System.out.println(lives);
     }//GEN-LAST:event_jButton27ActionPerformed
    
     private int lives;
@@ -1024,6 +989,13 @@ public class GamingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
