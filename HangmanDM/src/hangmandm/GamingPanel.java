@@ -962,6 +962,9 @@ public class GamingPanel extends javax.swing.JPanel {
 
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
         // TODO add your handling code here:
+        score = 0;
+        lives = 0;
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
     }//GEN-LAST:event_skipButtonActionPerformed
    
     private int lives;
