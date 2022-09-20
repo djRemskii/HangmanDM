@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+import static hangmandm.HangmanDM.frame;
 import java.util.Random;
 
 // timer imports
@@ -56,15 +57,15 @@ public class GamingPanel extends javax.swing.JPanel {
     {   
         System.out.println(life);
         switch (life) {
-            case 6 -> {}
+            case 6 -> { frame.getContentPane().add(new end(this.getScore()),"end");}
             //checks life and changes hangman symbol
-            case 5 -> {}
-            case 4 -> {}
-            case 3 -> {}
-            case 2 -> {}
-            case 1 -> {}
+            case 5 -> { frame.getContentPane().add(new end(this.getScore()),"end");}
+            case 4 -> { frame.getContentPane().add(new end(this.getScore()),"end");}
+            case 3 -> { frame.getContentPane().add(new end(this.getScore()),"end");}
+            case 2 -> { frame.getContentPane().add(new end(this.getScore()),"end");}
+            case 1 -> { frame.getContentPane().add(new end(this.getScore()),"end");}
             case 0 -> {
-                 
+                  frame.getContentPane().add(new end(this.getScore()),"end");
                 System.out.println("You looooooooooooooooose");
                 /*
                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman7.png")));
@@ -1296,7 +1297,7 @@ public class GamingPanel extends javax.swing.JPanel {
     };
     
     private int lives;
-    public static int score;
+    private int score;
     private int corr;
     private int randomVessel;
     private String word;

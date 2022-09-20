@@ -43,7 +43,7 @@ public class end extends javax.swing.JPanel {
         label1 = new java.awt.Label();
         button1 = new java.awt.Button();
 
-        jLabel1.setText(GamingPanel.score + "");
+        jLabel1.setText(this.getScore() + "");
 
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 36)); // NOI18N

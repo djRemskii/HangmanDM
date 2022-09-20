@@ -64,7 +64,7 @@ public class HangmanDM{
         frame.add(new HighScoresPanel(), "high scores");
         frame.add(new ClockTestPanel(), "clock test");
         frame.add(game, "game");
-        frame.add(new end(game.getScore()),"end");
+        frame.getContentPane().add(new end(game.getScore()),"end");
         
         //add the end page tied to the skip button
         //frame.add(new GamingPanel(), "end");
