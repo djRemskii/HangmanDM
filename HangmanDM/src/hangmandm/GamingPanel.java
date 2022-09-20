@@ -1296,7 +1296,7 @@ public class GamingPanel extends javax.swing.JPanel {
     };
     
     private int lives;
-    private int score;
+    public static int score;
     private int corr;
     private int randomVessel;
     private String word;

@@ -15,7 +15,6 @@ public class end extends javax.swing.JPanel {
      */
     public end() {
        // score.getScore;
-       score = 5;
         initComponents();
     }
 
@@ -32,7 +31,7 @@ public class end extends javax.swing.JPanel {
         label1 = new java.awt.Label();
         button1 = new java.awt.Button();
 
-        jLabel1.setText(score + "");
+        jLabel1.setText(GamingPanel.score + "");
 
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setFont(new java.awt.Font("Rockwell Extra Bold", 0, 36)); // NOI18N
@@ -74,8 +73,6 @@ public class end extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        label1.getAccessibleContext().setAccessibleName("Your Score");
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -88,5 +85,5 @@ public class end extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
-    private int score; 
+
 }
