@@ -47,22 +47,28 @@ public class GamePanel extends javax.swing.JPanel {
                 }
             case 5 ->                 {
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangman2.png")));
-
+                    break;
                 }
             case 4 ->                 {
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangman3.png")));
+                    break;
                 }
             case 3 ->                 {
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangman4.png")));
+                    break;
                 }
             case 2 ->                 {
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangman5.png")));
+                    break;
+                    
                 }
             case 1 ->                 {
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangman6.png")));
+                    break;
                 }
             case 0 ->                 {
                     jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangman7.png")));
+                    break;
                 }
             default -> {
             }
