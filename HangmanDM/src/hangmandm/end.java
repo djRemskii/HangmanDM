@@ -12,12 +12,21 @@ public class end extends javax.swing.JPanel {
 
     /**
      * Creates new form end
+     * @param points
      */
-    public end() {
+    public end(int points) {
        // score.getScore;
+<<<<<<< HEAD
+=======
+       score = points;
+>>>>>>> 1c73597a6237e52bdf8cbd229fd58262495f0e55
         initComponents();
     }
 
+    private int getScore()
+    {
+        return score;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
