@@ -10,21 +10,24 @@ package hangmandm;
  */
 public class end extends javax.swing.JPanel {
 
+    private String score;
     /**
      * Creates new form end
      * @param points
      */
     public end(int points) {
        // score.getScore;
-<<<<<<< HEAD
-=======
-       score = points;
->>>>>>> 1c73597a6237e52bdf8cbd229fd58262495f0e55
+
+        
+       score = ("" + points);
+       
+
         initComponents();
     }
 
-    private int getScore()
+    private String getScore()
     {
+        jLabel1.setText(score);
         return score;
     }
     /**

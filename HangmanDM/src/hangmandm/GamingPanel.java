@@ -56,13 +56,13 @@ public class GamingPanel extends javax.swing.JPanel {
     {   
         System.out.println(life);
         switch (life) {
-            case 6 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman1.png")));
+            case 6 -> {}
             //checks life and changes hangman symbol
-            case 5 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman2.png")));
-            case 4 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman3.png")));
-            case 3 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman4.png")));
-            case 2 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman5.png")));
-            case 1 -> jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman6.png")));
+            case 5 -> {}
+            case 4 -> {}
+            case 3 -> {}
+            case 2 -> {}
+            case 1 -> {}
             case 0 -> {
                  
                 System.out.println("You looooooooooooooooose");
@@ -79,7 +79,7 @@ public class GamingPanel extends javax.swing.JPanel {
         {
         if( corr == word.length())
             {
-                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
             }
         }
      private void spacer(String prob)
