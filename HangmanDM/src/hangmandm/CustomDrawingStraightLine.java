@@ -15,17 +15,24 @@ import java.awt.*;
 import java.awt.image.*; 
 import java.io.*; 
 import javax.imageio.*; 
-import javax.swing.*; 
+import javax.swing.*;
+
 /**
  *
  * @author danie
  */
-public class CustomDrawing extends JPanel {
-    private BufferedImage pic;
+public class CustomDrawingStraightLine extends JPanel {
     
-    public CustomDrawing(){
+    private int go;
+    private int end;
+    private int pos;
+    private boolean verticalOrHorizontal;
+    public CustomDrawingStraightLine(int xpos, int ystart, int ystop, boolean voh){
         setBorder(BorderFactory.createLineBorder(Color.black));
-        pic = null;
+        pos = xpos;
+        go = ystart;
+        end = ystop;
+        verticalOrHorizontal = voh;
     }
     
     @Override
@@ -37,11 +44,14 @@ public class CustomDrawing extends JPanel {
     public void paintComponent(Graphics g) { 
         super.paintComponent(g);        
  
-        try{ 
-            pic = ImageIO.read(new File("src\\squidward dabbing.png")); 
-            }
-        catch(IOException e){} 
-        g.drawImage(pic,50,50, 100, 100, this); 
+        g.setColor(Color.BLACK);
+        if(verticalOrHorizontal == true)
+        {
+            g.drawLine(pos, go, pos, end);
+        }
+        else
+            g.drawLine(go, pos, end, pos);
+        
     }   
     
 }
