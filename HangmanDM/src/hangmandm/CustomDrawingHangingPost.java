@@ -24,7 +24,7 @@ import javax.swing.*;
 public class CustomDrawingHangingPost extends JPanel {
     
     public CustomDrawingHangingPost(){
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        setBorder(null);
         
     }
     
@@ -38,10 +38,10 @@ public class CustomDrawingHangingPost extends JPanel {
         super.paintComponent(g);        
  
         g.setColor(Color.BLACK);
-        g.drawLine(100, 250, 500, 250);
-        g.drawLine(300, 250, 300, 350);
-        g.drawLine(300, 350, 400, 350);
-        g.drawLine(400, 350, 400, 250);
+        g.drawLine(0, 199, 249, 199);
+        g.drawLine(125, 0, 125, 199);
+        g.drawLine(125, 0, 249, 0);
+        g.drawLine(249, 0, 249, 30);
         
     }   
     

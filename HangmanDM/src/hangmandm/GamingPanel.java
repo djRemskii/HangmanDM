@@ -33,7 +33,6 @@ public class GamingPanel extends javax.swing.JPanel {
         randomVessel = random_method.nextInt(LIST.length);
         word = "cemetery";//LIST[randomVessel];
         
-        add(new CustomDrawingWordLines(word));
         
         
         initComponents();
@@ -161,6 +160,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -660,6 +660,17 @@ public class GamingPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout customDrawingHangingPost1Layout = new javax.swing.GroupLayout(customDrawingHangingPost1);
+        customDrawingHangingPost1.setLayout(customDrawingHangingPost1Layout);
+        customDrawingHangingPost1Layout.setHorizontalGroup(
+            customDrawingHangingPost1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 336, Short.MAX_VALUE)
+        );
+        customDrawingHangingPost1Layout.setVerticalGroup(
+            customDrawingHangingPost1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 237, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -667,7 +678,9 @@ public class GamingPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(customDrawingHangingPost1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
@@ -679,8 +692,10 @@ public class GamingPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(customDrawingHangingPost1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1354,6 +1369,7 @@ public class GamingPanel extends javax.swing.JPanel {
     private final String [] LIST = {"abstract","cemetery","nurse","pharmacy","climbing"};
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private hangmandm.CustomDrawingHangingPost customDrawingHangingPost1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;

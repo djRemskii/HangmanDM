@@ -56,8 +56,9 @@ public class HangmanDM{
         cardLayout = new CardLayout();
         frame.setLayout(cardLayout);
         GamingPanel game = new GamingPanel();
-        game.add(new CustomDrawingHangingPost());
+        
         //add any panels here
+        
         frame.add(new StartPanel(), "start");
         frame.add(new MenuPanel(), "menu");
         frame.add(new CreditsPanel(), "credits");
