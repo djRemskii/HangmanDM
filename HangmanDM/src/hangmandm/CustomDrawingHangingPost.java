@@ -21,18 +21,11 @@ import javax.swing.*;
  *
  * @author danie
  */
-public class CustomDrawingStraightLine extends JPanel {
+public class CustomDrawingHangingPost extends JPanel {
     
-    private int go;
-    private int end;
-    private int pos;
-    private boolean verticalOrHorizontal;
-    public CustomDrawingStraightLine(int aPos, int start, int stop, boolean voh){
+    public CustomDrawingHangingPost(){
         setBorder(BorderFactory.createLineBorder(Color.black));
-        pos = aPos;
-        go = start;
-        end = stop;
-        verticalOrHorizontal = voh;
+        
     }
     
     @Override
@@ -45,12 +38,10 @@ public class CustomDrawingStraightLine extends JPanel {
         super.paintComponent(g);        
  
         g.setColor(Color.BLACK);
-        if(verticalOrHorizontal == true)
-        {
-            g.drawLine(pos, go, pos, end);
-        }
-        else
-            g.drawLine(go, pos, end, pos);
+        g.drawLine(100, 250, 500, 250);
+        g.drawLine(300, 250, 300, 350);
+        g.drawLine(300, 350, 400, 350);
+        g.drawLine(400, 350, 400, 250);
         
     }   
     
