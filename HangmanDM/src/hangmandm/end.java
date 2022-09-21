@@ -88,6 +88,7 @@ public class end extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_button1ActionPerformed
 

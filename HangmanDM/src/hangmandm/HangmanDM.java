@@ -55,7 +55,7 @@ public class HangmanDM{
         //creates the card layout
         cardLayout = new CardLayout();
         frame.setLayout(cardLayout);
-        GamingPanel game = new GamingPanel();
+        
         
         //add any panels here
         
@@ -64,8 +64,8 @@ public class HangmanDM{
         frame.add(new CreditsPanel(), "credits");
         frame.add(new HighScoresPanel(), "high scores");
         frame.add(new ClockTestPanel(), "clock test");
-        frame.add(game, "game");
-        frame.getContentPane().add(new end(game.getScore()),"end");
+        frame.add(new GamingPanel(), "game");
+        
         
         //add the end page tied to the skip button
         //frame.add(new GamingPanel(), "end");

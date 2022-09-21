@@ -23,14 +23,16 @@ import javax.swing.*;
  */
 public class CustomDrawingHangingPost extends JPanel {
     
-    public CustomDrawingHangingPost(){
+    private int life;
+    public CustomDrawingHangingPost(int lives){
         setBorder(null);
+        life = lives;
         
     }
     
     @Override
     public Dimension getPreferredSize() { 
-        return new Dimension(100,100); 
+        return new Dimension(120,120); 
     } 
  
     @Override
@@ -40,9 +42,28 @@ public class CustomDrawingHangingPost extends JPanel {
         g.setColor(Color.BLACK);
         g.drawLine(0, 99, 99, 99);
         g.drawLine(49, 99, 49, 0);
-        g.drawLine(49, 0, 99, 0);
-        g.drawLine(99, 0, 99, 30);
-        
+        g.drawLine(49, 0, 70, 0);
+        g.drawLine(70, 0, 70, 30);
+        switch (life) {
+            case 5:
+                g.drawOval(70, 30, 10, 10);
+                break;
+            case 4:
+                g.drawLine(70, 40, 70, 70);
+                break;
+            case 3:
+                g.drawLine(70, 55, 25, 85);
+                break;
+            case 2:
+                g.drawLine(70, 55, 105, 85);
+                break;
+            case 1:
+                g.drawLine(70, 70, 25, 100);
+                break;
+            default:
+                g.drawLine(70, 70, 105, 100);
+                break;
+        }
     }   
     
 }
