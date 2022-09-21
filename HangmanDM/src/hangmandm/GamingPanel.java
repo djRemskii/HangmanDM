@@ -68,21 +68,27 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println(life);
         switch (life) {
             case 6 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);}
+            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            }
             //checks life and changes hangman symbol
             case 5 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);}
+            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            }
             case 4 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);}
+            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            }
             case 3 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);}
+            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            }
             case 2 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);}
+            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            }
             case 1 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);}
+            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            }
             case 0 -> {
                   frame.getContentPane().add(new end(this.getScore()),"end");
-                  customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);
+                  customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
                 System.out.println("You looooooooooooooooose");
                 /*
                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman7.png")));
@@ -92,8 +98,8 @@ public class GamingPanel extends javax.swing.JPanel {
             default -> {
             }    
         }
-        customDrawingHangingPost2.revalidate();
-        customDrawingHangingPost2.repaint();
+        //customDrawingHangingPost2.revalidate();
+        //customDrawingHangingPost2.repaint();
     }
         private void correct()
         {
@@ -215,7 +221,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
-        customDrawingHangingPost2 = new hangmandm.CustomDrawingHangingPost(lives);
+        customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -240,8 +246,9 @@ public class GamingPanel extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel18)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(skipButton)
                 .addGap(0, 6, Short.MAX_VALUE))
         );
@@ -763,15 +770,15 @@ public class GamingPanel extends javax.swing.JPanel {
                 .addGap(71, 71, 71))
         );
 
-        javax.swing.GroupLayout customDrawingHangingPost2Layout = new javax.swing.GroupLayout(customDrawingHangingPost2);
-        customDrawingHangingPost2.setLayout(customDrawingHangingPost2Layout);
-        customDrawingHangingPost2Layout.setHorizontalGroup(
-            customDrawingHangingPost2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        javax.swing.GroupLayout customDrawingHangingPost1Layout = new javax.swing.GroupLayout(customDrawingHangingPost1);
+        customDrawingHangingPost1.setLayout(customDrawingHangingPost1Layout);
+        customDrawingHangingPost1Layout.setHorizontalGroup(
+            customDrawingHangingPost1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 137, Short.MAX_VALUE)
         );
-        customDrawingHangingPost2Layout.setVerticalGroup(
-            customDrawingHangingPost2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        customDrawingHangingPost1Layout.setVerticalGroup(
+            customDrawingHangingPost1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 119, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -779,26 +786,30 @@ public class GamingPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(customDrawingHangingPost2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(337, Short.MAX_VALUE))
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(customDrawingHangingPost1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(192, 192, 192)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(12, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(customDrawingHangingPost2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addGap(98, 98, 98))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(customDrawingHangingPost1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
+                .addGap(81, 81, 81))
         );
     }// </editor-fold>//GEN-END:initComponents
     
@@ -1468,7 +1479,7 @@ public class GamingPanel extends javax.swing.JPanel {
     private final String [] LIST = {"abstract","cemetery","nurse","pharmacy","climbing"};
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private hangmandm.CustomDrawingHangingPost customDrawingHangingPost2;
+    private hangmandm.CustomDrawingHangingPost customDrawingHangingPost1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;

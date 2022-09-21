@@ -45,24 +45,57 @@ public class CustomDrawingHangingPost extends JPanel {
         g.drawLine(49, 0, 70, 0);
         g.drawLine(70, 0, 70, 30);
         switch (life) {
-            case 5:
-                g.drawOval(70, 30, 10, 10);
-                break;
-            case 4:
+            case 5 ->             {
+               g.drawOval(65, 30, 10, 10);
+               revalidate();
+               repaint();
+            }
+                
+            case 4 ->             {
+               g.drawOval(65, 30, 10, 10);
+               g.drawLine(70, 40, 70, 70);
+               revalidate();
+               repaint();
+            }
+                
+            case 3 ->             {
+                g.drawOval(65, 30, 10, 10);
                 g.drawLine(70, 40, 70, 70);
-                break;
-            case 3:
-                g.drawLine(70, 55, 25, 85);
-                break;
-            case 2:
-                g.drawLine(70, 55, 105, 85);
-                break;
-            case 1:
-                g.drawLine(70, 70, 25, 100);
-                break;
-            default:
-                g.drawLine(70, 70, 105, 100);
-                break;
+                g.drawLine(70, 55, 60, 85);
+                revalidate();
+                repaint();
+            }
+                
+            case 2 ->             {
+                g.drawOval(65, 30, 10, 10);
+                g.drawLine(70, 40, 70, 70);
+                g.drawLine(70, 55, 60, 85);
+                g.drawLine(70, 55, 80, 85);
+                revalidate();
+                repaint();
+            }
+                
+            case 1 ->             {
+                g.drawOval(65, 30, 10, 10);
+                g.drawLine(70, 40, 70, 70);
+                g.drawLine(70, 55, 60, 85);
+                g.drawLine(70, 55, 80, 85);
+                g.drawLine(70, 70, 55, 100);
+                revalidate();
+                repaint();
+            }
+                
+            case 0 ->             {
+                g.drawOval(65, 30, 10, 10);
+                g.drawLine(70, 40, 70, 70);
+                g.drawLine(70, 55, 60, 85);
+                g.drawLine(70, 55, 80, 85);
+                g.drawLine(70, 70, 55, 50);
+                g.drawLine(70, 70, 95, 90);
+                revalidate();
+                repaint();
+            }
+                
         }
     }   
     
