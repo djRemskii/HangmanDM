@@ -14,7 +14,7 @@ import javax.swing.*;
 
 /***************************************************************  
 *  file: HangmanDM.java 
-*  author: J. Ong 
+*  authors: J. Ong, D Menkir
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.0  

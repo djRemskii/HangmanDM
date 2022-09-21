@@ -6,7 +6,7 @@ package hangmandm;
 
 /**
  *
- * @author Samuel Araya
+ * @author D Menkir 
  */
 public class end extends javax.swing.JPanel {
 
@@ -90,6 +90,7 @@ public class end extends javax.swing.JPanel {
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
+         HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
     }//GEN-LAST:event_button1ActionPerformed
 
 
