@@ -5,6 +5,9 @@
 package hangmandm;
 
 import static hangmandm.HangmanDM.frame;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.util.Random;
 
 // timer imports
@@ -28,6 +31,7 @@ public class GamingPanel extends javax.swing.JPanel {
      
     public GamingPanel() 
     {   
+        setBorder(null);
         HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
         Timer t = new Timer(1000, updateClockAction);
         t.start();
@@ -68,27 +72,41 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println(life);
         switch (life) {
             case 6 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            revalidate();
+            repaint();
+            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             //checks life and changes hangman symbol
             case 5 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            revalidate();
+            repaint();
+            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 4 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            revalidate();
+            repaint();
+            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 3 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            revalidate();
+            repaint();
+            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 2 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            revalidate();
+            repaint();
+            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 1 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+            revalidate();
+            repaint();
+            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 0 -> {
                   frame.getContentPane().add(new end(this.getScore()),"end");
-                  customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+                  revalidate();
+                  repaint();
+                  //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
                 System.out.println("You looooooooooooooooose");
                 /*
                 jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("src\\Hangman7.png")));
@@ -101,6 +119,85 @@ public class GamingPanel extends javax.swing.JPanel {
         //customDrawingHangingPost2.revalidate();
         //customDrawingHangingPost2.repaint();
     }
+    
+    @Override
+    public Dimension getPreferredSize() { 
+        return new Dimension(600,400); 
+    } 
+ 
+    @Override
+    public void paintComponent(Graphics g) { 
+        super.paintComponent(g);        
+ 
+        g.setColor(Color.BLACK);
+        g.drawLine(0, 99, 99, 99);
+        g.drawLine(49, 99, 49, 0);
+        g.drawLine(49, 0, 70, 0);
+        g.drawLine(70, 0, 70, 30);
+        switch (lives) {
+            case 6 -> { 
+                break;
+            }
+            case 5 ->             {
+               g.drawOval(65, 30, 10, 10); //head
+               revalidate();
+               repaint();
+               break;
+            }
+                
+            case 4 ->             {
+               g.drawOval(65, 30, 10, 10); //head
+               g.drawLine(70, 40, 70, 70); //torso
+               revalidate();
+               repaint();
+               break;
+            }
+                
+            case 3 ->             {
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
+                revalidate();
+                repaint();
+                break;
+            }
+                
+            case 2 ->             {
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
+                g.drawLine(70, 55, 80, 65); //right arm
+                revalidate();
+                repaint();
+                break;
+            }
+                
+            case 1 ->             {
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
+                g.drawLine(70, 55, 80, 65); //right arm
+                g.drawLine(70, 70, 55, 85); //left leg
+                revalidate();
+                repaint();
+                break;
+            }
+                
+            case 0 ->             {
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
+                g.drawLine(70, 55, 80, 65); //right arm
+                g.drawLine(70, 70, 55, 85); //left leg
+                g.drawLine(70, 70, 85, 85); //right leg
+                revalidate();
+                repaint();
+                break;
+            }
+                
+        }
+    }
+    
         private void correct()
         {
         if( corr == word.length())
@@ -771,7 +868,33 @@ public class GamingPanel extends javax.swing.JPanel {
                 .addGap(71, 71, 71))
         );
 
+<<<<<<< HEAD
         add(jPanel4);
+=======
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(312, 312, 312)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+>>>>>>> 1bdc0c99161a248b2f1c93c507781cbea103781a
     }// </editor-fold>//GEN-END:initComponents
     
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
