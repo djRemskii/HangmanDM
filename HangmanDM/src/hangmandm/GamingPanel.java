@@ -904,19 +904,7 @@ public class GamingPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
-        if( lives == 0)
-        {   
-            /*
-            try { Thread.sleep(1000);
-                }
-                catch (java.lang.InterruptedException iek){
-        } 
-*/              //edit it so that endGame() takes does what this if fucntion does
-            score = 0;
-            resetGame();
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
-        }
-         else
+
         {
                 score = 0;
                 
@@ -937,7 +925,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+            endGame();            
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
