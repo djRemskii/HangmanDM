@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;  
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
 
@@ -32,7 +33,7 @@ public class GamingPanel extends javax.swing.JPanel {
         t.start();
         Random random_method = new Random();
         randomVessel = random_method.nextInt(LIST.length);
-        word = "cemetery";//LIST[randomVessel];
+        word = LIST[randomVessel];//LIST[randomVessel];
         
         
         
@@ -98,16 +99,51 @@ public class GamingPanel extends javax.swing.JPanel {
         {
         if( corr == word.length())
             {
+                frame.getContentPane().add(new end(this.getScore()),"end");
                 lives = 6;
                 score = 100;
-                jLabel10.setText("");
-                jLabel11.setText("");
-                jLabel12.setText("");
-                jLabel13.setText("");
-                jLabel14.setText("");
-                jLabel15.setText("");
-                jLabel16.setText("");
-                jLabel17.setText("");
+                corr = 0;
+                jLabel10.setText("?");
+                jLabel11.setText("?");
+                jLabel12.setText("?");
+                jLabel13.setText("?");
+                jLabel14.setText("?");
+                jLabel15.setText("?");
+                jLabel16.setText("?");
+                jLabel17.setText("?");
+                jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
+                jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
+                jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
+                jButton2.setEnabled(true);
+                jButton3.setEnabled(true);
+                jButton4.setEnabled(true);
+                jButton5.setEnabled(true);
+                jButton6.setEnabled(true);
+                jButton7.setEnabled(true);
+                jButton8.setEnabled(true);
+                jButton9.setEnabled(true);
+                jButton10.setEnabled(true);
+                jButton11.setEnabled(true);
+                jButton12.setEnabled(true);
+                jButton13.setEnabled(true);
+                jButton14.setEnabled(true);
+                jButton15.setEnabled(true);
+                jButton16.setEnabled(true);
+                jButton17.setEnabled(true);
+                jButton18.setEnabled(true);
+                jButton19.setEnabled(true);
+                jButton20.setEnabled(true);
+                jButton21.setEnabled(true);
+                jButton22.setEnabled(true);
+                jButton23.setEnabled(true);
+                jButton24.setEnabled(true);
+                jButton25.setEnabled(true);
+                jButton26.setEnabled(true);
+                jButton27.setEnabled(true);
+                Random random_method = new Random();
+                randomVessel = random_method.nextInt(LIST.length);
+                word = LIST[randomVessel];
+                spacer(word);
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
             }
         }
@@ -118,9 +154,9 @@ public class GamingPanel extends javax.swing.JPanel {
                  jLabel15.setText("");
                  jLabel16.setText("");
                  jLabel17.setText("");
-                // jLabel8.setIcon("");
-                 //jLabel9.setIcon(); 
-               //  jLabel3.setIcon("");
+                jLabel15.setIcon(null);
+                 jLabel16.setIcon(null);
+                 jLabel17.setIcon(null);
                //find way to get rid of the images
              }
              default -> {
@@ -220,56 +256,56 @@ public class GamingPanel extends javax.swing.JPanel {
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel10.setText("jLabel10");
+        jLabel10.setText("?");
         jLabel10.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel10.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel11.setText("jLabel11");
+        jLabel11.setText("?");
         jLabel11.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel11.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel12.setText("jLabel12");
+        jLabel12.setText("?");
         jLabel12.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel12.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel13.setText("jLabel13");
+        jLabel13.setText("?");
         jLabel13.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel13.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel14.setText("jLabel14");
+        jLabel14.setText("?");
         jLabel14.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel14.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel14.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel15.setText("jLabel15");
+        jLabel15.setText("?");
         jLabel15.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel15.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel15.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel16.setText("jLabel16");
+        jLabel16.setText("?");
         jLabel16.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel16.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel16.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png"))); // NOI18N
-        jLabel17.setText("jLabel17");
+        jLabel17.setText("?");
         jLabel17.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel17.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel17.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
@@ -775,6 +811,7 @@ public class GamingPanel extends javax.swing.JPanel {
         {
             score = 0;
             lives = 0;
+            frame.getContentPane().add(new end(this.getScore()),"end");
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
         }
     }//GEN-LAST:event_skipButtonActionPerformed
