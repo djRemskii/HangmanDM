@@ -4,41 +4,42 @@
  */
 package hangmandm;
 
-import java.awt.Color;
-import java.awt.Dimension;
+import javax.swing.SwingUtilities; 
+import javax.swing.JFrame; 
+import javax.swing.JPanel; 
+import javax.swing.BorderFactory; 
+import java.awt.Color; 
+import java.awt.Dimension; 
 import java.awt.Graphics;
-import javax.swing.JPanel;
+import java.awt.*; 
+import java.awt.image.*; 
+import java.io.*; 
+import javax.imageio.*; 
+import javax.swing.*;
 
 /**
  *
  * @author danie
  */
-public class CustomDrawingWordLines extends JPanel {
+public class CDWordLine extends JPanel {
     
-    
-    
-    public CustomDrawingWordLines()
-    {       setBorder(null);
-            
+    public CDWordLine()
+    {
+        setBorder(null);
     }
     
     @Override
     public Dimension getPreferredSize() {
-      return new Dimension(400,25);  
-    } 
- 
+      return new Dimension(50, 10);  
+    }
+    
     @Override
     public void paintComponent(Graphics g) { 
         super.paintComponent(g);        
  
         g.setColor(Color.BLACK);
-        for(int i = 0; i < 5; i++)
-            {
-                g.drawLine((10 + 50*(i)), 25, (40 + 50*(i)), 12);
-            }
+        g.drawLine(0, 5, 49, 5);
+            
         
     }
-    
-    
-    
 }

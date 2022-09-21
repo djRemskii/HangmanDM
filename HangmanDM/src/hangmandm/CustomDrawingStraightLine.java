@@ -28,7 +28,7 @@ public class CustomDrawingStraightLine extends JPanel {
     private int pos;
     private boolean verticalOrHorizontal;
     public CustomDrawingStraightLine(int aPos, int start, int stop, boolean voh){
-        setBorder(BorderFactory.createLineBorder(Color.black));
+        setBorder(null);
         pos = aPos;
         go = start;
         end = stop;
@@ -36,8 +36,13 @@ public class CustomDrawingStraightLine extends JPanel {
     }
     
     @Override
-    public Dimension getPreferredSize() { 
-        return new Dimension(250,200); 
+    public Dimension getPreferredSize() {
+        if(verticalOrHorizontal == true)
+        {
+            return new Dimension(10,end-go-1);
+        }
+        else
+            return new Dimension(end-go-1,10);
     } 
  
     @Override

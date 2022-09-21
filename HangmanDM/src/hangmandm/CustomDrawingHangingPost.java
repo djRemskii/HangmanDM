@@ -30,7 +30,7 @@ public class CustomDrawingHangingPost extends JPanel {
     
     @Override
     public Dimension getPreferredSize() { 
-        return new Dimension(250,200); 
+        return new Dimension(100,100); 
     } 
  
     @Override
@@ -38,10 +38,10 @@ public class CustomDrawingHangingPost extends JPanel {
         super.paintComponent(g);        
  
         g.setColor(Color.BLACK);
-        g.drawLine(0, 199, 249, 199);
-        g.drawLine(125, 0, 125, 199);
-        g.drawLine(125, 0, 249, 0);
-        g.drawLine(249, 0, 249, 30);
+        g.drawLine(0, 99, 99, 99);
+        g.drawLine(49, 99, 49, 0);
+        g.drawLine(49, 0, 99, 0);
+        g.drawLine(99, 0, 99, 30);
         
     }   
     
