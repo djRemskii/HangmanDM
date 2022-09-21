@@ -45,55 +45,64 @@ public class CustomDrawingHangingPost extends JPanel {
         g.drawLine(49, 0, 70, 0);
         g.drawLine(70, 0, 70, 30);
         switch (life) {
+            case 6 -> { 
+                break;
+            }
             case 5 ->             {
-               g.drawOval(65, 30, 10, 10);
+               g.drawOval(65, 30, 10, 10); //head
                revalidate();
                repaint();
+               break;
             }
                 
             case 4 ->             {
-               g.drawOval(65, 30, 10, 10);
-               g.drawLine(70, 40, 70, 70);
+               g.drawOval(65, 30, 10, 10); //head
+               g.drawLine(70, 40, 70, 70); //torso
                revalidate();
                repaint();
+               break;
             }
                 
             case 3 ->             {
-                g.drawOval(65, 30, 10, 10);
-                g.drawLine(70, 40, 70, 70);
-                g.drawLine(70, 55, 60, 85);
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
                 revalidate();
                 repaint();
+                break;
             }
                 
             case 2 ->             {
-                g.drawOval(65, 30, 10, 10);
-                g.drawLine(70, 40, 70, 70);
-                g.drawLine(70, 55, 60, 85);
-                g.drawLine(70, 55, 80, 85);
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
+                g.drawLine(70, 55, 80, 65); //right arm
                 revalidate();
                 repaint();
+                break;
             }
                 
             case 1 ->             {
-                g.drawOval(65, 30, 10, 10);
-                g.drawLine(70, 40, 70, 70);
-                g.drawLine(70, 55, 60, 85);
-                g.drawLine(70, 55, 80, 85);
-                g.drawLine(70, 70, 55, 100);
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
+                g.drawLine(70, 55, 80, 65); //right arm
+                g.drawLine(70, 70, 55, 85); //left leg
                 revalidate();
                 repaint();
+                break;
             }
                 
             case 0 ->             {
-                g.drawOval(65, 30, 10, 10);
-                g.drawLine(70, 40, 70, 70);
-                g.drawLine(70, 55, 60, 85);
-                g.drawLine(70, 55, 80, 85);
-                g.drawLine(70, 70, 55, 50);
-                g.drawLine(70, 70, 95, 90);
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                g.drawLine(70, 55, 60, 65); //left arm
+                g.drawLine(70, 55, 80, 65); //right arm
+                g.drawLine(70, 70, 55, 85); //left leg
+                g.drawLine(70, 70, 85, 85); //right leg
                 revalidate();
                 repaint();
+                break;
             }
                 
         }
