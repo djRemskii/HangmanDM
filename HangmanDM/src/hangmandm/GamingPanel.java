@@ -25,7 +25,7 @@ import javax.swing.Timer;
 * class: CS 141 – Programming and Problem Solving 
 * 
 * assignment: program 1 
-* date last modified: 3/20/2112 
+* date last modified: 9/21/2022 
 * 
 * purpose: This panel hosts the hangman game.
 * 
@@ -40,37 +40,27 @@ public class GamingPanel extends javax.swing.JPanel {
     {   
         setBorder(null);
         HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
-       
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         Random random_method = new Random();
         randomVessel = random_method.nextInt(list.length);
         word = list[randomVessel];
-          System.out.println(word);
-        spacer(word);
         corr = 0;
         lives = 6;
         lifeCheck(lives);
         score = 100;
-        
         frame.getContentPane().add(new end(this.getScore()),"end");  
-        
-        
         initComponents();
-        
-        
-        
-        
-                
-        
-        
-         
+        spacer(word);   
     }
+    
     //getter for the score
     public static int getScore()
     {
         return score; 
     } 
+    
+    //ends the game and resets it 
     private void endGame()
     {
                  resetGame();
@@ -80,7 +70,7 @@ public class GamingPanel extends javax.swing.JPanel {
             
            
     
-    
+    //resets the game for next round
     private void resetGame()
     {
          lives = 6;
@@ -130,6 +120,11 @@ public class GamingPanel extends javax.swing.JPanel {
                 word = list[randomVessel];
                 spacer(word);
     }
+    
+    //checks the remaining life and score left.
+    //Tells user that their answer is wrong when they answer wrong.
+    //changes the hangman image when you get it wrong 
+    //shows you your remaining points
     private void lifeCheck(int life)
     {   
         System.out.println(life);
@@ -198,6 +193,7 @@ public class GamingPanel extends javax.swing.JPanel {
     } 
  
     @Override
+    //paints the hangman
     public void paintComponent(Graphics g) { 
         super.paintComponent(g);        
  
@@ -270,7 +266,8 @@ public class GamingPanel extends javax.swing.JPanel {
         }
     }
     
-        private void correct()
+    //checks if you won the game,and ends it if you did
+    private void correct()
         {
         if( corr == word.length())
             {
@@ -284,7 +281,9 @@ public class GamingPanel extends javax.swing.JPanel {
                jLabel1.setText("");
         }
         }
-     private void spacer(String prob)
+    
+    //changes the amount of lines depending on the word
+    private void spacer(String prob)
     {   
         switch (prob) {
              case "nurse" -> {
@@ -939,33 +938,43 @@ public class GamingPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     
+    //when skipButton is pressed sets your score to zero
+    //takes you to the end page
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
 
         {
-                score = 0;
-                
-             
+            score = 0;
             frame.getContentPane().add(new end(this.getScore()),"end");
             resetGame();
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
              
         }
     }//GEN-LAST:event_skipButtonActionPerformed
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Buttons inside this area repreent the letters
+//When pressed they check the word
+//If the word matches a case it will set the text of the appropriate label
+//itself and add to int corr.
+//Will call correct() to check if corr is high enough to end the game with a win
+//If the word doesn't match the case it subtracts from  life and score
+//and calls liveCheck() and endGame()
+//Some word automactically do this automacitcally as they don't appear in the
+//words for example the letter "Z".
+    
+    //Letter O
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        //OOOOOOOOOOOOOOOOOOO
+       
         jButton16.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
-  
         if( lives == 0)
         {
             endGame();      
         }
     }//GEN-LAST:event_jButton16ActionPerformed
-
+    
+    //Letter N
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         switch (word) {
             case "nurse" -> {
@@ -985,17 +994,15 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {    
                     endGame();   
                 }
             }
-            //NNNNNNNNNNNNNNNNNNNNN
         }
 
     }//GEN-LAST:event_jButton15ActionPerformed
-
+    //Letter M
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         switch (word) {
             case "cemetery" -> {
@@ -1021,17 +1028,15 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
                      endGame();
                 }
             }
-            //MMMMMMMMMMMMMMMMMMMMMMM
         }
 
     }//GEN-LAST:event_jButton14ActionPerformed
-
+    //Letter L
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         if (word.equals("climbing"))
         {
@@ -1046,43 +1051,37 @@ public class GamingPanel extends javax.swing.JPanel {
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
                  endGame();
             }
         }
-
-        //LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
-
     }//GEN-LAST:event_jButton13ActionPerformed
-
+    //Letter K
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         //KKKKKKKKKKKKKKKKKKKKK
         jButton12.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
              endGame();
         }
     }//GEN-LAST:event_jButton12ActionPerformed
-
+    //Letter J
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         //JJJJJJJJJJJJJJJJJJJ
         jButton11.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
              endGame();
         }
     }//GEN-LAST:event_jButton11ActionPerformed
-
+    //Letter I
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         if (word.equals("climbing"))
         {
@@ -1101,17 +1100,13 @@ public class GamingPanel extends javax.swing.JPanel {
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
                  endGame();
             }
         }
-
-        //IIIIIIIIIIIIIIIIIII
-
     }//GEN-LAST:event_jButton10ActionPerformed
-
+    //Letter H
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         if (word.equals("pharmacy"))
         {
@@ -1126,16 +1121,13 @@ public class GamingPanel extends javax.swing.JPanel {
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
                  endGame();
             }
         }
-
-        //HHHHHHHHHHHHHHHHHHHHHHHHH
     }//GEN-LAST:event_jButton9ActionPerformed
-
+    //Letter G
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         if (word.equals("climbing"))
         {
@@ -1151,30 +1143,25 @@ public class GamingPanel extends javax.swing.JPanel {
             lives = lives - 1;
             score = score - 10;
             lifeCheck(lives);
-            System.out.println("Wrong, please try again" + lives + "more lives left.");
             if( lives == 0)
             {
                  endGame();
             }
         }
-
-        //GGGGGGGGGGGGGGGG
-
     }//GEN-LAST:event_jButton8ActionPerformed
-
+    //Letter F
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         //FFFFFFFFFFFFFFFFFFFFFF
         jButton7.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0 )
         {
             endGame();
         }
     }//GEN-LAST:event_jButton7ActionPerformed
-
+    //Letter E
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         switch (word) {
             case "cemetery" -> {
@@ -1202,18 +1189,14 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0 )
                 {
                      endGame();
                 }
             }
-            //EEEEEEEEEEEEEEEEEE
         }
-        //show it on label
-
     }//GEN-LAST:event_jButton6ActionPerformed
-
+    //Letter A
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         switch (word) {
             case "abstract" -> {
@@ -1240,29 +1223,26 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0 )
                 {
                      endGame();
                 }
             }
-            //AAAAAAAAA
         }
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    //Letter D
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //DDDDDDDD
         jButton4.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
              endGame();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    //Letter C
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         switch (word) {
             case "cemetery" -> {
@@ -1295,7 +1275,6 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
                      endGame();
@@ -1303,10 +1282,8 @@ public class GamingPanel extends javax.swing.JPanel {
             }
 
         }
-        //show it on label
-
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    //Letter B
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         switch (word) {
             case "abstract" -> {
@@ -1326,31 +1303,25 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
              endGame();
             }
-            //BBBBBBBBBBBBBBB
             }
-        }
-
-        
+        } 
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    //Letter Z
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
-        //ZZZZZZZZZZZZZZZZZZZZZZZ
         jButton27.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
              endGame();
         }
     }//GEN-LAST:event_jButton27ActionPerformed
-
+    //Letter Y
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         switch (word) {
             case "pharmacy" -> {
@@ -1370,41 +1341,37 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
                      endGame();
                 }
             }
-            //YYYYYYYYYYYYYYYYYYYYYY
         }
 
     }//GEN-LAST:event_jButton26ActionPerformed
-
+    //Letter X
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         jButton25.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
             endGame();
         }
     }//GEN-LAST:event_jButton25ActionPerformed
-
+    //Letter W
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         jButton24.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
              endGame();
         }
     }//GEN-LAST:event_jButton24ActionPerformed
-
+    //Letter P
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         if (word.equals("pharmacy"))
         {
@@ -1419,33 +1386,25 @@ public class GamingPanel extends javax.swing.JPanel {
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
                  endGame();
             }
         }
-
-        //PPPPPPPPPPPPPPPPPPPPPP
-
     }//GEN-LAST:event_jButton23ActionPerformed
-
+    //Letter V
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
 
         jButton22.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
              endGame();
         }
-
-        //VVVVVVVVVVVVVVVVVV
-
     }//GEN-LAST:event_jButton22ActionPerformed
-
+    //Letter U
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         if (word.equals("nurse"))
         {
@@ -1460,17 +1419,13 @@ public class GamingPanel extends javax.swing.JPanel {
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
                  endGame();
             }
         }
-
-        //UUUUUUUUUUUUUUUUUUUUUUUU
-
     }//GEN-LAST:event_jButton21ActionPerformed
-
+    //Letter T
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         switch (word) {
             case "abstract" -> {
@@ -1494,17 +1449,15 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
                      endGame();
                 }
             }
-            //TTTTTTTTTTTTTTTTTTTTT
         }
 
     }//GEN-LAST:event_jButton20ActionPerformed
-
+    //Letter S
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         switch (word) {
             case "abstract" -> {
@@ -1524,17 +1477,15 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
                      endGame();
                 }
             }
-            //SSSSSSSSSSSSSSSSSSS
         }
 
     }//GEN-LAST:event_jButton19ActionPerformed
-
+    //Letter R
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         switch (word) {
             case "nurse" -> {
@@ -1566,30 +1517,29 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
                      endGame();
                 }
             }
-            //RRRRRRRRRRRRRRRRRRRRRRRRR
         }
 
     }//GEN-LAST:event_jButton18ActionPerformed
-
+    //Letter Q
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        //QQQQQQQQQQQQQQQQQ
+
         jButton17.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
              endGame();
         }
     }//GEN-LAST:event_jButton17ActionPerformed
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
     
+    //for the clock
     ActionListener updateClockAction = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             // Assumes clock is a JLabel
@@ -1599,9 +1549,9 @@ public class GamingPanel extends javax.swing.JPanel {
     };
     
     private int lives;
-    private static int score;
     private int corr;
     private int randomVessel;
+    private static int score;
     private String word;
     private final String [] list = {"abstract","cemetery","nurse","pharmacy","climbing"};
     

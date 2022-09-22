@@ -94,11 +94,12 @@ public class end extends javax.swing.JPanel {
                 .addComponent(button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    //Switches to the Menu Panel
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
-         HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
+        HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
     }//GEN-LAST:event_button1ActionPerformed
 
 

@@ -122,7 +122,7 @@ public class MenuPanel extends javax.swing.JPanel {
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /////////DELETE ME LATER////////////
+   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
