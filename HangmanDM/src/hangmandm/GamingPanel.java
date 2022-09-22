@@ -52,6 +52,7 @@ public class GamingPanel extends javax.swing.JPanel {
         
         
         
+        
                 
         
         
@@ -64,19 +65,18 @@ public class GamingPanel extends javax.swing.JPanel {
     } 
     private void endGame()
     {
-              try { Thread.sleep(3000);
-                }
-                catch (java.lang.InterruptedException iek){
-        }
-             resetGame();
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
+                 resetGame();
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");   
+   }
+             
             
            
-    }
+    
     
     private void resetGame()
     {
          lives = 6;
+                jLabel1.setText("");
                 score = 100;
                 corr = 0;
                 jLabel10.setText("?");
@@ -134,32 +134,39 @@ public class GamingPanel extends javax.swing.JPanel {
             case 5 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
+            jLabel1.setText("Wrong Answer try again");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 4 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
+            jLabel1.setText("Wrong Answer try again");
+            
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 3 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
+            jLabel1.setText("Wrong Answer try again");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 2 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
+            jLabel1.setText("Wrong Answer try again");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 1 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
+            jLabel1.setText("Wrong Answer try again");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 0 -> {
                   frame.getContentPane().add(new end(this.getScore()),"end");
                   revalidate();
                   repaint();
+                  jLabel1.setText("Wrong Answer try again");
                   //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
                 System.out.println("You looooooooooooooooose");
                
@@ -257,10 +264,15 @@ public class GamingPanel extends javax.swing.JPanel {
         {
         if( corr == word.length())
             {
+                   jLabel1.setText("");
                 frame.getContentPane().add(new end(this.getScore()),"end");
                 resetGame();
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
             }
+        else 
+        {
+               jLabel1.setText("");
+        }
         }
      private void spacer(String prob)
     {   
@@ -330,6 +342,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -430,7 +443,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
@@ -885,19 +898,23 @@ public class GamingPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(312, 312, 312)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(351, 351, 351)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(76, 76, 76)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
         );
@@ -910,7 +927,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 
              
             frame.getContentPane().add(new end(this.getScore()),"end");
-            endGame();
+            resetGame();
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
              
         }
@@ -923,9 +940,10 @@ public class GamingPanel extends javax.swing.JPanel {
         lives = lives - 1;
         lifeCheck(lives);
         System.out.println("Wrong, please try again" + lives + " more lives left.");
+  
         if( lives == 0)
         {
-            endGame();            
+            endGame();      
         }
     }//GEN-LAST:event_jButton16ActionPerformed
 
@@ -951,7 +969,11 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
-                    skipButtonActionPerformed(evt);
+                     try { Thread.sleep(50);
+                }
+                catch (java.lang.InterruptedException iek){
+            endGame();   
+                }
                 }
             }
             //NNNNNNNNNNNNNNNNNNNNN
@@ -987,7 +1009,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
             //MMMMMMMMMMMMMMMMMMMMMMM
@@ -1012,7 +1034,7 @@ public class GamingPanel extends javax.swing.JPanel {
             System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
-                skipButtonActionPerformed(evt);
+                 endGame();
             }
         }
 
@@ -1029,7 +1051,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+             endGame();
         }
     }//GEN-LAST:event_jButton12ActionPerformed
 
@@ -1042,7 +1064,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+             endGame();
         }
     }//GEN-LAST:event_jButton11ActionPerformed
 
@@ -1067,7 +1089,7 @@ public class GamingPanel extends javax.swing.JPanel {
             System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
-                skipButtonActionPerformed(evt);
+                 endGame();
             }
         }
 
@@ -1092,7 +1114,7 @@ public class GamingPanel extends javax.swing.JPanel {
             System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
-                skipButtonActionPerformed(evt);
+                 endGame();
             }
         }
 
@@ -1116,7 +1138,7 @@ public class GamingPanel extends javax.swing.JPanel {
             System.out.println("Wrong, please try again" + lives + "more lives left.");
             if( lives == 0)
             {
-                skipButtonActionPerformed(evt);
+                 endGame();
             }
         }
 
@@ -1133,7 +1155,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0 )
         {
-            skipButtonActionPerformed(evt);
+            endGame();
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -1167,7 +1189,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0 )
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
             //EEEEEEEEEEEEEEEEEE
@@ -1205,7 +1227,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0 )
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
             //AAAAAAAAA
@@ -1221,7 +1243,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+             endGame();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -1260,7 +1282,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
 
@@ -1289,15 +1311,15 @@ public class GamingPanel extends javax.swing.JPanel {
                 lives = lives - 1;
                 lifeCheck(lives);
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
+            if( lives == 0)
+            {
+             endGame();
             }
             //BBBBBBBBBBBBBBB
-
+            }
         }
 
-        if( lives == 0)
-        {
-            skipButtonActionPerformed(evt);
-        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
@@ -1309,7 +1331,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+             endGame();
         }
     }//GEN-LAST:event_jButton27ActionPerformed
 
@@ -1335,7 +1357,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
             //YYYYYYYYYYYYYYYYYYYYYY
@@ -1351,7 +1373,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+            endGame();
         }
     }//GEN-LAST:event_jButton25ActionPerformed
 
@@ -1363,7 +1385,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+             endGame();
         }
     }//GEN-LAST:event_jButton24ActionPerformed
 
@@ -1384,7 +1406,7 @@ public class GamingPanel extends javax.swing.JPanel {
             System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
-                skipButtonActionPerformed(evt);
+                 endGame();
             }
         }
 
@@ -1401,7 +1423,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+             endGame();
         }
 
         //VVVVVVVVVVVVVVVVVV
@@ -1425,7 +1447,7 @@ public class GamingPanel extends javax.swing.JPanel {
             System.out.println("Wrong, please try again" + lives + " more lives left.");
             if( lives == 0)
             {
-                skipButtonActionPerformed(evt);
+                 endGame();
             }
         }
 
@@ -1459,7 +1481,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
             //TTTTTTTTTTTTTTTTTTTTT
@@ -1489,7 +1511,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
             //SSSSSSSSSSSSSSSSSSS
@@ -1531,7 +1553,7 @@ public class GamingPanel extends javax.swing.JPanel {
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
                 {
-                    skipButtonActionPerformed(evt);
+                     endGame();
                 }
             }
             //RRRRRRRRRRRRRRRRRRRRRRRRR
@@ -1548,7 +1570,7 @@ public class GamingPanel extends javax.swing.JPanel {
         System.out.println("Wrong, please try again" + lives + " more lives left.");
         if( lives == 0)
         {
-            skipButtonActionPerformed(evt);
+             endGame();
         }
     }//GEN-LAST:event_jButton17ActionPerformed
     
@@ -1594,6 +1616,7 @@ public class GamingPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
