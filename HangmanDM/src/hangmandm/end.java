@@ -4,10 +4,18 @@
  */
 package hangmandm;
 
-/**
- *
- * @author D Menkir 
- */
+/*************************************************************** 
+* file: DoubleIt.java 
+* author: D. Menkir 
+* class: CS 141 – Programming and Problem Solving 
+* 
+* assignment: program 1 
+* date last modified: 9/21/2022
+* 
+* purpose: This panel shows the user's score after losing the game and allows
+* them to exit to the main menu. 
+* 
+****************************************************************/
 public class end extends javax.swing.JPanel {
 
     private String score;

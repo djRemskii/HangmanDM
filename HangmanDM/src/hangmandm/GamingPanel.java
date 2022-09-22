@@ -19,10 +19,17 @@ import javax.swing.JLabel;
 import javax.swing.Timer;
 
 
-/**
- *//// Samuel and Daniel
- //* @author saray
-//*/
+/*************************************************************** 
+* file: DoubleIt.java 
+* authors: S. Araya and D. Menkir 
+* class: CS 141 – Programming and Problem Solving 
+* 
+* assignment: program 1 
+* date last modified: 3/20/2112 
+* 
+* purpose: This panel hosts the hangman game.
+* 
+****************************************************************/
 public class GamingPanel extends javax.swing.JPanel {
 
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
@@ -37,14 +44,15 @@ public class GamingPanel extends javax.swing.JPanel {
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         Random random_method = new Random();
-        randomVessel = random_method.nextInt(LIST.length);
-        word = LIST[randomVessel];//LIST[randomVessel];
+        randomVessel = random_method.nextInt(list.length);
+        word = list[randomVessel];
           System.out.println(word);
         spacer(word);
         corr = 0;
         lives = 6;
         lifeCheck(lives);
         score = 100;
+        
         frame.getContentPane().add(new end(this.getScore()),"end");  
         
         
@@ -77,6 +85,7 @@ public class GamingPanel extends javax.swing.JPanel {
     {
          lives = 6;
                 jLabel1.setText("");
+                jLabel2.setText("100 points");
                 score = 100;
                 corr = 0;
                 jLabel10.setText("?");
@@ -117,8 +126,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 jButton26.setEnabled(true);
                 jButton27.setEnabled(true);
                 Random random_method = new Random();
-                randomVessel = random_method.nextInt(LIST.length);
-                word = LIST[randomVessel];
+                randomVessel = random_method.nextInt(list.length);
+                word = list[randomVessel];
                 spacer(word);
     }
     private void lifeCheck(int life)
@@ -135,31 +144,35 @@ public class GamingPanel extends javax.swing.JPanel {
             revalidate();
             repaint();
             jLabel1.setText("Wrong Answer try again");
+            jLabel2.setText("90 points");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 4 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
             jLabel1.setText("Wrong Answer try again");
-            
+            jLabel2.setText("80 points");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 3 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
             jLabel1.setText("Wrong Answer try again");
+            jLabel2.setText("70 points");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 2 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
             jLabel1.setText("Wrong Answer try again");
+            jLabel2.setText("60 points");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 1 -> { frame.getContentPane().add(new end(this.getScore()),"end");
             revalidate();
             repaint();
             jLabel1.setText("Wrong Answer try again");
+            jLabel2.setText("50 points");
             //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 0 -> {
@@ -167,11 +180,8 @@ public class GamingPanel extends javax.swing.JPanel {
                   revalidate();
                   repaint();
                   jLabel1.setText("Wrong Answer try again");
+                  jLabel2.setText("40 points");
                   //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
-                System.out.println("You looooooooooooooooose");
-               
-              
-               // endGame();
             }
             
             
@@ -343,6 +353,7 @@ public class GamingPanel extends javax.swing.JPanel {
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -891,6 +902,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 .addGap(71, 71, 71))
         );
 
+        jLabel2.setText("100 points");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -906,6 +919,10 @@ public class GamingPanel extends javax.swing.JPanel {
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(176, 176, 176))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -914,7 +931,9 @@ public class GamingPanel extends javax.swing.JPanel {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addGap(76, 76, 76)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addGap(33, 33, 33)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
         );
@@ -968,12 +987,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 lifeCheck(lives);
                 System.out.println("Wrong, please try again" + lives + " more lives left.");
                 if( lives == 0)
-                {
-                     try { Thread.sleep(50);
-                }
-                catch (java.lang.InterruptedException iek){
-            endGame();   
-                }
+                {    
+                    endGame();   
                 }
             }
             //NNNNNNNNNNNNNNNNNNNNN
@@ -1130,11 +1145,12 @@ public class GamingPanel extends javax.swing.JPanel {
             correct();
         }
         else
-        {
+        {   
+            
             jButton8.setEnabled(false);
             lives = lives - 1;
             score = score - 10;
-
+            lifeCheck(lives);
             System.out.println("Wrong, please try again" + lives + "more lives left.");
             if( lives == 0)
             {
@@ -1587,7 +1603,7 @@ public class GamingPanel extends javax.swing.JPanel {
     private int corr;
     private int randomVessel;
     private String word;
-    private final String [] LIST = {"abstract","cemetery","nurse","pharmacy","climbing"};
+    private final String [] list = {"abstract","cemetery","nurse","pharmacy","climbing"};
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
@@ -1626,6 +1642,7 @@ public class GamingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
