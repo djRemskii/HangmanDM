@@ -37,6 +37,17 @@ public class ColorGamePanel extends javax.swing.JPanel {
         
     }
     
+    private void correct()
+     {
+        //if button == color add 100 points, else do nothing
+    }
+    private void rounds()
+    {
+        if (round == 5)
+        {
+            //end game and go to endColor
+        }          
+    }
     private void labelColor()
     {
         switch (colorL) {
@@ -138,6 +149,7 @@ ActionListener updateClockAction = new ActionListener() {
     private static int score;
     private String colorL;
     private String color;
+    private int round;
     private final String [] colorList = {"Red","Yellow","Green","Blue","Purple"};
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
