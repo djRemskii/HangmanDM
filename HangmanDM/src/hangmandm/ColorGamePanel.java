@@ -9,6 +9,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;  
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import java.util.Random;
+import java.awt.Color;
 /**
  *
  * @author saray
@@ -24,8 +26,62 @@ public class ColorGamePanel extends javax.swing.JPanel {
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         initComponents();
+        Random random_method = new Random();
+        randomVessel = random_method.nextInt(colorList.length);
+        colorL = colorList[randomVessel];
+        color = colorList[randomVessel];
+        labelColor();
+        colorColor();
+        
     }
-
+    
+    private void labelColor()
+    {
+        switch (colorL) {
+            case "Red" -> {
+               jLabel2.setText("Red");
+            }
+            case "Yellow" -> {
+               jLabel2.setText("Yellow");
+            }
+            case "Green" -> {
+               jLabel2.setText("Green");
+            }
+             case "Blue" -> {
+               jLabel2.setText("Blue");
+            }
+             case "Purple" -> {
+               jLabel2.setText("Purple");
+            }
+            default -> {
+              System.out.println("error");
+            }
+        }
+    }
+    
+     private void colorColor()
+    {
+        switch (color) {
+            case "Red" -> {
+               jLabel2.setBackground(Color.RED);
+            }
+            case "Yellow" -> {
+               jLabel2.setBackground(Color.YELLOW);
+            }
+            case "Green" -> {
+               jLabel2.setBackground(Color.GREEN);
+            }
+             case "Blue" -> {
+               jLabel2.setBackground(Color.BLUE);
+            }
+             case "Purple" -> {
+              // jLabel2.setBackground(Color.PURPLE);
+            }
+            default -> {
+              System.out.println("error");
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,8 +92,11 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
+
+        jLabel2.setText("Color");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -47,13 +106,19 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 .addContainerGap(259, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(103, 103, 103))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jLabel1)
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addGap(74, 74, 74)
+                .addComponent(jLabel2)
+                .addContainerGap(154, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 ActionListener updateClockAction = new ActionListener() {
@@ -64,7 +129,15 @@ ActionListener updateClockAction = new ActionListener() {
         }
     };
 
+
+
+    private int randomVessel;
+    private static int score;
+    private String colorL;
+    private String color;
+    private final String [] colorList = {"Red","Yellow","Green","Blue","Purple"};
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
