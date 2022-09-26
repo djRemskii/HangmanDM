@@ -59,7 +59,10 @@ public class GameLogic {
                 GamePanel.letterReset();
                 
                 HighScorePanel.scoreCheck(currentScore);
-                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                
+                HangmanDM.frame.add(new end(currentScore),"endPanel");
+                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
             }
             return true;
         } else {
@@ -72,7 +75,10 @@ public class GameLogic {
                 
                 GamePanel.letterReset();
                 
-                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                
+                HangmanDM.frame.add(new end(currentScore),"endPanel");
+                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
             }
             return false;
         }
