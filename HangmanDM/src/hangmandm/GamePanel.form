@@ -80,7 +80,7 @@
                       <Component id="buttonI" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="278" max="32767" attributes="0"/>
+              <EmptySpace pref="305" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -93,10 +93,9 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <Component id="skipButton" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,7 +113,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace pref="66" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="buttonA" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonB" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -157,6 +156,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="skipButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="SKIP"/>
       </Properties>
       <Events>
@@ -165,6 +167,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonA">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="A"/>
       </Properties>
       <Events>
@@ -176,6 +181,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonB">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="B"/>
       </Properties>
       <Events>
@@ -187,6 +195,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonC">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="C"/>
       </Properties>
       <Events>
@@ -198,6 +209,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonD">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="D"/>
       </Properties>
       <Events>
@@ -209,6 +223,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonE">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="E"/>
       </Properties>
       <Events>
@@ -220,6 +237,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonF">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="F"/>
       </Properties>
       <Events>
@@ -231,6 +251,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonG">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="G"/>
       </Properties>
       <Events>
@@ -242,6 +265,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonH">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="H"/>
       </Properties>
       <Events>
@@ -253,6 +279,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonI">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="I"/>
       </Properties>
       <Events>
@@ -264,6 +293,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonJ">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="J"/>
       </Properties>
       <Events>
@@ -275,6 +307,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonK">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="K"/>
       </Properties>
       <Events>
@@ -286,6 +321,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonL">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="L"/>
       </Properties>
       <Events>
@@ -297,6 +335,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonM">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="M"/>
       </Properties>
       <Events>
@@ -308,6 +349,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonN">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="N"/>
       </Properties>
       <Events>
@@ -319,6 +363,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonO">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="O"/>
       </Properties>
       <Events>
@@ -330,6 +377,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonP">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="P"/>
       </Properties>
       <Events>
@@ -341,6 +391,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonQ">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Q"/>
       </Properties>
       <Events>
@@ -352,6 +405,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonR">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="R"/>
       </Properties>
       <Events>
@@ -363,6 +419,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonS">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="S"/>
       </Properties>
       <Events>
@@ -374,6 +433,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonT">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="T"/>
       </Properties>
       <Events>
@@ -385,6 +447,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonU">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="U"/>
       </Properties>
       <Events>
@@ -396,6 +461,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonV">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="V"/>
       </Properties>
       <Events>
@@ -407,6 +475,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonW">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="W"/>
       </Properties>
       <Events>
@@ -418,6 +489,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonX">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="X"/>
       </Properties>
       <Events>
@@ -429,6 +503,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonY">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Y"/>
       </Properties>
       <Events>
@@ -440,6 +517,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="buttonZ">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Z"/>
       </Properties>
       <Events>
@@ -451,6 +531,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Stencil" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="dtf.format(now)" type="code"/>
         </Property>
@@ -522,6 +605,9 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="letter1">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -537,6 +623,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -552,6 +641,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter3">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -567,6 +659,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter4">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -582,6 +677,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter5">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -597,6 +695,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter6">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -612,6 +713,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter7">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -627,6 +731,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter8">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -642,6 +749,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter9">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>
@@ -657,6 +767,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="letter10">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="12" style="0"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/hangmanSprites/Line.png"/>

@@ -185,6 +185,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
+        skipButton.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         skipButton.setText("SKIP");
         skipButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,6 +193,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonA.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonA.setText("A");
         buttonA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,6 +201,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonB.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonB.setText("B");
         buttonB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,6 +209,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonC.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonC.setText("C");
         buttonC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +217,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonD.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonD.setText("D");
         buttonD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +225,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonE.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonE.setText("E");
         buttonE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,6 +233,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonF.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonF.setText("F");
         buttonF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,6 +241,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonG.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonG.setText("G");
         buttonG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,6 +249,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonH.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonH.setText("H");
         buttonH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,6 +257,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonI.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonI.setText("I");
         buttonI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,6 +265,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonJ.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonJ.setText("J");
         buttonJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,6 +273,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonK.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonK.setText("K");
         buttonK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,6 +281,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonL.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonL.setText("L");
         buttonL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,6 +289,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonM.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonM.setText("M");
         buttonM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,6 +297,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonN.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonN.setText("N");
         buttonN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,6 +305,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonO.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonO.setText("O");
         buttonO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,6 +313,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonP.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonP.setText("P");
         buttonP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -304,6 +321,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonQ.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonQ.setText("Q");
         buttonQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,6 +329,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonR.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonR.setText("R");
         buttonR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -318,6 +337,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonS.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonS.setText("S");
         buttonS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -325,6 +345,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonT.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonT.setText("T");
         buttonT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,6 +353,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonU.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonU.setText("U");
         buttonU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,6 +361,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonV.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonV.setText("V");
         buttonV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,6 +369,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonW.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonW.setText("W");
         buttonW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,6 +377,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonX.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonX.setText("X");
         buttonX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,6 +385,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonY.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonY.setText("Y");
         buttonY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -367,6 +393,7 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        buttonZ.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonZ.setText("Z");
         buttonZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -374,10 +401,12 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jLabel1.setText(dtf.format(now));
 
         hangmanSprite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_0.png"))); // NOI18N
 
+        letter1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter1.setText("?");
@@ -385,6 +414,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter1.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter2.setText("?");
@@ -392,6 +422,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter2.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter3.setText("?");
@@ -399,6 +430,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter4.setText("?");
@@ -406,6 +438,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter4.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter5.setText("?");
@@ -413,6 +446,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter5.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter6.setText("?");
@@ -420,6 +454,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter6.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter7.setText("?");
@@ -427,6 +462,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter7.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter8.setText("?");
@@ -434,6 +470,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter8.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter9.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter9.setText("?");
@@ -441,6 +478,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         letter9.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
+        letter10.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         letter10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter10.setText("?");
@@ -553,7 +591,7 @@ public class GamePanel extends javax.swing.JPanel {
                         .addComponent(buttonH)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(buttonI)))
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addContainerGap(305, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -563,9 +601,8 @@ public class GamePanel extends javax.swing.JPanel {
                         .addGap(125, 125, 125)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(skipButton))
-                        .addGap(3, 3, 3)))
-                .addGap(34, 34, 34))
+                            .addComponent(skipButton))))
+                .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,7 +616,7 @@ public class GamePanel extends javax.swing.JPanel {
                     .addComponent(hangmanSprite))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonA)
                     .addComponent(buttonB)
