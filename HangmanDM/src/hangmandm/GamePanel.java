@@ -142,8 +142,7 @@ public class GamePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        skipButton = new javax.swing.JButton();
         buttonA = new javax.swing.JButton();
         buttonB = new javax.swing.JButton();
         buttonC = new javax.swing.JButton();
@@ -172,7 +171,6 @@ public class GamePanel extends javax.swing.JPanel {
         buttonZ = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         hangmanSprite = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         letter1 = new javax.swing.JLabel();
         letter2 = new javax.swing.JLabel();
@@ -187,17 +185,10 @@ public class GamePanel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
-        jButton1.setText("SKIP");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        skipButton.setText("SKIP");
+        skipButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Menu");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                skipButtonActionPerformed(evt);
             }
         });
 
@@ -387,13 +378,6 @@ public class GamePanel extends javax.swing.JPanel {
 
         hangmanSprite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_0.png"))); // NOI18N
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         letter1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         letter1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/Line.png"))); // NOI18N
         letter1.setText("?");
@@ -579,9 +563,8 @@ public class GamePanel extends javax.swing.JPanel {
                         .addGap(125, 125, 125)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))))
+                            .addComponent(skipButton))
+                        .addGap(3, 3, 3)))
                 .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
@@ -592,11 +575,7 @@ public class GamePanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3))
+                        .addComponent(skipButton))
                     .addComponent(hangmanSprite))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -636,17 +615,14 @@ public class GamePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
         // TODO add your handling code here:
         spriteReset();
         letterReset();
-        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
-    }//GEN-LAST:event_jButton1ActionPerformed
+        HangmanDM.frame.add(new end(0),"endPanel");
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+        //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+    }//GEN-LAST:event_skipButtonActionPerformed
 
     //CLOCK FUNCTIONALITY
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
@@ -879,11 +855,6 @@ public class GamePanel extends javax.swing.JPanel {
         buttonZ.setEnabled(false);
     }//GEN-LAST:event_buttonZActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        hangmanSprite.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_1.png")));
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     public static void buttonReset(){
         buttonA.setEnabled(true);
         buttonB.setEnabled(true);
@@ -944,9 +915,6 @@ public class GamePanel extends javax.swing.JPanel {
     private static javax.swing.JButton buttonY;
     private static javax.swing.JButton buttonZ;
     public static javax.swing.JLabel hangmanSprite;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private static javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private static javax.swing.JLabel letter1;
@@ -959,5 +927,6 @@ public class GamePanel extends javax.swing.JPanel {
     private static javax.swing.JLabel letter7;
     private static javax.swing.JLabel letter8;
     private static javax.swing.JLabel letter9;
+    private javax.swing.JButton skipButton;
     // End of variables declaration//GEN-END:variables
 }
