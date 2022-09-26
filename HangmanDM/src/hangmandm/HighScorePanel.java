@@ -4,10 +4,17 @@
  */
 package hangmandm;
 
-/**
- *
- * @author djRemskii
- */
+/***************************************************************  
+*  file: HighScoresPanel.java 
+*  author: Kevin Hoang, Jeremy Ong  
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.1  
+*  date last modified: 9/26/2022 
+*  
+*  purpose: This panel shows the highscores.
+*  
+****************************************************************/ 
 public class HighScorePanel extends javax.swing.JPanel {
 
     public int newScore = 0;
@@ -86,12 +93,18 @@ public class HighScorePanel extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(600, 400));
+
+        jLabel1.setFont(new java.awt.Font("Stencil", 0, 48)); // NOI18N
         jLabel1.setText("HIGH SCORES");
 
+        highScore1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         highScore1.setText(highScores[0] + "");
 
+        initials1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         initials1.setText("AAA");
 
+        jButton1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton1.setText("50");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,22 +112,31 @@ public class HighScorePanel extends javax.swing.JPanel {
             }
         });
 
+        initials2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         initials2.setText("AAA");
 
+        initials3.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         initials3.setText("AAA");
 
+        initials4.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         initials4.setText("AAA");
 
+        initials5.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         initials5.setText("AAA");
 
+        highScore2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         highScore2.setText("0");
 
+        highScore3.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         highScore3.setText("0");
 
+        highScore4.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         highScore4.setText("0");
 
+        highScore5.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         highScore5.setText("0");
 
+        jButton2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton2.setText("BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +144,7 @@ public class HighScorePanel extends javax.swing.JPanel {
             }
         });
 
+        jButton3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton3.setText("70");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +152,7 @@ public class HighScorePanel extends javax.swing.JPanel {
             }
         });
 
+        jButton4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton4.setText("100");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,38 +170,35 @@ public class HighScorePanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(130, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(157, 157, 157))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(initials5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(initials4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(initials3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(initials2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(initials1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(highScore5)
-                            .addComponent(highScore4)
-                            .addComponent(highScore3)
-                            .addComponent(highScore2)
-                            .addComponent(highScore1))
-                        .addGap(146, 146, 146))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(initials5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(initials4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(initials3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(initials2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(initials1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(highScore5)
+                                    .addComponent(highScore4)
+                                    .addComponent(highScore3)
+                                    .addComponent(highScore2)
+                                    .addComponent(highScore1)))
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addContainerGap(59, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(31, 31, 31)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(highScore1)
                     .addComponent(initials1))
@@ -197,7 +218,7 @@ public class HighScorePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(initials5)
                     .addComponent(highScore5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)

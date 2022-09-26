@@ -9,10 +9,17 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author djRemskii
- */
+/***************************************************************  
+*  file: GameLogic.java 
+*  author: J. Ong 
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.1  
+*  date last modified: 9/26/2022 
+*  
+*  purpose: Contains the logic handling for the hangman game, visuals shown by panel GamePanel.java
+*  
+****************************************************************/ 
 public class GameLogic {
     public static String[] wordList = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
     public static String currentWord;

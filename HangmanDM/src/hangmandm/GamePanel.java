@@ -14,10 +14,16 @@ import javax.swing.JLabel;
 import javax.swing.Timer;
 
 
-
 /**
+ * *************************************************************
+ * file: GamePanel.java authors: S. Araya, D. Menkir, J Ong 
+ * class: CS 2450 – User Interface Design and Programming 
  *
- * @author djRemskii
+ * assignment: program 1 date last modified: 9/26/2022
+ *
+ * purpose: This panel hosts the hangman game visuals. Logic is handled in GameLogic.java.
+ *
+ ***************************************************************
  */
 public class GamePanel extends javax.swing.JPanel {
     
