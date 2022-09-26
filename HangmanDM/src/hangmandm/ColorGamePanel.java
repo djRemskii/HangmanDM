@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package hangmandm;
+import static hangmandm.HangmanDM.frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;  
@@ -45,9 +46,16 @@ public class ColorGamePanel extends javax.swing.JPanel {
     {
         if (round == 5)
         {
-            //end game and go to endColor
+            frame.getContentPane().add(new end(this.getScore()),"endColor");
+            //resetGame();
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endColor");
         }          
     }
+    
+    public static int getScore()
+    {
+        return score; 
+    } 
     private void labelColor()
     {
         switch (colorL) {
