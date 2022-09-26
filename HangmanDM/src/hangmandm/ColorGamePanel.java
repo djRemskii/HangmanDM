@@ -27,9 +27,11 @@ public class ColorGamePanel extends javax.swing.JPanel {
         t.start();
         initComponents();
         Random random_method = new Random();
+        Random random_method2 = new Random();
         randomVessel = random_method.nextInt(colorList.length);
+        randomVessel2 = random_method2.nextInt(colorList.length);
         colorL = colorList[randomVessel];
-        color = colorList[randomVessel];
+        color = colorList[randomVessel2];
         labelColor();
         colorColor();
         
@@ -63,16 +65,16 @@ public class ColorGamePanel extends javax.swing.JPanel {
     {
         switch (color) {
             case "Red" -> {
-               jLabel2.setBackground(Color.RED);
+               jLabel2.setForeground(Color.RED);
             }
             case "Yellow" -> {
-               jLabel2.setBackground(Color.YELLOW);
+               jLabel2.setForeground(Color.YELLOW);
             }
             case "Green" -> {
-               jLabel2.setBackground(Color.GREEN);
+               jLabel2.setForeground(Color.GREEN);
             }
              case "Blue" -> {
-               jLabel2.setBackground(Color.BLUE);
+               jLabel2.setForeground(Color.BLUE);
             }
              case "Purple" -> {
               // jLabel2.setBackground(Color.PURPLE);
@@ -132,6 +134,7 @@ ActionListener updateClockAction = new ActionListener() {
 
 
     private int randomVessel;
+    private int randomVessel2;
     private static int score;
     private String colorL;
     private String color;
