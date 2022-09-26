@@ -77,7 +77,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
                jLabel2.setForeground(Color.BLUE);
             }
              case "Purple" -> {
-              // jLabel2.setBackground(Color.PURPLE);
+               jLabel2.setForeground(new java.awt.Color(153, 0, 255));
             }
             default -> {
               System.out.println("error");
@@ -94,54 +94,33 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-<<<<<<< HEAD
         jLabel2 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         jLabel2.setText("Color");
-=======
-        jButton1 = new javax.swing.JButton();
-
-        jLabel1.setText("jLabel1");
-
-        jButton1.setText("jButton1");
->>>>>>> dcfbfe47c1b0e475e0875f88df64f065ba96567a
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(301, Short.MAX_VALUE)
+                .addContainerGap(259, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-<<<<<<< HEAD
                 .addGap(103, 103, 103))
             .addGroup(layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addComponent(jLabel2)
-=======
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jButton1)
->>>>>>> dcfbfe47c1b0e475e0875f88df64f065ba96567a
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel1)
-<<<<<<< HEAD
                 .addGap(74, 74, 74)
                 .addComponent(jLabel2)
                 .addContainerGap(154, Short.MAX_VALUE))
-=======
-                .addGap(31, 31, 31)
-                .addComponent(jButton1)
-                .addContainerGap(202, Short.MAX_VALUE))
->>>>>>> dcfbfe47c1b0e475e0875f88df64f065ba96567a
         );
     }// </editor-fold>//GEN-END:initComponents
 ActionListener updateClockAction = new ActionListener() {
@@ -161,7 +140,6 @@ ActionListener updateClockAction = new ActionListener() {
     private String color;
     private final String [] colorList = {"Red","Yellow","Green","Blue","Purple"};
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
