@@ -38,9 +38,10 @@ public class ColorGamePanel extends javax.swing.JPanel {
         
     }
     
-    private void correct()
-     {
-        //if button == color add 100 points, else do nothing
+    private void correct(){
+     score = score + 100;
+     System.out.println(score);
+     round++;
     }
     private void rounds()
     {
@@ -103,6 +104,10 @@ public class ColorGamePanel extends javax.swing.JPanel {
             }
         }
     }
+  
+
+   
+      
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -128,14 +133,39 @@ public class ColorGamePanel extends javax.swing.JPanel {
         jLabel2.setText("Color");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RedButton.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PurpleButton.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/YellowButton.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BlueButton.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GreenButton.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -184,7 +214,65 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 .addContainerGap(81, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-ActionListener updateClockAction = new ActionListener() {
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         if( color.equals("Red"))
+        {
+            correct();
+        }
+        else
+        {
+            round+=5;
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+          if( color.equals("Purple"))
+        {
+            correct();
+        }
+        else
+        {
+            round++;
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if( color.equals("Yellow"))
+        {
+            correct();
+        }
+        else
+        {
+            round++;
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+          if( color.equals("Blue"))
+        {
+            correct();
+        }
+        else
+        {
+            round++;
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+         if( color.equals("Green"))
+        {
+            correct();
+        }
+        else
+        {
+            round++;
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+   
+   
+   
+
+    ActionListener updateClockAction = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             // Assumes clock is a JLabel
             now = LocalDateTime.now();
