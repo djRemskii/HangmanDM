@@ -22,11 +22,18 @@ public class ColorGamePanel extends javax.swing.JPanel {
     LocalDateTime now = LocalDateTime.now(); 
     
     
-    public ColorGamePanel() {
+    public ColorGamePanel(int points) {
         setBorder(null);
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         initComponents();
+        repeat();
+        
+   
+        
+    }
+    private void repeat()
+    {
         Random random_method = new Random();
         Random random_method2 = new Random();
         randomVessel = random_method.nextInt(colorList.length);
@@ -35,13 +42,13 @@ public class ColorGamePanel extends javax.swing.JPanel {
         color = colorList[randomVessel2];
         labelColor();
         colorColor();
-        
     }
-    
     private void correct(){
      score = score + 100;
      System.out.println(score);
      round++;
+     rounds();
+     repeat();
     }
     private void rounds()
     {
@@ -49,6 +56,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
         {
             frame.getContentPane().add(new end(this.getScore()),"endColor");
             //resetGame();
+            System.out.println("game ends");
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endColor");
         }          
     }
@@ -222,7 +230,9 @@ public class ColorGamePanel extends javax.swing.JPanel {
         }
         else
         {
-            round+=5;
+            round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -233,6 +243,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -244,6 +256,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -255,6 +269,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -266,6 +282,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
    
