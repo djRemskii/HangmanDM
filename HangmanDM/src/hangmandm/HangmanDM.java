@@ -62,8 +62,8 @@ public class HangmanDM{
         frame.add(new StartPanel(), "start");
         frame.add(new MenuPanel(), "menu");
         frame.add(new CreditsPanel(), "credits");
-        frame.add(new HighScoresPanel(), "high scores");
-        frame.add(new GamingPanel(), "game");
+        frame.add(new HighScorePanel(), "high scores");
+        frame.add(new GamePanel(), "game");
         
         
         //add the end page tied to the skip button
