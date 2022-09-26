@@ -137,6 +137,7 @@ public class MenuPanel extends javax.swing.JPanel {
         HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
         
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "game");
+        GameLogic.main();
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
