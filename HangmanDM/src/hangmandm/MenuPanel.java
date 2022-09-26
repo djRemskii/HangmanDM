@@ -4,6 +4,8 @@
  */
 package hangmandm;
 
+
+import static hangmandm.HangmanDM.frame;
 import javax.swing.JFrame;
 
 /***************************************************************  
@@ -153,7 +155,7 @@ public class MenuPanel extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
-        
+        frame.add(new ColorGamePanel(100), "color game");
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
     }//GEN-LAST:event_jButton4ActionPerformed
 

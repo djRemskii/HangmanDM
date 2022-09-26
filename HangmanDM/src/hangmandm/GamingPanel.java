@@ -13,31 +13,28 @@ import java.util.Random;
 // timer imports
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime;  
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 
-
-/*************************************************************** 
-* file: DoubleIt.java 
-* authors: S. Araya and D. Menkir 
-* class: CS 141 – Programming and Problem Solving 
-* 
-* assignment: program 1 
-* date last modified: 9/21/2022 
-* 
-* purpose: This panel hosts the hangman game.
-* 
-****************************************************************/
+/**
+ * *************************************************************
+ * file: DoubleIt.java authors: S. Araya and D. Menkir class: CS 141 –
+ * Programming and Problem Solving
+ *
+ * assignment: program 1 date last modified: 9/21/2022
+ *
+ * purpose: This panel hosts the hangman game.
+ *
+ ***************************************************************
+ */
 public class GamingPanel extends javax.swing.JPanel {
 
-    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
-    LocalDateTime now = LocalDateTime.now(); 
-    
-     
-    public GamingPanel() 
-    {   
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");
+    LocalDateTime now = LocalDateTime.now();
+
+    public GamingPanel() {
         setBorder(null);
         HangmanDM.cardLayout.invalidateLayout(HangmanDM.frame.getContentPane());
         Timer t = new Timer(1000, updateClockAction);
@@ -49,179 +46,178 @@ public class GamingPanel extends javax.swing.JPanel {
         lives = 6;
         lifeCheck(lives);
         score = 100;
-        frame.getContentPane().add(new end(this.getScore()),"end");  
+        
         initComponents();
-        spacer(word);   
+        spacer(word);
     }
-    
+
     //getter for the score
-    public static int getScore()
-    {
-        return score; 
-    } 
-    
-    //ends the game and resets it 
-    private void endGame()
-    {
-                 resetGame();
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");   
-   }
-             
-            
-           
-    
-    //resets the game for next round
-    private void resetGame()
-    {
-         lives = 6;
-                jLabel1.setText("");
-                jLabel2.setText("100 points");
-                score = 100;
-                corr = 0;
-                jLabel10.setText("?");
-                jLabel11.setText("?");
-                jLabel12.setText("?");
-                jLabel13.setText("?");
-                jLabel14.setText("?");
-                jLabel15.setText("?");
-                jLabel16.setText("?");
-                jLabel17.setText("?");
-                jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
-                jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
-                jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
-                jButton2.setEnabled(true);
-                jButton3.setEnabled(true);
-                jButton4.setEnabled(true);
-                jButton5.setEnabled(true);
-                jButton6.setEnabled(true);
-                jButton7.setEnabled(true);
-                jButton8.setEnabled(true);
-                jButton9.setEnabled(true);
-                jButton10.setEnabled(true);
-                jButton11.setEnabled(true);
-                jButton12.setEnabled(true);
-                jButton13.setEnabled(true);
-                jButton14.setEnabled(true);
-                jButton15.setEnabled(true);
-                jButton16.setEnabled(true);
-                jButton17.setEnabled(true);
-                jButton18.setEnabled(true);
-                jButton19.setEnabled(true);
-                jButton20.setEnabled(true);
-                jButton21.setEnabled(true);
-                jButton22.setEnabled(true);
-                jButton23.setEnabled(true);
-                jButton24.setEnabled(true);
-                jButton25.setEnabled(true);
-                jButton26.setEnabled(true);
-                jButton27.setEnabled(true);
-                Random random_method = new Random();
-                randomVessel = random_method.nextInt(list.length);
-                word = list[randomVessel];
-                spacer(word);
+    public static int getScore() {
+        return score;
     }
-    
+
+    //ends the game and resets it 
+    private void endGame() {
+        frame.add(new ColorGamePanel(getScore()), "color game");
+        resetGame();
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
+    }
+
+    //resets the game for next round
+    private void resetGame() {
+        lives = 6;
+        jLabel1.setText("");
+        jLabel2.setText("100 points");
+        score = 100;
+        corr = 0;
+        jLabel10.setText("?");
+        jLabel11.setText("?");
+        jLabel12.setText("?");
+        jLabel13.setText("?");
+        jLabel14.setText("?");
+        jLabel15.setText("?");
+        jLabel16.setText("?");
+        jLabel17.setText("?");
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Line.png")));
+        jButton2.setEnabled(true);
+        jButton3.setEnabled(true);
+        jButton4.setEnabled(true);
+        jButton5.setEnabled(true);
+        jButton6.setEnabled(true);
+        jButton7.setEnabled(true);
+        jButton8.setEnabled(true);
+        jButton9.setEnabled(true);
+        jButton10.setEnabled(true);
+        jButton11.setEnabled(true);
+        jButton12.setEnabled(true);
+        jButton13.setEnabled(true);
+        jButton14.setEnabled(true);
+        jButton15.setEnabled(true);
+        jButton16.setEnabled(true);
+        jButton17.setEnabled(true);
+        jButton18.setEnabled(true);
+        jButton19.setEnabled(true);
+        jButton20.setEnabled(true);
+        jButton21.setEnabled(true);
+        jButton22.setEnabled(true);
+        jButton23.setEnabled(true);
+        jButton24.setEnabled(true);
+        jButton25.setEnabled(true);
+        jButton26.setEnabled(true);
+        jButton27.setEnabled(true);
+        Random random_method = new Random();
+        randomVessel = random_method.nextInt(list.length);
+        word = list[randomVessel];
+        spacer(word);
+    }
+
     //checks the remaining life and score left.
     //Tells user that their answer is wrong when they answer wrong.
     //changes the hangman image when you get it wrong 
     //shows you your remaining points
-    private void lifeCheck(int life)
-    {   
+    private void lifeCheck(int life) {
         System.out.println(life);
         switch (life) {
-            case 6 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            revalidate();
-            repaint();
-            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
+            case 6 -> {
+                frame.getContentPane().add(new end(this.getScore()), "end");
+                revalidate();
+                repaint();
+                //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             //checks life and changes hangman symbol
-            case 5 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            revalidate();
-            repaint();
-            jLabel1.setText("Wrong Answer try again");
-            jLabel2.setText("90 points");
-            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
+            case 5 -> {
+                frame.getContentPane().add(new end(this.getScore()), "end");
+                revalidate();
+                repaint();
+                jLabel1.setText("Wrong Answer try again");
+                jLabel2.setText("90 points");
+                //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
-            case 4 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            revalidate();
-            repaint();
-            jLabel1.setText("Wrong Answer try again");
-            jLabel2.setText("80 points");
-            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
+            case 4 -> {
+                frame.getContentPane().add(new end(this.getScore()), "end");
+                revalidate();
+                repaint();
+                jLabel1.setText("Wrong Answer try again");
+                jLabel2.setText("80 points");
+                //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
-            case 3 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            revalidate();
-            repaint();
-            jLabel1.setText("Wrong Answer try again");
-            jLabel2.setText("70 points");
-            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
+            case 3 -> {
+                frame.getContentPane().add(new end(this.getScore()), "end");
+                revalidate();
+                repaint();
+                jLabel1.setText("Wrong Answer try again");
+                jLabel2.setText("70 points");
+                //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
-            case 2 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            revalidate();
-            repaint();
-            jLabel1.setText("Wrong Answer try again");
-            jLabel2.setText("60 points");
-            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
+            case 2 -> {
+                frame.getContentPane().add(new end(this.getScore()), "end");
+                revalidate();
+                repaint();
+                jLabel1.setText("Wrong Answer try again");
+                jLabel2.setText("60 points");
+                //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
-            case 1 -> { frame.getContentPane().add(new end(this.getScore()),"end");
-            revalidate();
-            repaint();
-            jLabel1.setText("Wrong Answer try again");
-            jLabel2.setText("50 points");
-            //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
+            case 1 -> {
+                frame.getContentPane().add(new end(this.getScore()), "end");
+                revalidate();
+                repaint();
+                jLabel1.setText("Wrong Answer try again");
+                jLabel2.setText("50 points");
+                //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(life);
             }
             case 0 -> {
-                  frame.getContentPane().add(new end(this.getScore()),"end");
-                  revalidate();
-                  repaint();
-                  jLabel1.setText("Wrong Answer try again");
-                  jLabel2.setText("40 points");
-                  //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
+                frame.getContentPane().add(new end(this.getScore()), "end");
+                revalidate();
+                repaint();
+                jLabel1.setText("Wrong Answer try again");
+                jLabel2.setText("40 points");
+                //customDrawingHangingPost1 = new hangmandm.CustomDrawingHangingPost(lives);
             }
-            
-            
+
             default -> {
-            }    
+            }
         }
         //customDrawingHangingPost2.revalidate();
         //customDrawingHangingPost2.repaint();
     }
-    
+
     @Override
-    public Dimension getPreferredSize() { 
-        return new Dimension(600,400); 
-    } 
- 
+    public Dimension getPreferredSize() {
+        return new Dimension(600, 400);
+    }
+
     @Override
     //paints the hangman
-    public void paintComponent(Graphics g) { 
-        super.paintComponent(g);        
- 
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
         g.setColor(Color.BLACK);
         g.drawLine(0, 99, 99, 99);
         g.drawLine(49, 99, 49, 0);
         g.drawLine(49, 0, 70, 0);
         g.drawLine(70, 0, 70, 30);
         switch (lives) {
-            case 6 -> { 
+            case 6 -> {
                 break;
             }
-            case 5 ->             {
-               g.drawOval(65, 30, 10, 10); //head
-               revalidate();
-               repaint();
-               break;
+            case 5 -> {
+                g.drawOval(65, 30, 10, 10); //head
+                revalidate();
+                repaint();
+                break;
             }
-                
-            case 4 ->             {
-               g.drawOval(65, 30, 10, 10); //head
-               g.drawLine(70, 40, 70, 70); //torso
-               revalidate();
-               repaint();
-               break;
+
+            case 4 -> {
+                g.drawOval(65, 30, 10, 10); //head
+                g.drawLine(70, 40, 70, 70); //torso
+                revalidate();
+                repaint();
+                break;
             }
-                
-            case 3 ->             {
+
+            case 3 -> {
                 g.drawOval(65, 30, 10, 10); //head
                 g.drawLine(70, 40, 70, 70); //torso
                 g.drawLine(70, 55, 60, 65); //left arm
@@ -229,8 +225,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 repaint();
                 break;
             }
-                
-            case 2 ->             {
+
+            case 2 -> {
                 g.drawOval(65, 30, 10, 10); //head
                 g.drawLine(70, 40, 70, 70); //torso
                 g.drawLine(70, 55, 60, 65); //left arm
@@ -239,8 +235,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 repaint();
                 break;
             }
-                
-            case 1 ->             {
+
+            case 1 -> {
                 g.drawOval(65, 30, 10, 10); //head
                 g.drawLine(70, 40, 70, 70); //torso
                 g.drawLine(70, 55, 60, 65); //left arm
@@ -250,8 +246,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 repaint();
                 break;
             }
-                
-            case 0 ->             {
+
+            case 0 -> {
                 g.drawOval(65, 30, 10, 10); //head
                 g.drawLine(70, 40, 70, 70); //torso
                 g.drawLine(70, 55, 60, 65); //left arm
@@ -262,44 +258,38 @@ public class GamingPanel extends javax.swing.JPanel {
                 repaint();
                 break;
             }
-                
+
         }
     }
-    
+
     //checks if you won the game,and ends it if you did
-    private void correct()
-        {
-        if( corr == word.length())
-            {
-                   jLabel1.setText("");
-                frame.getContentPane().add(new end(this.getScore()),"end");
-                resetGame();
-                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
-            }
-        else 
-        {
-               jLabel1.setText("");
+    private void correct() {
+        jLabel1.setText("");
+        if (corr == word.length()) {
+            
+            frame.add(new ColorGamePanel(getScore()), "color game");
+            resetGame();
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
         }
-        }
-    
-    //changes the amount of lines depending on the word
-    private void spacer(String prob)
-    {   
-        switch (prob) {
-             case "nurse" -> {
-                 jLabel15.setText("");
-                 jLabel16.setText("");
-                 jLabel17.setText("");
-                jLabel15.setIcon(null);
-                 jLabel16.setIcon(null);
-                 jLabel17.setIcon(null);
-               //find way to get rid of the images
-             }
-             default -> {
-             }
-         }
     }
-   
+
+    //changes the amount of lines depending on the word
+    private void spacer(String prob) {
+        switch (prob) {
+            case "nurse" -> {
+                jLabel15.setText("");
+                jLabel16.setText("");
+                jLabel17.setText("");
+                jLabel15.setIcon(null);
+                jLabel16.setIcon(null);
+                jLabel17.setIcon(null);
+                //find way to get rid of the images
+            }
+            default -> {
+            }
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -937,17 +927,17 @@ public class GamingPanel extends javax.swing.JPanel {
                 .addGap(81, 81, 81))
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     //when skipButton is pressed sets your score to zero
     //takes you to the end page
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
 
         {
             score = 0;
-            frame.getContentPane().add(new end(this.getScore()),"end");
+            frame.getContentPane().add(new end(this.getScore()), "end");
             resetGame();
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
-             
+
         }
     }//GEN-LAST:event_skipButtonActionPerformed
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -960,20 +950,19 @@ public class GamingPanel extends javax.swing.JPanel {
 //and calls liveCheck() and endGame()
 //Some word automactically do this automacitcally as they don't appear in the
 //words for example the letter "Z".
-    
+
     //Letter O
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-       
+
         jButton16.setEnabled(false);
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-            endGame();      
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton16ActionPerformed
-    
+
     //Letter N
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         switch (word) {
@@ -994,9 +983,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0)
-                {    
-                    endGame();   
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1028,9 +1016,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0)
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1038,22 +1025,18 @@ public class GamingPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton14ActionPerformed
     //Letter L
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        if (word.equals("climbing"))
-        {
+        if (word.equals("climbing")) {
             jLabel11.setText("l");
             jButton13.setEnabled(false);
             corr++;
             correct();
-        }
-        else
-        {
+        } else {
             jButton13.setEnabled(false);
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            if( lives == 0)
-            {
-                 endGame();
+            if (lives == 0) {
+                endGame();
             }
         }
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -1064,9 +1047,8 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-             endGame();
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton12ActionPerformed
     //Letter J
@@ -1076,15 +1058,13 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-             endGame();
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton11ActionPerformed
     //Letter I
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        if (word.equals("climbing"))
-        {
+        if (word.equals("climbing")) {
             jLabel12.setText("i");
             jLabel15.setText("i");
             jButton10.setEnabled(false);
@@ -1093,59 +1073,48 @@ public class GamingPanel extends javax.swing.JPanel {
             corr++;
             correct();
 
-        }
-        else
-        {
+        } else {
             jButton10.setEnabled(false);
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            if( lives == 0)
-            {
-                 endGame();
+            if (lives == 0) {
+                endGame();
             }
         }
     }//GEN-LAST:event_jButton10ActionPerformed
     //Letter H
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        if (word.equals("pharmacy"))
-        {
+        if (word.equals("pharmacy")) {
             jLabel11.setText("h");
             jButton11.setEnabled(false);
             corr++;
             correct();
-        }
-        else
-        {
+        } else {
             jButton9.setEnabled(false);
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            if( lives == 0)
-            {
-                 endGame();
+            if (lives == 0) {
+                endGame();
             }
         }
     }//GEN-LAST:event_jButton9ActionPerformed
     //Letter G
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        if (word.equals("climbing"))
-        {
+        if (word.equals("climbing")) {
             jLabel17.setText("g");
             jButton8.setEnabled(false);
             corr++;
             correct();
-        }
-        else
-        {   
-            
+        } else {
+
             jButton8.setEnabled(false);
             lives = lives - 1;
             score = score - 10;
             lifeCheck(lives);
-            if( lives == 0)
-            {
-                 endGame();
+            if (lives == 0) {
+                endGame();
             }
         }
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -1156,8 +1125,7 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0 )
-        {
+        if (lives == 0) {
             endGame();
         }
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -1189,9 +1157,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0 )
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1223,9 +1190,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0 )
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1237,9 +1203,8 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-             endGame();
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
     //Letter C
@@ -1275,9 +1240,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0)
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
 
@@ -1303,12 +1267,11 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-            if( lives == 0)
-            {
-             endGame();
+                if (lives == 0) {
+                    endGame();
+                }
             }
-            }
-        } 
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
     //Letter Z
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
@@ -1316,9 +1279,8 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-             endGame();
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton27ActionPerformed
     //Letter Y
@@ -1341,9 +1303,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0)
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1355,8 +1316,7 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
+        if (lives == 0) {
             endGame();
         }
     }//GEN-LAST:event_jButton25ActionPerformed
@@ -1366,29 +1326,24 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-             endGame();
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton24ActionPerformed
     //Letter P
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        if (word.equals("pharmacy"))
-        {
+        if (word.equals("pharmacy")) {
             jLabel10.setText("P");
             jButton23.setEnabled(false);
             corr++;
             correct();
-        }
-        else
-        {
+        } else {
             jButton23.setEnabled(false);
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            if( lives == 0)
-            {
-                 endGame();
+            if (lives == 0) {
+                endGame();
             }
         }
     }//GEN-LAST:event_jButton23ActionPerformed
@@ -1399,29 +1354,24 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-             endGame();
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton22ActionPerformed
     //Letter U
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        if (word.equals("nurse"))
-        {
+        if (word.equals("nurse")) {
             jLabel11.setText("u");
             jButton21.setEnabled(false);
             corr++;
             correct();
-        }
-        else
-        {
+        } else {
             jButton21.setEnabled(false);
             score = score - 10;
             lives = lives - 1;
             lifeCheck(lives);
-            if( lives == 0)
-            {
-                 endGame();
+            if (lives == 0) {
+                endGame();
             }
         }
     }//GEN-LAST:event_jButton21ActionPerformed
@@ -1449,9 +1399,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0)
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1477,9 +1426,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0)
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1517,9 +1465,8 @@ public class GamingPanel extends javax.swing.JPanel {
                 score = score - 10;
                 lives = lives - 1;
                 lifeCheck(lives);
-                if( lives == 0)
-                {
-                     endGame();
+                if (lives == 0) {
+                    endGame();
                 }
             }
         }
@@ -1532,29 +1479,28 @@ public class GamingPanel extends javax.swing.JPanel {
         score = score - 10;
         lives = lives - 1;
         lifeCheck(lives);
-        if( lives == 0)
-        {
-             endGame();
+        if (lives == 0) {
+            endGame();
         }
     }//GEN-LAST:event_jButton17ActionPerformed
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
-    
+
     //for the clock
     ActionListener updateClockAction = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             // Assumes clock is a JLabel
             now = LocalDateTime.now();
-            jLabel18.setText(dtf.format(now)); 
+            jLabel18.setText(dtf.format(now));
         }
     };
-    
+
     private int lives;
     private int corr;
     private int randomVessel;
     private static int score;
     private String word;
-    private final String [] list = {"abstract","cemetery","nurse","pharmacy","climbing"};
-    
+    private final String[] list = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;

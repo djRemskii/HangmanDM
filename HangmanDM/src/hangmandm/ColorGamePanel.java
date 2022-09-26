@@ -22,33 +22,65 @@ public class ColorGamePanel extends javax.swing.JPanel {
     LocalDateTime now = LocalDateTime.now(); 
     
     
-    public ColorGamePanel() {
+    public ColorGamePanel(int points) {
+        
+        score = points;
         setBorder(null);
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         initComponents();
+        xLocations = new int[]{jButton1.getLocation().x, jButton2.getLocation().x, jButton3.getLocation().x, jButton4.getLocation().x, jButton5.getLocation().x};
+        yLocations = new int[]{jButton1.getLocation().y, jButton2.getLocation().y, jButton3.getLocation().y, jButton4.getLocation().y, jButton5.getLocation().y};
+        repeat();
+        
+        
+   
+        
+    }
+    private void repeat()
+    {
         Random random_method = new Random();
         Random random_method2 = new Random();
+        Random random_method3 = new Random();
+        Random random_method4 = new Random();
         randomVessel = random_method.nextInt(colorList.length);
         randomVessel2 = random_method2.nextInt(colorList.length);
+        randomVessel3 = random_method3.nextInt(xLocations.length);
+        randomVessel4 = random_method4.nextInt(yLocations.length);
+        
         colorL = colorList[randomVessel];
         color = colorList[randomVessel2];
+        int xPos = xLocations[randomVessel3];
+        int yPos = yLocations[randomVessel4];
         labelColor();
         colorColor();
         
+        jButton1.setBounds(xPos, yPos, 106, 106);
+        jButton2.setBounds(xPos, yPos, 106, 106);
+        jButton3.setBounds(xPos, yPos, 106, 106);
+        jButton4.setBounds(xPos, yPos, 106, 106);
+        jButton5.setBounds(xPos, yPos, 106, 106);
     }
     
     private void correct(){
      score = score + 100;
      System.out.println(score);
      round++;
+     rounds();
+     repeat();
     }
+    
     private void rounds()
     {
         if (round == 5)
         {
-            frame.getContentPane().add(new end(this.getScore()),"endColor");
+            frame.add(new end(getScore()),"endColor");
+
             resetGame();
+
+            //resetGame();
+            System.out.println("game ends");
+
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endColor");
         }          
     }
@@ -56,13 +88,14 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void resetGame()
     {
         round = 1;
-        score = 100;
+        
     }
     
     public static int getScore()
     {
         return score; 
     } 
+    
     private void labelColor()
     {
         switch (colorL) {
@@ -180,25 +213,28 @@ public class ColorGamePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
+                        .addGap(73, 73, 73)
+                        .addComponent(jButton2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5))
+                                .addGap(59, 59, 59)
+                                .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(132, 132, 132)
-                                .addComponent(jLabel2)))
-                        .addContainerGap(262, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(37, 37, 37)
+                                .addComponent(jButton3)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(104, 104, 104))))
+                        .addGap(104, 104, 104))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton5)
+                        .addGap(93, 93, 93))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton4)
+                        .addGap(117, 117, 117))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,18 +242,23 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButton5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)))
-                    .addComponent(jLabel2))
-                .addContainerGap(81, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jButton4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(jButton3))))
+                    .addComponent(jButton2))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -229,6 +270,11 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+
+
+            rounds();
+            repeat();
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -239,6 +285,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -250,6 +298,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -261,6 +311,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -272,6 +324,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         else
         {
             round++;
+            rounds();
+            repeat();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
    
@@ -290,11 +344,15 @@ public class ColorGamePanel extends javax.swing.JPanel {
 
     private int randomVessel;
     private int randomVessel2;
+    private int randomVessel3;
+    private int randomVessel4;
     private static int score;
     private String colorL;
     private String color;
     private int round;
     private final String [] colorList = {"Red","Yellow","Green","Blue","Purple"};
+    private final int [] xLocations;
+    private final int [] yLocations;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
