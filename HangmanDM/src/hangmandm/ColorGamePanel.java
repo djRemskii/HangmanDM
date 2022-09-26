@@ -48,9 +48,15 @@ public class ColorGamePanel extends javax.swing.JPanel {
         if (round == 5)
         {
             frame.getContentPane().add(new end(this.getScore()),"endColor");
-            //resetGame();
+            resetGame();
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endColor");
         }          
+    }
+    
+    private void resetGame()
+    {
+        round = 1;
+        score = 100;
     }
     
     public static int getScore()
