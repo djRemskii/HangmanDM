@@ -4,6 +4,10 @@
  */
 package hangmandm;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -29,6 +33,13 @@ public class GameLogic {
     public static boolean gameOverFlag = false;
     public static boolean winFlag = false;
     
+    //Writes on scores file
+    public static void writeFile(int a) throws IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File("scores.txt"),true));
+        String b = ("" + a);
+        writer.write("\r\n" + b);
+        writer.close();
+    }
     
     //Returns a random word from wordList
     private static String randomWord(){
@@ -38,7 +49,7 @@ public class GameLogic {
     }
     
     //Returns boolean value if currentWord contains the letter (must be a String) and increments incorrectGuesses.
-    public static boolean isCorrect(String s){
+    public static boolean isCorrect(String s) throws IOException{
         if (currentWord.contains(s)){
             for (int i=0; i<currentWord.length(); i++){
                 if (currentWord.indexOf(s)==i){
@@ -58,6 +69,8 @@ public class GameLogic {
                 
                 GamePanel.letterReset();
                 
+                writeFile(currentScore);
+                
                 HighScorePanel.scoreCheck(currentScore);
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
                 
@@ -75,8 +88,9 @@ public class GameLogic {
                 
                 GamePanel.letterReset();
                 
-                //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                writeFile(currentScore);
                 
+                //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
                 HangmanDM.frame.add(new end(currentScore),"endPanel");
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
             }
