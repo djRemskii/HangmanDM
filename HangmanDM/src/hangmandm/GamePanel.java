@@ -7,8 +7,11 @@ package hangmandm;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.Timer;
@@ -685,208 +688,312 @@ public class GamePanel extends javax.swing.JPanel {
     
     //LETTER BUTTONS
     private void buttonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("a"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("a"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonA.setEnabled(false);
     }//GEN-LAST:event_buttonAActionPerformed
 
     private void buttonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("b"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("b"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonB.setEnabled(false);
     }//GEN-LAST:event_buttonBActionPerformed
 
     private void buttonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("c"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("c"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonC.setEnabled(false);
     }//GEN-LAST:event_buttonCActionPerformed
 
     private void buttonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonDActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("d"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("d"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonD.setEnabled(false);
     }//GEN-LAST:event_buttonDActionPerformed
 
     private void buttonEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("e"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("e"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonE.setEnabled(false);
     }//GEN-LAST:event_buttonEActionPerformed
 
     private void buttonFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonFActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("f"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("f"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonF.setEnabled(false);
     }//GEN-LAST:event_buttonFActionPerformed
 
     private void buttonGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonGActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("g"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("g"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonG.setEnabled(false);
     }//GEN-LAST:event_buttonGActionPerformed
 
     private void buttonHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonHActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("h"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("h"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonH.setEnabled(false);
     }//GEN-LAST:event_buttonHActionPerformed
 
     private void buttonIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("i"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("i"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonI.setEnabled(false);
     }//GEN-LAST:event_buttonIActionPerformed
 
     private void buttonJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("j"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("j"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonJ.setEnabled(false);
     }//GEN-LAST:event_buttonJActionPerformed
 
     private void buttonKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonKActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("k"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("k"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonK.setEnabled(false);
     }//GEN-LAST:event_buttonKActionPerformed
 
     private void buttonLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("l"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("l"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonL.setEnabled(false);
     }//GEN-LAST:event_buttonLActionPerformed
 
     private void buttonMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("m"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("m"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonM.setEnabled(false);
     }//GEN-LAST:event_buttonMActionPerformed
 
     private void buttonNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("n"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("n"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonN.setEnabled(false);
     }//GEN-LAST:event_buttonNActionPerformed
 
     private void buttonOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("o"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("o"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonO.setEnabled(false);
     }//GEN-LAST:event_buttonOActionPerformed
 
     private void buttonPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("p"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("p"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonP.setEnabled(false);
     }//GEN-LAST:event_buttonPActionPerformed
 
     private void buttonQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonQActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("q"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("q"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonQ.setEnabled(false);
     }//GEN-LAST:event_buttonQActionPerformed
 
     private void buttonRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("r"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("r"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonR.setEnabled(false);
     }//GEN-LAST:event_buttonRActionPerformed
 
     private void buttonSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("s"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("s"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonS.setEnabled(false);
     }//GEN-LAST:event_buttonSActionPerformed
 
     private void buttonTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonTActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("t"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("t"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonT.setEnabled(false);
     }//GEN-LAST:event_buttonTActionPerformed
 
     private void buttonUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("u"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("u"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonU.setEnabled(false);
     }//GEN-LAST:event_buttonUActionPerformed
 
     private void buttonVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("v"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("v"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonV.setEnabled(false);
     }//GEN-LAST:event_buttonVActionPerformed
 
     private void buttonWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonWActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("w"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("w"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonW.setEnabled(false);
     }//GEN-LAST:event_buttonWActionPerformed
 
     private void buttonXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonXActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("x"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("x"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonX.setEnabled(false);
     }//GEN-LAST:event_buttonXActionPerformed
 
     private void buttonYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonYActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("y"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("y"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonY.setEnabled(false);
     }//GEN-LAST:event_buttonYActionPerformed
 
     private void buttonZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonZActionPerformed
-        // TODO add your handling code here:
-        System.out.println(GameLogic.isCorrect("z"));
+        try {
+            // TODO add your handling code here:
+            System.out.println(GameLogic.isCorrect("z"));
+        } catch (IOException ex) {
+            Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         spriteCheck();
         letterCheck();
         buttonZ.setEnabled(false);
