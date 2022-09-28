@@ -58,8 +58,8 @@ public class GameLogic {
                     System.out.println(currentWord);
                     for(int j=0; j<currentWordReverse.length; j++){
                         System.out.print(currentWordReverse[j]);
-                    }
                     System.out.println();
+                    }
                 }
             }
             currentWord = currentWord.replaceAll(s, "");
@@ -75,7 +75,7 @@ public class GameLogic {
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
                 
                 HangmanDM.frame.add(new end(currentScore),"endPanel");
-                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
             }
             return true;
         } else {
@@ -92,7 +92,7 @@ public class GameLogic {
                 
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
                 HangmanDM.frame.add(new end(currentScore),"endPanel");
-                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+                HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
             }
             return false;
         }
