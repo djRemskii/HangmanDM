@@ -9,6 +9,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /***************************************************************  
 *  file: HighScoresPanel.java 
@@ -26,6 +28,7 @@ public class HighScorePanel extends javax.swing.JPanel {
     public static int newScore = 0;
     private static int[] highScores = new int[5];
     private String[] names;
+    static boolean hs = false;
     
     private static javax.swing.JLabel[] scoreLables = new javax.swing.JLabel[5];
     
@@ -48,6 +51,11 @@ public class HighScorePanel extends javax.swing.JPanel {
         return newScore;
     }
     
+    public static void optionPane(){
+        JFrame frame = new JFrame();
+        String name = JOptionPane.showInputDialog(frame, "You set a new high score. Input your initials");
+}
+    
     public static void scoreCheck(int s){
         
         //I have no idea why this code only works when placed right here, but for the love of god dont move it.
@@ -69,6 +77,10 @@ public class HighScorePanel extends javax.swing.JPanel {
                         }
                         highScores[i] = s;
                         scoreLables[i].setText(highScores[i] + "");
+                        hs = true;
+                        if(hs = true)
+                            optionPane();
+                        hs = false;
                         change = true;
                     }
                 }
