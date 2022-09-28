@@ -71,7 +71,7 @@ public class GameLogic {
                 
                 writeFile(currentScore);
                 
-                HighScorePanel.scoreCheck(currentScore);
+                HighScorePanel.scoreCheck(HighScorePanel.getScore());
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
                 
                 HangmanDM.frame.add(new end(currentScore),"endPanel");
