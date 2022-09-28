@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.Timer;
 import java.util.Random;
 import java.awt.Color;
+import java.awt.Point;
+import java.util.ArrayList;
 /**
  *
  * @author saray
@@ -29,8 +31,12 @@ public class ColorGamePanel extends javax.swing.JPanel {
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         initComponents();
-        xLocations = new int[]{jButton1.getLocation().x, jButton2.getLocation().x, jButton3.getLocation().x, jButton4.getLocation().x, jButton5.getLocation().x};
-        yLocations = new int[]{jButton1.getLocation().y, jButton2.getLocation().y, jButton3.getLocation().y, jButton4.getLocation().y, jButton5.getLocation().y};
+        locations = new Point[]{jButton1.getLocation(), jButton2.getLocation(), jButton3.getLocation(), jButton4.getLocation(), jButton5.getLocation()};
+        randomize.add(0);
+        randomize.add(1);
+        randomize.add(2);
+        randomize.add(3);
+        randomize.add(4);
         repeat();
         
         
@@ -41,25 +47,40 @@ public class ColorGamePanel extends javax.swing.JPanel {
     {
         Random random_method = new Random();
         Random random_method2 = new Random();
-        Random random_method3 = new Random();
-        Random random_method4 = new Random();
+        
         randomVessel = random_method.nextInt(colorList.length);
         randomVessel2 = random_method2.nextInt(colorList.length);
-        randomVessel3 = random_method3.nextInt(xLocations.length);
-        randomVessel4 = random_method4.nextInt(yLocations.length);
         
+        java.util.Collections.shuffle(randomize);
         colorL = colorList[randomVessel];
         color = colorList[randomVessel2];
-        int xPos = xLocations[randomVessel3];
-        int yPos = yLocations[randomVessel4];
+        Point x1 = locations[randomize.get(0)];
+        
+        Point x2 = locations[randomize.get(1)];
+        
+        Point x3 = locations[randomize.get(2)];
+        
+        Point x4 = locations[randomize.get(3)];
+        
+        Point x5 = locations[randomize.get(4)];
+        
         labelColor();
         colorColor();
         
-        jButton1.setBounds(xPos, yPos, 106, 106);
-        jButton2.setBounds(xPos, yPos, 106, 106);
-        jButton3.setBounds(xPos, yPos, 106, 106);
-        jButton4.setBounds(xPos, yPos, 106, 106);
-        jButton5.setBounds(xPos, yPos, 106, 106);
+        
+        
+        jButton1.setBounds(x1.x, x1.y, 106, 106);
+        jButton2.setBounds(x2.x, x2.y, 106, 106);
+        jButton3.setBounds(x3.x, x3.y, 106, 106);
+        jButton4.setBounds(x4.x, x4.y, 106, 106);
+        jButton5.setBounds(x5.x, x5.y, 106, 106);
+        add(jButton1);
+        add(jButton2);
+        add(jButton3);
+        add(jButton4);
+        add(jButton5);
+        
+        
     }
     
     private void correct(){
@@ -356,8 +377,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private String color;
     private int round;
     private final String [] colorList = {"Red","Yellow","Green","Blue","Purple"};
-    private final int [] xLocations;
-    private final int [] yLocations;
+    private final Point [] locations;
+    private final ArrayList<Integer> randomize = new ArrayList<Integer>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
