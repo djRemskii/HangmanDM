@@ -191,6 +191,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
 
         jLabel2.setText("Color");
+        jLabel2.setLocation(280, 160);
+        add(jLabel2);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RedButton.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -198,6 +200,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        jButton1.setBounds(30, 30, 106, 106);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PurpleButton.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -205,6 +208,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
+        jButton2.setBounds(70, 200, 106, 106);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/YellowButton.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +216,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
+        jButton3.setBounds(200, 220, 106, 106);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BlueButton.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +224,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
+        jButton4.setBounds(370, 200, 106, 106);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GreenButton.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -226,6 +232,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
                 jButton5ActionPerformed(evt);
             }
         });
+        jButton1.setBounds(420, 70, 106, 106);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
