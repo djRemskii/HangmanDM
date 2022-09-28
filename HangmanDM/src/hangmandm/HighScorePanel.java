@@ -27,14 +27,19 @@ public class HighScorePanel extends javax.swing.JPanel {
 
     public static int newScore = 0;
     private static int[] highScores = new int[5];
-    private String[] names;
+    private static String[] names = new String[5];
     static boolean hs = false;
+    static String name = "";
     
     private static javax.swing.JLabel[] scoreLables = new javax.swing.JLabel[5];
+    private static javax.swing.JLabel[] nameLabels = new javax.swing.JLabel[5];
     
     private static void main(){
         for(int i=0; i<highScores.length; i++){
             highScores[i]=0;
+        }
+        for(int k = 0; k<names.length; k++){
+            names[k] = "AAA";
         }
     }
     
@@ -53,7 +58,7 @@ public class HighScorePanel extends javax.swing.JPanel {
     
     public static void optionPane(){
         JFrame frame = new JFrame();
-        String name = JOptionPane.showInputDialog(frame, "You set a new high score. Input your initials");
+        name = JOptionPane.showInputDialog(frame, "You set a new high score. Input your initials");
 }
     
     public static void scoreCheck(int s){
@@ -66,6 +71,13 @@ public class HighScorePanel extends javax.swing.JPanel {
         scoreLables[4] = highScore5;
         //end rant
         
+        nameLabels[0] = nameLabel1;
+        nameLabels[1] = nameLabel2;
+        nameLabels[2] = nameLabel3;
+        nameLabels[3] = nameLabel4;
+        nameLabels[4] = nameLabel5;
+        
+        
         if (s>0){
             boolean change = false;
             for (int i=0; i<highScores.length; i++){
@@ -73,13 +85,17 @@ public class HighScorePanel extends javax.swing.JPanel {
                     if (s>highScores[i]){
                         for (int j=highScores.length-1; j>i; j--){
                             highScores[j] = highScores[j-1];
+                            names[j] = names[j-1];
                             scoreLables[j].setText(highScores[j] + "");
+                            nameLabels[j].setText(names[j] + "");
                         }
                         highScores[i] = s;
                         scoreLables[i].setText(highScores[i] + "");
                         hs = true;
                         if(hs = true)
                             optionPane();
+                        names[i] = name.substring(0, 3);
+                        nameLabels[i].setText(names[i].substring(0,3) + "");
                         hs = false;
                         change = true;
                     }
@@ -110,12 +126,12 @@ public class HighScorePanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         highScore1 = new javax.swing.JLabel();
-        initials1 = new javax.swing.JLabel();
+        nameLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        initials2 = new javax.swing.JLabel();
-        initials3 = new javax.swing.JLabel();
-        initials4 = new javax.swing.JLabel();
-        initials5 = new javax.swing.JLabel();
+        nameLabel2 = new javax.swing.JLabel();
+        nameLabel3 = new javax.swing.JLabel();
+        nameLabel4 = new javax.swing.JLabel();
+        nameLabel5 = new javax.swing.JLabel();
         highScore2 = new javax.swing.JLabel();
         highScore3 = new javax.swing.JLabel();
         highScore4 = new javax.swing.JLabel();
@@ -132,8 +148,9 @@ public class HighScorePanel extends javax.swing.JPanel {
         highScore1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         highScore1.setText(highScores[0] + "");
 
-        initials1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
-        initials1.setText("AAA");
+        nameLabel1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        nameLabel1.setText("AAA");
+        nameLabel1.setToolTipText("");
 
         jButton1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton1.setText("50");
@@ -143,17 +160,17 @@ public class HighScorePanel extends javax.swing.JPanel {
             }
         });
 
-        initials2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
-        initials2.setText("AAA");
+        nameLabel2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        nameLabel2.setText("AAA");
 
-        initials3.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
-        initials3.setText("AAA");
+        nameLabel3.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        nameLabel3.setText("AAA");
 
-        initials4.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
-        initials4.setText("AAA");
+        nameLabel4.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        nameLabel4.setText("AAA");
 
-        initials5.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
-        initials5.setText("AAA");
+        nameLabel5.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        nameLabel5.setText("AAA");
 
         highScore2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         highScore2.setText("0");
@@ -209,11 +226,11 @@ public class HighScorePanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(initials5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(initials4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(initials3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(initials2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(initials1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(nameLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addGap(29, 29, 29)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(highScore5)
@@ -232,22 +249,22 @@ public class HighScorePanel extends javax.swing.JPanel {
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(highScore1)
-                    .addComponent(initials1))
+                    .addComponent(nameLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(initials2)
+                    .addComponent(nameLabel2)
                     .addComponent(highScore2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(initials3)
+                    .addComponent(nameLabel3)
                     .addComponent(highScore3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(initials4)
+                    .addComponent(nameLabel4)
                     .addComponent(highScore4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(initials5)
+                    .addComponent(nameLabel5)
                     .addComponent(highScore5))
                 .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -287,16 +304,16 @@ public class HighScorePanel extends javax.swing.JPanel {
     private static javax.swing.JLabel highScore3;
     private static javax.swing.JLabel highScore4;
     private static javax.swing.JLabel highScore5;
-    private javax.swing.JLabel initials1;
-    private javax.swing.JLabel initials2;
-    private javax.swing.JLabel initials3;
-    private javax.swing.JLabel initials4;
-    private javax.swing.JLabel initials5;
     private static javax.swing.JButton jButton1;
     private static javax.swing.JButton jButton2;
     private static javax.swing.JButton jButton3;
     private static javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private static javax.swing.JLabel nameLabel1;
+    private static javax.swing.JLabel nameLabel2;
+    private static javax.swing.JLabel nameLabel3;
+    private static javax.swing.JLabel nameLabel4;
+    private static javax.swing.JLabel nameLabel5;
     // End of variables declaration//GEN-END:variables
 
 
