@@ -4,6 +4,12 @@
  */
 package hangmandm;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 /***************************************************************  
 *  file: HighScoresPanel.java 
 *  author: Kevin Hoang, Jeremy Ong  
@@ -17,7 +23,7 @@ package hangmandm;
 ****************************************************************/ 
 public class HighScorePanel extends javax.swing.JPanel {
 
-    public int newScore = 0;
+    public static int newScore = 0;
     private static int[] highScores = new int[5];
     private String[] names;
     
@@ -27,6 +33,19 @@ public class HighScorePanel extends javax.swing.JPanel {
         for(int i=0; i<highScores.length; i++){
             highScores[i]=0;
         }
+    }
+    
+    public static int getScore() throws FileNotFoundException, IOException{
+        InputStreamReader streamReader = new InputStreamReader(new FileInputStream("scores.txt"));
+        BufferedReader br = new BufferedReader(streamReader);
+        String lLine = "";
+        String empty = "";
+        while(br.ready()){
+            lLine = br.readLine();
+            if(!(lLine.equals(empty)))
+                newScore = Integer.parseInt(lLine);
+        }
+        return newScore;
     }
     
     public static void scoreCheck(int s){
