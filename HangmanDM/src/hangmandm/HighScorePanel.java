@@ -46,6 +46,23 @@ public class HighScorePanel extends javax.swing.JPanel {
         }
     }
     
+    public static void savedData() throws IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File("savedscores.txt")));
+        for(int i = 0; i < highScores.length; i++){
+            writer.write(highScores[i] + "\r\n");
+        }
+        BufferedWriter writer2 = new BufferedWriter(new FileWriter(new File("savednames.txt")));
+        for(int k = 0; k < highScores.length; k++){
+            writer2.write(names[k] + "\r\n");
+        }
+        writer.close();
+        writer2.close();
+    }
+    
+    public static void loadSavedData(){
+        
+    }
+    
         //Writes on scores file
     public static void writeFile(String a) throws IOException{
         BufferedWriter writer = new BufferedWriter(new FileWriter(new File("scores.txt"),true));
