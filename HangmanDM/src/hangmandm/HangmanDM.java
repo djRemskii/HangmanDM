@@ -18,7 +18,7 @@ import javax.swing.*;
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.0  
-*  date last modified: 9/18/2022 
+*  date last modified: 9/28/2022 
 *  
 *  purpose: This is the main class/java file that controls the switching of all the other panels.
 *           This class contains the JFrame that holds the other panels in a CardLayout format.

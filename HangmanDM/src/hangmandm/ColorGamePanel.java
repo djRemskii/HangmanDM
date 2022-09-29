@@ -17,16 +17,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/**
- *
- * @author saray
- */
+/***************************************************************  
+*  file: HangmanDM.java 
+*  authors: J. Ong, D Menkir, S. Araya, Kevin Hoang
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.0  
+*  date last modified: 9/28/2022 
+*  
+*  purpose: Displays the colors game.
+*  
+****************************************************************/ 
 public class ColorGamePanel extends javax.swing.JPanel {
 
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
-    LocalDateTime now = LocalDateTime.now(); 
+    LocalDateTime now = LocalDateTime.now();
+    private int randomVessel;
+    private int randomVessel2;
+    private static int score;
+    private String colorL;
+    private String color;
+    private int round;
+    private final String [] COLOR_LIST = {"Red","Yellow","Green","Blue","Purple"};
+    private final Point [] locations;
+    private final ArrayList<Integer> randomize = new ArrayList<Integer>();
     
-    
+    //method: ColorGamePanel
+    //purpose: is the constructor of this class. initializes variables
     public ColorGamePanel(int points) {
         
         score = points;
@@ -41,22 +58,21 @@ public class ColorGamePanel extends javax.swing.JPanel {
         randomize.add(3);
         randomize.add(4);
         repeat();
-        
-        
-   
-        
     }
+    
+    //method: repeat
+    //purpose: randomizes button location, word color, and word text
     private void repeat()
     {
-        Random random_method = new Random();
-        Random random_method2 = new Random();
+        Random random_Method = new Random();
+        Random random_Method2 = new Random();
         
-        randomVessel = random_method.nextInt(colorList.length);
-        randomVessel2 = random_method2.nextInt(colorList.length);
+        randomVessel = random_Method.nextInt(COLOR_LIST.length);
+        randomVessel2 = random_Method2.nextInt(COLOR_LIST.length);
         
         java.util.Collections.shuffle(randomize);
-        colorL = colorList[randomVessel];
-        color = colorList[randomVessel2];
+        colorL = COLOR_LIST[randomVessel];
+        color = COLOR_LIST[randomVessel2];
         Point x1 = locations[randomize.get(0)];
         
         Point x2 = locations[randomize.get(1)];
@@ -86,6 +102,9 @@ public class ColorGamePanel extends javax.swing.JPanel {
         
     }
     
+    
+    //method: correct
+    //purpose: after the correct button is pressed, the score is increased by 100, the rounds increase, and rounds() and repeat() are called
     private void correct() throws IOException{
      score = score + 100;
      System.out.println(score);
@@ -94,9 +113,11 @@ public class ColorGamePanel extends javax.swing.JPanel {
      repeat();
     }
     
+    //method: rounds
+    //purpose: checks to see if 5 rounds have past
     private void rounds() throws IOException
     {
-        if (round == 5)
+        if (round >= 5)
         {
             frame.add(new end(getScore()),"endColor");
 
@@ -110,19 +131,24 @@ public class ColorGamePanel extends javax.swing.JPanel {
         }          
     }
     
+    //method: resetGame
+    //purpose: resets the color game
     private void resetGame()
     {
         round = 1;
         
     }
     
+    //method: getScore
+    //purpose: returns score
     public static int getScore()
     {
         return score; 
     } 
     
-    private void labelColor()
-    {
+    //method: labelColor
+    //purpose: changes the text of the word when called
+    private void labelColor(){
         switch (colorL) {
             case "Red" -> {
                jLabel2.setText("Red");
@@ -145,8 +171,9 @@ public class ColorGamePanel extends javax.swing.JPanel {
         }
     }
     
-     private void colorColor()
-    {
+    //method: colorColor
+    //purpose: changes the color of the word when called
+    private void colorColor(){
         switch (color) {
             case "Red" -> {
                jLabel2.setForeground(Color.RED);
@@ -167,7 +194,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
               System.out.println("error");
             }
         }
-        jButton1.setBounds(300, 180, 40, 50);
+        
     }
   
 
@@ -299,6 +326,9 @@ public class ColorGamePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    //methods: jButton_ActionPerformed
+    //purpose: Actions performed when the colored buttons are pushed. If the correct button is pushed, correct() is called, 
+    //else no points are given, the round counter increases, and rounds() is called.
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          if( color.equals("Red"))
         {
@@ -419,17 +449,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
 
 
 
-    private int randomVessel;
-    private int randomVessel2;
-    private int randomVessel3;
-    private int randomVessel4;
-    private static int score;
-    private String colorL;
-    private String color;
-    private int round;
-    private final String [] colorList = {"Red","Yellow","Green","Blue","Purple"};
-    private final Point [] locations;
-    private final ArrayList<Integer> randomize = new ArrayList<Integer>();
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.1  
-*  date last modified: 9/26/2022 
+*  date last modified: 9/28/2022 
 *  
 *  purpose: Contains the logic handling for the hangman game, visuals shown by panel GamePanel.java
 *  

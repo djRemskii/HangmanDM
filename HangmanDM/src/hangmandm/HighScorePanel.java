@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.1  
-*  date last modified: 9/26/2022 
+*  date last modified: 9/28/2022 
 *  
 *  purpose: This panel shows the highscores.
 *  
