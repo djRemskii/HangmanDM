@@ -94,5 +94,6 @@ public class HangmanDM{
     // purpose: creates a new HangmanDM object, essentially starting the program.
     public static void main(String[]args) throws IOException{
         new HangmanDM();
+        HighScorePanel.loadSavedData();
     }
 }

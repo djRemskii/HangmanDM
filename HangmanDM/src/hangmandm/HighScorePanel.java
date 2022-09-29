@@ -9,9 +9,12 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -21,7 +24,7 @@ import javax.swing.JOptionPane;
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.1  
-*  date last modified: 9/28/2022 
+*  date last modified: 9/26/2022 
 *  
 *  purpose: This panel shows the highscores.
 *  
@@ -29,15 +32,16 @@ import javax.swing.JOptionPane;
 public class HighScorePanel extends javax.swing.JPanel {
 
     public static int newScore = 0;
-    private static int[] highScores = new int[5];
-    private static String[] names = new String[5];
+    public static int[] highScores = new int[5];
+    public static String[] names = new String[5];
     static boolean hs = false;
     static String name = "";
     
     private static javax.swing.JLabel[] scoreLables = new javax.swing.JLabel[5];
     private static javax.swing.JLabel[] nameLabels = new javax.swing.JLabel[5];
     
-    private static void main(){
+    
+    public static void main(){
         for(int i=0; i<highScores.length; i++){
             highScores[i]=0;
         }
@@ -59,7 +63,30 @@ public class HighScorePanel extends javax.swing.JPanel {
         writer2.close();
     }
     
-    public static void loadSavedData(){
+    public static void loadSavedData() throws FileNotFoundException, IOException{
+        
+        BufferedReader br = new BufferedReader(new FileReader("savedscores.txt"));
+        for(int i = 0; i < 5; i++){
+         highScores[i] = Integer.parseInt(Files.readAllLines(Paths.get("savedscores.txt")).get(i));
+        }
+        BufferedReader br2 = new BufferedReader(new FileReader("savednames.txt"));
+        for(int i = 0, k = 0; i < 5; i++, k++){
+         names[k] = Files.readAllLines(Paths.get("savednames.txt")).get(i);
+        }
+        
+        highScore1.setText(highScores[0] + "");
+        highScore2.setText(highScores[1] + "");
+        highScore3.setText(highScores[2] + "");
+        highScore4.setText(highScores[3] + "");
+        highScore5.setText(highScores[4] + "");
+        
+        nameLabel1.setText(names[0]);
+        nameLabel2.setText(names[1]);
+        nameLabel3.setText(names[2]);
+        nameLabel4.setText(names[3]);
+        nameLabel5.setText(names[4]);
+        
+
         
     }
     
