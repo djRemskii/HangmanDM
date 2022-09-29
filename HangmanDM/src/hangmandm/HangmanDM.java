@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.*;
 
@@ -91,7 +92,7 @@ public class HangmanDM{
     
     // method: main  
     // purpose: creates a new HangmanDM object, essentially starting the program.
-    public static void main(String[]args){
+    public static void main(String[]args) throws IOException{
         new HangmanDM();
     }
 }
