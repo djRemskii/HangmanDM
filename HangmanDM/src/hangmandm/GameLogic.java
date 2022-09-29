@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+import static hangmandm.HangmanDM.frame;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -73,8 +74,8 @@ public class GameLogic {
                 
                 HighScorePanel.scoreCheck(HighScorePanel.getScore());
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                frame.add(new ColorGamePanel(currentScore), "color game");
                 
-                HangmanDM.frame.add(new end(currentScore),"endPanel");
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
             }
             return true;
@@ -91,7 +92,8 @@ public class GameLogic {
                 writeFile(currentScore);
                 
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
-                HangmanDM.frame.add(new end(currentScore),"endPanel");
+                frame.add(new ColorGamePanel(currentScore), "color game");
+                
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
             }
             return false;

@@ -101,8 +101,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
 
             //resetGame();
             System.out.println("game ends");
-
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endColor");
+            HangmanDM.frame.add(new end(getScore()),"endPanel");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
         }          
     }
     
