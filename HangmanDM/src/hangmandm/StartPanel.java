@@ -17,9 +17,8 @@ package hangmandm;
 ****************************************************************/ 
 public class StartPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form StartPanel
-     */
+    //method: StartPanel
+    //purpose: constructor. initializes components
     public StartPanel() {
         initComponents();
     }

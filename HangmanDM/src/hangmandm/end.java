@@ -19,20 +19,18 @@ package hangmandm;
 public class end extends javax.swing.JPanel {
 
     private String score;
-    /**
-     * Creates new form end
-     * @param points
-     */
+    
+    //method: end
+    //purpose: constructor. initializes components.
     public end(int points) {
-       // score.getScore;
-
-        
+      
        score = ("" + points);
        
-
         initComponents();
     }
 
+    //method: getScore
+    //purpose: sets jLabel1's text to score. returns score.
     private String getScore()
     {
         jLabel1.setText(score);
@@ -99,7 +97,8 @@ public class end extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     
-    //Switches to the Menu Panel
+    //method: button1ActionPerformed
+    //purpose: returns to main menu
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");

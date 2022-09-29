@@ -29,7 +29,7 @@ import javax.swing.*;
 public class HangmanDM{
     
     
-    JPanel mainPanel;
+    
     public static JFrame frame;
     public static CardLayout cardLayout;
     

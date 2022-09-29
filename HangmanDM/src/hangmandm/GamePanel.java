@@ -30,35 +30,13 @@ import javax.swing.Timer;
  */
 public class GamePanel extends javax.swing.JPanel {
     
-    /**
-     * Creates new form GamePanel
-     */
+    //method: GamePanel
+    //purpose: is the constructor of this class. initializes variables
     public GamePanel() {
         Timer t = new Timer(1000, updateClockAction);
         t.start();
-        
-        
-        
-        /*
-        letter1.setText(" ");
-        letter2.setText(" ");
-        letter3.setText(" ");
-        letter4.setText(" ");
-        letter5.setText(" ");
-        letter6.setText(" ");
-        letter7.setText(" ");
-        letter8.setText(" ");
-        letter9.setText(" ");
-        letter10.setText(" ");
-        */
-        
-        //for (int i=0; i<GameLogic.currentWord.length(); i++){
-        //    lettersLong[i].setText(GameLogic.currentWordReverse[i]);
-        //}
-        
-        
+            
         initComponents();
-        
         
         images[0] = image0;
         images[1] = image1;
@@ -67,7 +45,6 @@ public class GamePanel extends javax.swing.JPanel {
         images[4] = image4;
         images[5] = image5;
         images[6] = image6;
-        
         
         lettersLong[0] = letter1;
         lettersLong[1] = letter2;
@@ -96,7 +73,8 @@ public class GamePanel extends javax.swing.JPanel {
     ImageIcon image6 = new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_0.png"));
     
     
-    
+    //method: spriteCheck
+    //purpose: changes the hanged man to match the number of incorrect guesses
     private void spriteCheck(){
         spriteReset();
         System.out.println("nextSprite() called");
@@ -108,7 +86,8 @@ public class GamePanel extends javax.swing.JPanel {
         hangmanSprite.setIcon(images[i]);
     }
 
-    
+    //method: spriteReset
+    //purpose: resets the hanged man
     public void spriteReset(){
         hangmanSprite.setIcon(images[0]);
     }
@@ -118,6 +97,8 @@ public class GamePanel extends javax.swing.JPanel {
     //CODE TO SWITCH LETTERS
     private static JLabel[] lettersLong = new JLabel[10];
     
+    //method: letterCheck
+    //purpose: sets the text of the label to its correct letter, depending on the word
     public static void letterCheck(){
         JLabel[] letters = new JLabel[GameLogic.currentWord.length()];
         for (int i=0; i<GameLogic.currentWordReverse.length; i++){
@@ -127,6 +108,8 @@ public class GamePanel extends javax.swing.JPanel {
         //letter1.setText(GameLogic.currentWordReverse[0]);
     }
     
+    //method: letterReset
+    //purpose: resets the correct letters to be invisible
     public static void letterReset(){
         for (int i=0; i<10; i++){
             lettersLong[i].setText(" ");
@@ -655,6 +638,8 @@ public class GamePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    //method: skipButtonActionPerformed
+    //purpose: skips the hangman Game
     private void skipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skipButtonActionPerformed
         // TODO add your handling code here:
         spriteReset();
@@ -687,6 +672,9 @@ public class GamePanel extends javax.swing.JPanel {
     
     
     //LETTER BUTTONS
+    //method: button_ActionPerformed
+    //purpose: runs isCorrect(letter pressed) from GameLogic.java, then updates either the hanged man via spriteCheck() or
+    // updates the empty spaces via letterCheck()
     private void buttonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAActionPerformed
         try {
             // TODO add your handling code here:
@@ -999,6 +987,8 @@ public class GamePanel extends javax.swing.JPanel {
         buttonZ.setEnabled(false);
     }//GEN-LAST:event_buttonZActionPerformed
 
+    //method: buttonReset
+    //purpose: enables the buttons
     public static void buttonReset(){
         buttonA.setEnabled(true);
         buttonB.setEnabled(true);

@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 *  
 ****************************************************************/ 
 public class GameLogic {
-    public static String[] wordList = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
+    public static String[] WORD_LIST = {"abstract", "cemetery", "nurse", "pharmacy", "climbing"};
     public static String currentWord;
     public static String[] currentWordReverse;
     public static int incorrectGuesses = 0;
@@ -35,14 +35,21 @@ public class GameLogic {
     public static boolean winFlag = false;
     
     
-    //Returns a random word from wordList
+    //Returns a random word from WORD_LIST
+    //method: randomWord
+    //purpose: returns a random word from WORD_LIST
     private static String randomWord(){
-        int upperbound = wordList.length;
+        int upperbound = WORD_LIST.length;
         int randomInt = new Random().nextInt(upperbound);
-        return wordList[randomInt];
+        return WORD_LIST[randomInt];
     }
     
     //Returns boolean value if currentWord contains the letter (must be a String) and increments incorrectGuesses.
+    //method: isCorrect
+    //purpose: returns true if the argument has a letter that is within the guessing word,
+    // otherwise subtracts 10 points and returns false. If there are no more blank  
+    // spaces in the guessing word, transition to colors game. If the user loses, 
+    // transition to colors game
     public static boolean isCorrect(String s) throws IOException{
         if (currentWord.contains(s)){
             for (int i=0; i<currentWord.length(); i++){
@@ -93,6 +100,8 @@ public class GameLogic {
     
     
     //Reserts the incorrectGuesses Counter
+    //method: reset
+    //purpose: resets the game
     private static void reset(){
         incorrectGuesses = 0;
         currentScore = 100;
@@ -114,7 +123,8 @@ public class GameLogic {
     }
     
 
-    
+    //method: main
+    //purpose: gives information on what is happening while running the code
     public static void main(){
         System.out.println("GameLogic.java is running");
         reset();

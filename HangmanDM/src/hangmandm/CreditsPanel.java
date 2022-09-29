@@ -18,9 +18,8 @@ import javax.swing.*;
 ****************************************************************/ 
 public class CreditsPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form CreditsPanel
-     */
+    //method: CreditsPanel
+    //purpose: constructor. initializes components
     public CreditsPanel() {
         initComponents();
     }
