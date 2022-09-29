@@ -659,8 +659,8 @@ public class GamePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         spriteReset();
         letterReset();
-        HangmanDM.frame.add(new end(0),"endPanel");
-        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+        HangmanDM.frame.add(new ColorGamePanel(0),"color game");
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
         //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
     }//GEN-LAST:event_skipButtonActionPerformed
 

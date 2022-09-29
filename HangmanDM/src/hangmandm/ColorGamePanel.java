@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package hangmandm;
+import static hangmandm.GameLogic.writeFile;
 import static hangmandm.HangmanDM.frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +14,10 @@ import javax.swing.Timer;
 import java.util.Random;
 import java.awt.Color;
 import java.awt.Point;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author saray
@@ -83,7 +87,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
         
     }
     
-    private void correct(){
+    private void correct() throws IOException{
      score = score + 100;
      System.out.println(score);
      round++;
@@ -91,10 +95,11 @@ public class ColorGamePanel extends javax.swing.JPanel {
      repeat();
     }
     
-    private void rounds()
+    private void rounds() throws IOException
     {
         if (round == 5)
         {
+            writeFile(getScore());
             frame.add(new end(getScore()),"endColor");
 
             resetGame();
@@ -298,14 +303,22 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          if( color.equals("Red"))
         {
-            correct();
+             try {
+                 correct();
+             } catch (IOException ex) {
+                 Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+             }
         }
         else
         {
             round++;
 
 
-            rounds();
+             try {
+                 rounds();
+             } catch (IOException ex) {
+                 Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+             }
             repeat();
 
         }
@@ -313,12 +326,20 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
           if( color.equals("Purple"))
         {
-            correct();
+              try {
+                  correct();
+              } catch (IOException ex) {
+                  Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+              }
         }
         else
         {
             round++;
-            rounds();
+              try {
+                  rounds();
+              } catch (IOException ex) {
+                  Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+              }
             repeat();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -326,12 +347,20 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if( color.equals("Yellow"))
         {
-            correct();
+            try {
+                correct();
+            } catch (IOException ex) {
+                Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         else
         {
             round++;
-            rounds();
+            try {
+                rounds();
+            } catch (IOException ex) {
+                Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
             repeat();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -339,12 +368,20 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
           if( color.equals("Blue"))
         {
-            correct();
+              try {
+                  correct();
+              } catch (IOException ex) {
+                  Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+              }
         }
         else
         {
             round++;
-            rounds();
+              try {
+                  rounds();
+              } catch (IOException ex) {
+                  Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+              }
             repeat();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -352,12 +389,20 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
          if( color.equals("Green"))
         {
-            correct();
+             try {
+                 correct();
+             } catch (IOException ex) {
+                 Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+             }
         }
         else
         {
             round++;
-            rounds();
+             try {
+                 rounds();
+             } catch (IOException ex) {
+                 Logger.getLogger(ColorGamePanel.class.getName()).log(Level.SEVERE, null, ex);
+             }
             repeat();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
