@@ -5,8 +5,11 @@
 package hangmandm;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.swing.JFrame;
@@ -43,6 +46,12 @@ public class HighScorePanel extends javax.swing.JPanel {
         }
     }
     
+        //Writes on scores file
+    public static void writeFile(String a) throws IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(new File("scores.txt"),true));
+        writer.write(a + "\r\n");
+        writer.close();
+    }
     public static int getScore() throws FileNotFoundException, IOException{
         InputStreamReader streamReader = new InputStreamReader(new FileInputStream("scores.txt"));
         BufferedReader br = new BufferedReader(streamReader);
@@ -61,7 +70,7 @@ public class HighScorePanel extends javax.swing.JPanel {
         name = JOptionPane.showInputDialog(frame, "You set a new high score. Input your initials");
 }
     
-    public static void scoreCheck(int s){
+    public static void scoreCheck(int s) throws IOException{
         
         //I have no idea why this code only works when placed right here, but for the love of god dont move it.
         scoreLables[0] = highScore1;
@@ -93,6 +102,7 @@ public class HighScorePanel extends javax.swing.JPanel {
                         scoreLables[i].setText(highScores[i] + "");
                         hs = true;
                         if(hs = true)
+                            writeFile(ColorGamePanel.getScore() + "");
                             optionPane();
                         names[i] = name.substring(0, 3);
                         nameLabels[i].setText(names[i].substring(0,3) + "");
@@ -127,7 +137,6 @@ public class HighScorePanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         highScore1 = new javax.swing.JLabel();
         nameLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         nameLabel2 = new javax.swing.JLabel();
         nameLabel3 = new javax.swing.JLabel();
         nameLabel4 = new javax.swing.JLabel();
@@ -137,8 +146,6 @@ public class HighScorePanel extends javax.swing.JPanel {
         highScore4 = new javax.swing.JLabel();
         highScore5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -151,14 +158,6 @@ public class HighScorePanel extends javax.swing.JPanel {
         nameLabel1.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         nameLabel1.setText("AAA");
         nameLabel1.setToolTipText("");
-
-        jButton1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
-        jButton1.setText("50");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         nameLabel2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         nameLabel2.setText("AAA");
@@ -192,22 +191,6 @@ public class HighScorePanel extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
-        jButton3.setText("70");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
-        jButton4.setText("100");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -215,36 +198,30 @@ public class HighScorePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(56, 56, 56)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nameLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nameLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nameLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nameLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nameLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(highScore5)
-                                    .addComponent(highScore4)
-                                    .addComponent(highScore3)
-                                    .addComponent(highScore2)
-                                    .addComponent(highScore1)))
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(nameLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nameLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nameLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nameLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nameLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(highScore5)
+                            .addComponent(highScore4)
+                            .addComponent(highScore3)
+                            .addComponent(highScore2)
+                            .addComponent(highScore1))))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
+                .addContainerGap(58, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -267,35 +244,15 @@ public class HighScorePanel extends javax.swing.JPanel {
                     .addComponent(nameLabel5)
                     .addComponent(highScore5))
                 .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                .addComponent(jButton2)
                 .addGap(17, 17, 17))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        scoreCheck(50);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        scoreCheck(70);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        scoreCheck(100);
-    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -304,10 +261,7 @@ public class HighScorePanel extends javax.swing.JPanel {
     private static javax.swing.JLabel highScore3;
     private static javax.swing.JLabel highScore4;
     private static javax.swing.JLabel highScore5;
-    private static javax.swing.JButton jButton1;
     private static javax.swing.JButton jButton2;
-    private static javax.swing.JButton jButton3;
-    private static javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private static javax.swing.JLabel nameLabel1;
     private static javax.swing.JLabel nameLabel2;

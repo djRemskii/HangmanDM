@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package hangmandm;
-import static hangmandm.GameLogic.writeFile;
 import static hangmandm.HangmanDM.frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -99,13 +98,13 @@ public class ColorGamePanel extends javax.swing.JPanel {
     {
         if (round == 5)
         {
-            writeFile(getScore());
             frame.add(new end(getScore()),"endColor");
 
             resetGame();
 
             //resetGame();
             System.out.println("game ends");
+            HighScorePanel.scoreCheck(getScore());
             HangmanDM.frame.add(new end(getScore()),"endPanel");
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
         }          

@@ -34,13 +34,6 @@ public class GameLogic {
     public static boolean gameOverFlag = false;
     public static boolean winFlag = false;
     
-    //Writes on scores file
-    public static void writeFile(int a) throws IOException{
-        BufferedWriter writer = new BufferedWriter(new FileWriter(new File("scores.txt"),true));
-        String b = ("" + a);
-        writer.write("\r\n" + b);
-        writer.close();
-    }
     
     //Returns a random word from wordList
     private static String randomWord(){
@@ -70,9 +63,7 @@ public class GameLogic {
                 
                 GamePanel.letterReset();
                 
-                writeFile(currentScore);
                 
-                HighScorePanel.scoreCheck(HighScorePanel.getScore());
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
                 frame.add(new ColorGamePanel(currentScore), "color game");
                 
@@ -88,8 +79,7 @@ public class GameLogic {
                 System.out.println("game lost");
                 
                 GamePanel.letterReset();
-                
-                writeFile(currentScore);
+               
                 
                 //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
                 frame.add(new ColorGamePanel(currentScore), "color game");
