@@ -65,6 +65,7 @@ public class HangmanDM{
         frame.add(new CreditsPanel(), "credits");
         frame.add(new HighScorePanel(), "high scores");
         frame.add(new GamePanel(), "game");
+        frame.add(new SudokuPanel(), "sudoku");
          
         
         
