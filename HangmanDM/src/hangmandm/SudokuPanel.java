@@ -11,7 +11,8 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author TheGe
+ * @author djRemskii
+ * I'm doing this all in one night cause i cant sleep.
  */
 public class SudokuPanel extends javax.swing.JPanel {
 
@@ -54,7 +55,35 @@ public class SudokuPanel extends javax.swing.JPanel {
         boxes[0][7] = box0_7;
         boxes[0][8] = box0_8;
         
+        boxes[1][0] = box1_0;
+        boxes[1][1] = box1_1;
+        boxes[1][2] = box1_2;
+        boxes[1][3] = box1_3;
+        boxes[1][4] = box1_4;
+        boxes[1][5] = box1_5;
+        boxes[1][6] = box1_6;
+        boxes[1][7] = box1_7;
+        boxes[1][8] = box1_8;
         
+        boxes[2][0] = box2_0;
+        boxes[2][1] = box2_1;
+        boxes[2][2] = box2_2;
+        boxes[2][3] = box2_3;
+        boxes[2][4] = box2_4;
+        boxes[2][5] = box2_5;
+        boxes[2][6] = box2_6;
+        boxes[2][7] = box2_7;
+        boxes[2][8] = box2_8;
+        
+        boxes[3][0] = box3_0;
+        boxes[3][1] = box3_1;
+        boxes[3][2] = box3_2;
+        boxes[3][3] = box3_3;
+        boxes[3][4] = box3_4;
+        boxes[3][5] = box3_5;
+        boxes[3][6] = box3_6;
+        boxes[3][7] = box3_7;
+        boxes[3][8] = box3_8;
     }
 
     /**
@@ -84,6 +113,33 @@ public class SudokuPanel extends javax.swing.JPanel {
         box0_6 = new javax.swing.JTextField();
         box0_7 = new javax.swing.JTextField();
         box0_8 = new javax.swing.JTextField();
+        box1_0 = new javax.swing.JTextField();
+        box1_1 = new javax.swing.JTextField();
+        box1_2 = new javax.swing.JTextField();
+        box1_3 = new javax.swing.JTextField();
+        box1_4 = new javax.swing.JTextField();
+        box1_5 = new javax.swing.JTextField();
+        box1_6 = new javax.swing.JTextField();
+        box1_7 = new javax.swing.JTextField();
+        box1_8 = new javax.swing.JTextField();
+        box2_0 = new javax.swing.JTextField();
+        box2_1 = new javax.swing.JTextField();
+        box2_2 = new javax.swing.JTextField();
+        box2_3 = new javax.swing.JTextField();
+        box2_4 = new javax.swing.JTextField();
+        box2_5 = new javax.swing.JTextField();
+        box2_6 = new javax.swing.JTextField();
+        box2_7 = new javax.swing.JTextField();
+        box2_8 = new javax.swing.JTextField();
+        box3_0 = new javax.swing.JTextField();
+        box3_1 = new javax.swing.JTextField();
+        box3_2 = new javax.swing.JTextField();
+        box3_3 = new javax.swing.JTextField();
+        box3_4 = new javax.swing.JTextField();
+        box3_5 = new javax.swing.JTextField();
+        box3_6 = new javax.swing.JTextField();
+        box3_7 = new javax.swing.JTextField();
+        box3_8 = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -303,99 +359,648 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
         });
 
+        box1_0.setEditable(false);
+        box1_0.setBackground(new java.awt.Color(255, 255, 255));
+        box1_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_0.setActionCommand("<Not Set>");
+        box1_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_0.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_0.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_0.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_0.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_0FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_0FocusLost(evt);
+            }
+        });
+
+        box1_1.setEditable(false);
+        box1_1.setBackground(new java.awt.Color(255, 255, 255));
+        box1_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_1.setActionCommand("<Not Set>");
+        box1_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_1.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_1FocusLost(evt);
+            }
+        });
+
+        box1_2.setEditable(false);
+        box1_2.setBackground(new java.awt.Color(255, 255, 255));
+        box1_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_2.setActionCommand("<Not Set>");
+        box1_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_2.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_2FocusLost(evt);
+            }
+        });
+
+        box1_3.setEditable(false);
+        box1_3.setBackground(new java.awt.Color(255, 255, 255));
+        box1_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_3.setActionCommand("<Not Set>");
+        box1_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_3.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_3.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_3FocusLost(evt);
+            }
+        });
+
+        box1_4.setEditable(false);
+        box1_4.setBackground(new java.awt.Color(255, 255, 255));
+        box1_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_4.setActionCommand("<Not Set>");
+        box1_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_4.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_4.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_4FocusLost(evt);
+            }
+        });
+
+        box1_5.setEditable(false);
+        box1_5.setBackground(new java.awt.Color(255, 255, 255));
+        box1_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_5.setActionCommand("<Not Set>");
+        box1_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_5.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_5.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_5FocusLost(evt);
+            }
+        });
+
+        box1_6.setEditable(false);
+        box1_6.setBackground(new java.awt.Color(255, 255, 255));
+        box1_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_6.setActionCommand("<Not Set>");
+        box1_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_6.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_6FocusLost(evt);
+            }
+        });
+
+        box1_7.setEditable(false);
+        box1_7.setBackground(new java.awt.Color(255, 255, 255));
+        box1_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_7.setActionCommand("<Not Set>");
+        box1_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_7.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_7.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_7FocusLost(evt);
+            }
+        });
+
+        box1_8.setEditable(false);
+        box1_8.setBackground(new java.awt.Color(255, 255, 255));
+        box1_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_8.setActionCommand("<Not Set>");
+        box1_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box1_8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_8.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box1_8.setPreferredSize(new java.awt.Dimension(25, 25));
+        box1_8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box1_8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box1_8FocusLost(evt);
+            }
+        });
+
+        box2_0.setEditable(false);
+        box2_0.setBackground(new java.awt.Color(255, 255, 255));
+        box2_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_0.setActionCommand("<Not Set>");
+        box2_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_0.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_0.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_0.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_0.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_0FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_0FocusLost(evt);
+            }
+        });
+
+        box2_1.setEditable(false);
+        box2_1.setBackground(new java.awt.Color(255, 255, 255));
+        box2_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_1.setActionCommand("<Not Set>");
+        box2_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_1.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_1FocusLost(evt);
+            }
+        });
+
+        box2_2.setEditable(false);
+        box2_2.setBackground(new java.awt.Color(255, 255, 255));
+        box2_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_2.setActionCommand("<Not Set>");
+        box2_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_2.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_2FocusLost(evt);
+            }
+        });
+
+        box2_3.setEditable(false);
+        box2_3.setBackground(new java.awt.Color(255, 255, 255));
+        box2_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_3.setActionCommand("<Not Set>");
+        box2_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_3.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_3.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_3FocusLost(evt);
+            }
+        });
+
+        box2_4.setEditable(false);
+        box2_4.setBackground(new java.awt.Color(255, 255, 255));
+        box2_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_4.setActionCommand("<Not Set>");
+        box2_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_4.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_4.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_4FocusLost(evt);
+            }
+        });
+
+        box2_5.setEditable(false);
+        box2_5.setBackground(new java.awt.Color(255, 255, 255));
+        box2_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_5.setActionCommand("<Not Set>");
+        box2_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_5.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_5.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_5FocusLost(evt);
+            }
+        });
+
+        box2_6.setEditable(false);
+        box2_6.setBackground(new java.awt.Color(255, 255, 255));
+        box2_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_6.setActionCommand("<Not Set>");
+        box2_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_6.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_6FocusLost(evt);
+            }
+        });
+
+        box2_7.setEditable(false);
+        box2_7.setBackground(new java.awt.Color(255, 255, 255));
+        box2_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_7.setActionCommand("<Not Set>");
+        box2_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_7.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_7.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_7FocusLost(evt);
+            }
+        });
+
+        box2_8.setEditable(false);
+        box2_8.setBackground(new java.awt.Color(255, 255, 255));
+        box2_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_8.setActionCommand("<Not Set>");
+        box2_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box2_8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_8.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box2_8.setPreferredSize(new java.awt.Dimension(25, 25));
+        box2_8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box2_8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box2_8FocusLost(evt);
+            }
+        });
+
+        box3_0.setEditable(false);
+        box3_0.setBackground(new java.awt.Color(255, 255, 255));
+        box3_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_0.setActionCommand("<Not Set>");
+        box3_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_0.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_0.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_0.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_0.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_0FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_0FocusLost(evt);
+            }
+        });
+
+        box3_1.setEditable(false);
+        box3_1.setBackground(new java.awt.Color(255, 255, 255));
+        box3_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_1.setActionCommand("<Not Set>");
+        box3_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_1.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_1FocusLost(evt);
+            }
+        });
+
+        box3_2.setEditable(false);
+        box3_2.setBackground(new java.awt.Color(255, 255, 255));
+        box3_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_2.setActionCommand("<Not Set>");
+        box3_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_2.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_2FocusLost(evt);
+            }
+        });
+
+        box3_3.setEditable(false);
+        box3_3.setBackground(new java.awt.Color(255, 255, 255));
+        box3_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_3.setActionCommand("<Not Set>");
+        box3_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_3.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_3.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_3FocusLost(evt);
+            }
+        });
+
+        box3_4.setEditable(false);
+        box3_4.setBackground(new java.awt.Color(255, 255, 255));
+        box3_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_4.setActionCommand("<Not Set>");
+        box3_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_4.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_4.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_4FocusLost(evt);
+            }
+        });
+
+        box3_5.setEditable(false);
+        box3_5.setBackground(new java.awt.Color(255, 255, 255));
+        box3_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_5.setActionCommand("<Not Set>");
+        box3_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_5.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_5.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_5FocusLost(evt);
+            }
+        });
+
+        box3_6.setEditable(false);
+        box3_6.setBackground(new java.awt.Color(255, 255, 255));
+        box3_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_6.setActionCommand("<Not Set>");
+        box3_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_6.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_6FocusLost(evt);
+            }
+        });
+
+        box3_7.setEditable(false);
+        box3_7.setBackground(new java.awt.Color(255, 255, 255));
+        box3_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_7.setActionCommand("<Not Set>");
+        box3_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_7.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_7.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_7FocusLost(evt);
+            }
+        });
+
+        box3_8.setEditable(false);
+        box3_8.setBackground(new java.awt.Color(255, 255, 255));
+        box3_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_8.setActionCommand("<Not Set>");
+        box3_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box3_8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_8.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box3_8.setPreferredSize(new java.awt.Dimension(25, 25));
+        box3_8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box3_8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box3_8FocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(num1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(num2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(num4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(num5)))
+                                .addComponent(num1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(num6)
-                                    .addComponent(num3)))
+                                .addComponent(num2))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(num7)
+                                .addComponent(num4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(num8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(num9))))
+                                .addComponent(num5)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(num6)
+                            .addComponent(num3)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(num7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(num8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(num9)))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(box3_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(box3_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(box3_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(box3_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(box3_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                        .addComponent(box3_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box3_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box3_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box3_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(box1_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(box1_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box1_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box1_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box1_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box1_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box1_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box1_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(box1_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(box2_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box2_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(num1)
-                    .addComponent(num2)
-                    .addComponent(num3))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(num4)
-                    .addComponent(num5)
-                    .addComponent(num6))
-                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(num1)
+                            .addComponent(num2)
+                            .addComponent(num3))
+                        .addGap(7, 7, 7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(num4)
+                            .addComponent(num5)
+                            .addComponent(num6)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(box1_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box1_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(num7)
                     .addComponent(num8)
-                    .addComponent(num9))
+                    .addComponent(num9)
+                    .addComponent(box2_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box2_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(box3_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box3_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(250, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     
     
-    private static void setBox (int i){
+    private static boolean setBox (int i){
         int row = focusedBox[0];
         int column = focusedBox[1];
         if (row < 9 && column < 9){
             currentBoard[row][column] = i;
             System.out.println(currentBoard[row][column]);
+            return true;
         } else {
             System.out.println("No box selected");
+            return false;
         }
     }
     
@@ -403,48 +1008,57 @@ public class SudokuPanel extends javax.swing.JPanel {
     Border redBorder = BorderFactory.createLineBorder(Color.RED,3);
     
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
-        setBox(1);
-        boxes[focusedBox[0]][focusedBox[1]].setText("1");
+        if(setBox(1)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("1");
+        }
     }//GEN-LAST:event_num1ActionPerformed
 
     private void num2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num2ActionPerformed
-        setBox(2);
-        boxes[focusedBox[0]][focusedBox[1]].setText("2");
+        if(setBox(2)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("2");
+        }
     }//GEN-LAST:event_num2ActionPerformed
 
     private void num3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num3ActionPerformed
-        setBox(3);
-        boxes[focusedBox[0]][focusedBox[1]].setText("3");
+        if(setBox(3)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("3");
+        }
     }//GEN-LAST:event_num3ActionPerformed
 
     private void num4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num4ActionPerformed
-        setBox(4);
-        boxes[focusedBox[0]][focusedBox[1]].setText("4");
+        if(setBox(4)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("4");
+        }
     }//GEN-LAST:event_num4ActionPerformed
 
     private void num5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num5ActionPerformed
-        setBox(5);
-        boxes[focusedBox[0]][focusedBox[1]].setText("5");
+        if(setBox(5)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("5");
+        }
     }//GEN-LAST:event_num5ActionPerformed
 
     private void num6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num6ActionPerformed
-        setBox(6);
-        boxes[focusedBox[0]][focusedBox[1]].setText("6");
+        if(setBox(6)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("6");
+        }
     }//GEN-LAST:event_num6ActionPerformed
 
     private void num7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num7ActionPerformed
-        setBox(7);
-        boxes[focusedBox[0]][focusedBox[1]].setText("7");
+        if(setBox(7)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("7");
+        }
     }//GEN-LAST:event_num7ActionPerformed
 
     private void num8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num8ActionPerformed
-        setBox(8);
-        boxes[focusedBox[0]][focusedBox[1]].setText("8");
+        if(setBox(8)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("8");
+        }
     }//GEN-LAST:event_num8ActionPerformed
 
     private void num9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num9ActionPerformed
-        setBox(9);
-        boxes[focusedBox[0]][focusedBox[1]].setText("9");
+        if(setBox(9)){
+            boxes[focusedBox[0]][focusedBox[1]].setText("9");
+        }
     }//GEN-LAST:event_num9ActionPerformed
 
     private void box0_0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_0FocusGained
@@ -546,6 +1160,303 @@ public class SudokuPanel extends javax.swing.JPanel {
         box0_8.setBorder(blackBorder);
     }//GEN-LAST:event_box0_8FocusLost
 
+    private void box1_0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_0FocusGained
+        box1_0.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 0;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_0FocusGained
+
+    private void box1_0FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_0FocusLost
+        box1_0.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_0FocusLost
+
+    private void box1_1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_1FocusGained
+        box1_1.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 1;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_1FocusGained
+
+    private void box1_1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_1FocusLost
+        box1_1.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_1FocusLost
+
+    private void box1_2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_2FocusGained
+        box1_2.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 2;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_2FocusGained
+
+    private void box1_2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_2FocusLost
+        box1_2.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_2FocusLost
+
+    private void box1_3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_3FocusGained
+        box1_3.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 3;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_3FocusGained
+
+    private void box1_3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_3FocusLost
+        box1_3.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_3FocusLost
+
+    private void box1_4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_4FocusGained
+        box1_4.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 4;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_4FocusGained
+
+    private void box1_4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_4FocusLost
+        box1_4.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_4FocusLost
+
+    private void box1_5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_5FocusGained
+        box1_5.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 5;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_5FocusGained
+
+    private void box1_5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_5FocusLost
+        box1_5.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_5FocusLost
+
+    private void box1_6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_6FocusGained
+        box1_6.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 6;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_6FocusGained
+
+    private void box1_6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_6FocusLost
+        box1_6.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_6FocusLost
+
+    private void box1_7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_7FocusGained
+        box1_7.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 7;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_7FocusGained
+
+    private void box1_7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_7FocusLost
+        box1_7.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_7FocusLost
+
+    private void box1_8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_8FocusGained
+        box1_8.setBorder(redBorder);
+        focusedBox[0] = 1;
+        focusedBox[1] = 8;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box1_8FocusGained
+
+    private void box1_8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box1_8FocusLost
+        box1_8.setBorder(blackBorder);
+    }//GEN-LAST:event_box1_8FocusLost
+
+    private void box2_0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_0FocusGained
+        box2_0.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 0;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_0FocusGained
+
+    private void box2_0FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_0FocusLost
+        box2_0.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_0FocusLost
+
+    private void box2_1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_1FocusGained
+        box2_1.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 1;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_1FocusGained
+
+    private void box2_1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_1FocusLost
+        box2_1.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_1FocusLost
+
+    private void box2_2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_2FocusGained
+        box2_2.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 2;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_2FocusGained
+
+    private void box2_2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_2FocusLost
+        box2_2.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_2FocusLost
+
+    private void box2_3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_3FocusGained
+        box2_3.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 3;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_3FocusGained
+
+    private void box2_3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_3FocusLost
+        box2_3.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_3FocusLost
+
+    private void box2_4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_4FocusGained
+        box2_4.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 4;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_4FocusGained
+
+    private void box2_4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_4FocusLost
+        box2_4.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_4FocusLost
+
+    private void box2_5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_5FocusGained
+        box2_5.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 5;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_5FocusGained
+
+    private void box2_5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_5FocusLost
+        box2_5.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_5FocusLost
+
+    private void box2_6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_6FocusGained
+        box2_6.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 6;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_6FocusGained
+
+    private void box2_6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_6FocusLost
+        box2_6.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_6FocusLost
+
+    private void box2_7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_7FocusGained
+        box2_7.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 7;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_7FocusGained
+
+    private void box2_7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_7FocusLost
+        box2_7.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_7FocusLost
+
+    private void box2_8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_8FocusGained
+        box2_8.setBorder(redBorder);
+        focusedBox[0] = 2;
+        focusedBox[1] = 8;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box2_8FocusGained
+
+    private void box2_8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box2_8FocusLost
+        box2_8.setBorder(blackBorder);
+    }//GEN-LAST:event_box2_8FocusLost
+
+    private void box3_0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_0FocusGained
+        box3_0.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 0;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_0FocusGained
+
+    private void box3_0FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_0FocusLost
+        box3_0.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_0FocusLost
+
+    private void box3_1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_1FocusGained
+        box3_1.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 1;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_1FocusGained
+
+    private void box3_1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_1FocusLost
+        box3_1.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_1FocusLost
+
+    private void box3_2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_2FocusGained
+        box3_2.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 2;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_2FocusGained
+
+    private void box3_2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_2FocusLost
+        box3_2.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_2FocusLost
+
+    private void box3_3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_3FocusGained
+        box3_3.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 3;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_3FocusGained
+
+    private void box3_3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_3FocusLost
+        box3_3.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_3FocusLost
+
+    private void box3_4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_4FocusGained
+        box3_4.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 4;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_4FocusGained
+
+    private void box3_4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_4FocusLost
+        box3_4.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_4FocusLost
+
+    private void box3_5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_5FocusGained
+        box3_5.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 5;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_5FocusGained
+
+    private void box3_5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_5FocusLost
+        box3_5.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_5FocusLost
+
+    private void box3_6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_6FocusGained
+        box3_6.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 6;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_6FocusGained
+
+    private void box3_6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_6FocusLost
+        box3_6.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_6FocusLost
+
+    private void box3_7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_7FocusGained
+        box3_7.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 7;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_7FocusGained
+
+    private void box3_7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_7FocusLost
+        box3_7.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_7FocusLost
+
+    private void box3_8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_8FocusGained
+        box3_8.setBorder(redBorder);
+        focusedBox[0] = 3;
+        focusedBox[1] = 8;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box3_8FocusGained
+
+    private void box3_8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box3_8FocusLost
+        box3_8.setBorder(blackBorder);
+    }//GEN-LAST:event_box3_8FocusLost
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JTextField box0_0;
@@ -557,6 +1468,33 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static javax.swing.JTextField box0_6;
     private static javax.swing.JTextField box0_7;
     private static javax.swing.JTextField box0_8;
+    private static javax.swing.JTextField box1_0;
+    private static javax.swing.JTextField box1_1;
+    private static javax.swing.JTextField box1_2;
+    private static javax.swing.JTextField box1_3;
+    private static javax.swing.JTextField box1_4;
+    private static javax.swing.JTextField box1_5;
+    private static javax.swing.JTextField box1_6;
+    private static javax.swing.JTextField box1_7;
+    private static javax.swing.JTextField box1_8;
+    private static javax.swing.JTextField box2_0;
+    private static javax.swing.JTextField box2_1;
+    private static javax.swing.JTextField box2_2;
+    private static javax.swing.JTextField box2_3;
+    private static javax.swing.JTextField box2_4;
+    private static javax.swing.JTextField box2_5;
+    private static javax.swing.JTextField box2_6;
+    private static javax.swing.JTextField box2_7;
+    private static javax.swing.JTextField box2_8;
+    private static javax.swing.JTextField box3_0;
+    private static javax.swing.JTextField box3_1;
+    private static javax.swing.JTextField box3_2;
+    private static javax.swing.JTextField box3_3;
+    private static javax.swing.JTextField box3_4;
+    private static javax.swing.JTextField box3_5;
+    private static javax.swing.JTextField box3_6;
+    private static javax.swing.JTextField box3_7;
+    private static javax.swing.JTextField box3_8;
     private javax.swing.JButton num1;
     private javax.swing.JButton num2;
     private javax.swing.JButton num3;
