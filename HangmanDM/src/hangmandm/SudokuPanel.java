@@ -40,10 +40,21 @@ public class SudokuPanel extends javax.swing.JPanel {
         initComponents();
         
         boxAssigner();
+        
     }
     
     private static void boxAssigner(){
         boxes[0][0] = box0_0;
+        boxes[0][1] = box0_1;
+        boxes[0][2] = box0_2;
+        boxes[0][3] = box0_3;
+        boxes[0][4] = box0_4;
+        boxes[0][5] = box0_5;
+        boxes[0][6] = box0_6;
+        boxes[0][7] = box0_7;
+        boxes[0][8] = box0_8;
+        
+        
     }
 
     /**
@@ -65,6 +76,14 @@ public class SudokuPanel extends javax.swing.JPanel {
         num8 = new javax.swing.JButton();
         num9 = new javax.swing.JButton();
         box0_0 = new javax.swing.JTextField();
+        box0_1 = new javax.swing.JTextField();
+        box0_2 = new javax.swing.JTextField();
+        box0_3 = new javax.swing.JTextField();
+        box0_4 = new javax.swing.JTextField();
+        box0_5 = new javax.swing.JTextField();
+        box0_6 = new javax.swing.JTextField();
+        box0_7 = new javax.swing.JTextField();
+        box0_8 = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -134,9 +153,10 @@ public class SudokuPanel extends javax.swing.JPanel {
         box0_0.setEditable(false);
         box0_0.setBackground(new java.awt.Color(255, 255, 255));
         box0_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        box0_0.setText("6");
         box0_0.setActionCommand("<Not Set>");
+        box0_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box0_0.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_0.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box0_0.setPreferredSize(new java.awt.Dimension(25, 25));
         box0_0.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -144,6 +164,142 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 box0_0FocusLost(evt);
+            }
+        });
+
+        box0_1.setEditable(false);
+        box0_1.setBackground(new java.awt.Color(255, 255, 255));
+        box0_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_1.setActionCommand("<Not Set>");
+        box0_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_1.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_1FocusLost(evt);
+            }
+        });
+
+        box0_2.setEditable(false);
+        box0_2.setBackground(new java.awt.Color(255, 255, 255));
+        box0_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_2.setActionCommand("<Not Set>");
+        box0_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_2.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_2FocusLost(evt);
+            }
+        });
+
+        box0_3.setEditable(false);
+        box0_3.setBackground(new java.awt.Color(255, 255, 255));
+        box0_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_3.setActionCommand("<Not Set>");
+        box0_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_3.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_3.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_3FocusLost(evt);
+            }
+        });
+
+        box0_4.setEditable(false);
+        box0_4.setBackground(new java.awt.Color(255, 255, 255));
+        box0_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_4.setActionCommand("<Not Set>");
+        box0_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_4.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_4.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_4FocusLost(evt);
+            }
+        });
+
+        box0_5.setEditable(false);
+        box0_5.setBackground(new java.awt.Color(255, 255, 255));
+        box0_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_5.setActionCommand("<Not Set>");
+        box0_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_5.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_5.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_5.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_5FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_5FocusLost(evt);
+            }
+        });
+
+        box0_6.setEditable(false);
+        box0_6.setBackground(new java.awt.Color(255, 255, 255));
+        box0_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_6.setActionCommand("<Not Set>");
+        box0_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_6.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_6FocusLost(evt);
+            }
+        });
+
+        box0_7.setEditable(false);
+        box0_7.setBackground(new java.awt.Color(255, 255, 255));
+        box0_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_7.setActionCommand("<Not Set>");
+        box0_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_7.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_7.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_7.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_7FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_7FocusLost(evt);
+            }
+        });
+
+        box0_8.setEditable(false);
+        box0_8.setBackground(new java.awt.Color(255, 255, 255));
+        box0_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_8.setActionCommand("<Not Set>");
+        box0_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        box0_8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_8.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        box0_8.setPreferredSize(new java.awt.Dimension(25, 25));
+        box0_8.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                box0_8FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                box0_8FocusLost(evt);
             }
         });
 
@@ -177,9 +333,25 @@ public class SudokuPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(num9))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(394, Short.MAX_VALUE))
+                        .addGap(187, 187, 187)
+                        .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +371,18 @@ public class SudokuPanel extends javax.swing.JPanel {
                     .addComponent(num7)
                     .addComponent(num8)
                     .addComponent(num9))
-                .addGap(17, 17, 17)
-                .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -218,7 +399,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         }
     }
     
-    Border blackBorder = BorderFactory.createLineBorder(Color.BLACK);
+    Border blackBorder = BorderFactory.createLineBorder(Color.BLACK,2);
     Border redBorder = BorderFactory.createLineBorder(Color.RED,3);
     
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
@@ -277,9 +458,105 @@ public class SudokuPanel extends javax.swing.JPanel {
         box0_0.setBorder(blackBorder);
     }//GEN-LAST:event_box0_0FocusLost
 
+    private void box0_1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_1FocusGained
+        box0_1.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 1;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_1FocusGained
+
+    private void box0_1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_1FocusLost
+        box0_1.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_1FocusLost
+
+    private void box0_2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_2FocusGained
+        box0_2.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 2;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_2FocusGained
+
+    private void box0_2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_2FocusLost
+        box0_2.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_2FocusLost
+
+    private void box0_3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_3FocusGained
+        box0_3.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 3;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_3FocusGained
+
+    private void box0_3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_3FocusLost
+        box0_3.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_3FocusLost
+
+    private void box0_4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_4FocusGained
+        box0_4.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 4;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_4FocusGained
+
+    private void box0_4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_4FocusLost
+        box0_4.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_4FocusLost
+
+    private void box0_5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_5FocusGained
+        box0_5.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 5;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_5FocusGained
+
+    private void box0_5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_5FocusLost
+        box0_5.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_5FocusLost
+
+    private void box0_6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_6FocusGained
+        box0_6.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 6;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_6FocusGained
+
+    private void box0_6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_6FocusLost
+        box0_6.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_6FocusLost
+
+    private void box0_7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_7FocusGained
+        box0_7.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 7;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_7FocusGained
+
+    private void box0_7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_7FocusLost
+        box0_7.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_7FocusLost
+
+    private void box0_8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_8FocusGained
+        box0_8.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 8;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
+    }//GEN-LAST:event_box0_8FocusGained
+
+    private void box0_8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_8FocusLost
+        box0_8.setBorder(blackBorder);
+    }//GEN-LAST:event_box0_8FocusLost
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JTextField box0_0;
+    private static javax.swing.JTextField box0_1;
+    private static javax.swing.JTextField box0_2;
+    private static javax.swing.JTextField box0_3;
+    private static javax.swing.JTextField box0_4;
+    private static javax.swing.JTextField box0_5;
+    private static javax.swing.JTextField box0_6;
+    private static javax.swing.JTextField box0_7;
+    private static javax.swing.JTextField box0_8;
     private javax.swing.JButton num1;
     private javax.swing.JButton num2;
     private javax.swing.JButton num3;
