@@ -20,6 +20,8 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static int[][] currentBoard = new int[9][9];
     private static int[] focusedBox = new int[2];
     private static JTextField[][] boxes = new JTextField[9][9]; 
+    private static int score;
+    private static boolean scoreChecked;
     
     
     /**
@@ -36,8 +38,22 @@ public class SudokuPanel extends javax.swing.JPanel {
         solutionBoard[7] = new int[]{ 9,8,1,3,4,5,2,7,6 };
         solutionBoard[8] = new int[]{ 3,7,4,9,6,2,8,1,5 };
         
+        currentBoard[0] = new int[]{ 8,0,0,4,0,6,0,0,7 };
+        currentBoard[1] = new int[]{ 0,0,0,0,0,0,4,0,0 };
+        currentBoard[2] = new int[]{ 0,1,0,0,0,0,6,5,0 };
+        currentBoard[3] = new int[]{ 5,0,9,0,3,0,7,8,0 };
+        currentBoard[4] = new int[]{ 0,0,0,0,7,0,0,0,0 };
+        currentBoard[5] = new int[]{ 0,4,8,0,2,0,1,0,3 };
+        currentBoard[6] = new int[]{ 0,5,2,0,0,0,0,9,0 };
+        currentBoard[7] = new int[]{ 0,0,1,0,0,0,0,0,0 };
+        currentBoard[8] = new int[]{ 3,0,0,9,0,2,0,0,5 };
+        
         focusedBox[0] = 100;
         focusedBox[1] = 100;
+        
+        score = 540;
+        scoreChecked = false;
+        
         
         initComponents();
         
@@ -135,6 +151,21 @@ public class SudokuPanel extends javax.swing.JPanel {
         boxes[8][6] = box8_6;
         boxes[8][7] = box8_7;
         boxes[8][8] = box8_8;
+    }
+    
+    private static void checkScore(){
+        if (!scoreChecked){
+            for(int i=0; i<9; i++){
+                for(int j=0; j<9; j++){
+                    if(solutionBoard[i][j] != currentBoard[i][j]){
+                        score -= 10;
+                    }
+                }
+            }
+        }
+        scoreChecked = true;
+        System.out.println(score);
+        scoreDisplay.setText("Score: " + score);
     }
 
     /**
@@ -236,78 +267,122 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_6 = new javax.swing.JTextField();
         box8_7 = new javax.swing.JTextField();
         box8_8 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        scoreCheckButton = new javax.swing.JButton();
+        scoreDisplay = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
 
+        setForeground(new java.awt.Color(255, 51, 51));
+        setMinimumSize(new java.awt.Dimension(600, 400));
         setPreferredSize(new java.awt.Dimension(600, 400));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        num1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num1.setForeground(new java.awt.Color(255, 51, 51));
         num1.setText("1");
         num1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num1ActionPerformed(evt);
             }
         });
+        add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 166, -1, -1));
 
+        num2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num2.setForeground(new java.awt.Color(255, 51, 51));
         num2.setText("2");
         num2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num2ActionPerformed(evt);
             }
         });
+        add(num2, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 166, -1, -1));
 
+        num3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num3.setForeground(new java.awt.Color(255, 51, 51));
         num3.setText("3");
         num3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num3ActionPerformed(evt);
             }
         });
+        add(num3, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 166, -1, -1));
 
+        num4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num4.setForeground(new java.awt.Color(255, 51, 51));
         num4.setText("4");
         num4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num4ActionPerformed(evt);
             }
         });
+        add(num4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 194, -1, -1));
 
+        num5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num5.setForeground(new java.awt.Color(255, 51, 51));
         num5.setText("5");
         num5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num5ActionPerformed(evt);
             }
         });
+        add(num5, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 194, -1, -1));
 
+        num6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num6.setForeground(new java.awt.Color(255, 51, 51));
         num6.setText("6");
         num6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num6ActionPerformed(evt);
             }
         });
+        add(num6, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 194, -1, -1));
 
+        num7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num7.setForeground(new java.awt.Color(255, 51, 51));
         num7.setText("7");
         num7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num7ActionPerformed(evt);
             }
         });
+        add(num7, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 222, -1, -1));
 
+        num8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num8.setForeground(new java.awt.Color(255, 51, 51));
         num8.setText("8");
         num8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num8ActionPerformed(evt);
             }
         });
+        add(num8, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 222, -1, -1));
 
+        num9.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        num9.setForeground(new java.awt.Color(255, 51, 51));
         num9.setText("9");
         num9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num9ActionPerformed(evt);
             }
         });
+        add(num9, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 222, -1, -1));
 
         box0_0.setEditable(false);
         box0_0.setBackground(new java.awt.Color(255, 255, 255));
+        box0_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box0_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_0.setText("8");
         box0_0.setActionCommand("<Not Set>");
         box0_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box0_0.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_0.setFocusable(false);
         box0_0.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box0_0.setPreferredSize(new java.awt.Dimension(25, 25));
         box0_0.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -318,9 +393,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_0FocusLost(evt);
             }
         });
+        add(box0_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 111, -1, -1));
 
         box0_1.setEditable(false);
         box0_1.setBackground(new java.awt.Color(255, 255, 255));
+        box0_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box0_1.setForeground(new java.awt.Color(255, 51, 51));
         box0_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box0_1.setActionCommand("<Not Set>");
         box0_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -335,9 +413,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_1FocusLost(evt);
             }
         });
+        add(box0_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 111, -1, -1));
 
         box0_2.setEditable(false);
         box0_2.setBackground(new java.awt.Color(255, 255, 255));
+        box0_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box0_2.setForeground(new java.awt.Color(255, 51, 51));
         box0_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box0_2.setActionCommand("<Not Set>");
         box0_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -352,13 +433,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_2FocusLost(evt);
             }
         });
+        add(box0_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 111, -1, -1));
 
         box0_3.setEditable(false);
         box0_3.setBackground(new java.awt.Color(255, 255, 255));
+        box0_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box0_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_3.setText("4");
         box0_3.setActionCommand("<Not Set>");
         box0_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box0_3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_3.setFocusable(false);
         box0_3.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box0_3.setPreferredSize(new java.awt.Dimension(25, 25));
         box0_3.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -369,9 +454,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_3FocusLost(evt);
             }
         });
+        add(box0_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 111, -1, -1));
 
         box0_4.setEditable(false);
         box0_4.setBackground(new java.awt.Color(255, 255, 255));
+        box0_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box0_4.setForeground(new java.awt.Color(255, 51, 51));
         box0_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box0_4.setActionCommand("<Not Set>");
         box0_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -386,13 +474,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_4FocusLost(evt);
             }
         });
+        add(box0_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 111, -1, -1));
 
         box0_5.setEditable(false);
         box0_5.setBackground(new java.awt.Color(255, 255, 255));
+        box0_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box0_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_5.setText("6");
         box0_5.setActionCommand("<Not Set>");
         box0_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box0_5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_5.setFocusable(false);
         box0_5.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box0_5.setPreferredSize(new java.awt.Dimension(25, 25));
         box0_5.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -403,9 +495,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_5FocusLost(evt);
             }
         });
+        add(box0_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 111, -1, -1));
 
         box0_6.setEditable(false);
         box0_6.setBackground(new java.awt.Color(255, 255, 255));
+        box0_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box0_6.setForeground(new java.awt.Color(255, 51, 51));
         box0_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box0_6.setActionCommand("<Not Set>");
         box0_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -420,9 +515,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_6FocusLost(evt);
             }
         });
+        add(box0_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 111, -1, -1));
 
         box0_7.setEditable(false);
         box0_7.setBackground(new java.awt.Color(255, 255, 255));
+        box0_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box0_7.setForeground(new java.awt.Color(255, 51, 51));
         box0_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box0_7.setActionCommand("<Not Set>");
         box0_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -437,13 +535,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_7FocusLost(evt);
             }
         });
+        add(box0_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 111, -1, -1));
 
         box0_8.setEditable(false);
         box0_8.setBackground(new java.awt.Color(255, 255, 255));
+        box0_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box0_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box0_8.setText("7");
         box0_8.setActionCommand("<Not Set>");
         box0_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box0_8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box0_8.setFocusable(false);
         box0_8.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box0_8.setPreferredSize(new java.awt.Dimension(25, 25));
         box0_8.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -454,9 +556,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_8FocusLost(evt);
             }
         });
+        add(box0_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 111, -1, -1));
 
         box1_0.setEditable(false);
         box1_0.setBackground(new java.awt.Color(255, 255, 255));
+        box1_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_0.setForeground(new java.awt.Color(255, 51, 51));
         box1_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_0.setActionCommand("<Not Set>");
         box1_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -471,9 +576,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_0FocusLost(evt);
             }
         });
+        add(box1_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 136, -1, -1));
 
         box1_1.setEditable(false);
         box1_1.setBackground(new java.awt.Color(255, 255, 255));
+        box1_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_1.setForeground(new java.awt.Color(255, 51, 51));
         box1_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_1.setActionCommand("<Not Set>");
         box1_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -488,9 +596,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_1FocusLost(evt);
             }
         });
+        add(box1_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 136, -1, -1));
 
         box1_2.setEditable(false);
         box1_2.setBackground(new java.awt.Color(255, 255, 255));
+        box1_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_2.setForeground(new java.awt.Color(255, 51, 51));
         box1_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_2.setActionCommand("<Not Set>");
         box1_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -505,9 +616,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_2FocusLost(evt);
             }
         });
+        add(box1_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 136, -1, -1));
 
         box1_3.setEditable(false);
         box1_3.setBackground(new java.awt.Color(255, 255, 255));
+        box1_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_3.setForeground(new java.awt.Color(255, 51, 51));
         box1_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_3.setActionCommand("<Not Set>");
         box1_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -522,9 +636,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_3FocusLost(evt);
             }
         });
+        add(box1_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 136, -1, -1));
 
         box1_4.setEditable(false);
         box1_4.setBackground(new java.awt.Color(255, 255, 255));
+        box1_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_4.setForeground(new java.awt.Color(255, 51, 51));
         box1_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_4.setActionCommand("<Not Set>");
         box1_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -539,9 +656,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_4FocusLost(evt);
             }
         });
+        add(box1_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 136, -1, -1));
 
         box1_5.setEditable(false);
         box1_5.setBackground(new java.awt.Color(255, 255, 255));
+        box1_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_5.setForeground(new java.awt.Color(255, 51, 51));
         box1_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_5.setActionCommand("<Not Set>");
         box1_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -556,13 +676,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_5FocusLost(evt);
             }
         });
+        add(box1_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 136, -1, -1));
 
         box1_6.setEditable(false);
         box1_6.setBackground(new java.awt.Color(255, 255, 255));
+        box1_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box1_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box1_6.setText("4");
         box1_6.setActionCommand("<Not Set>");
         box1_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box1_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box1_6.setFocusable(false);
         box1_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box1_6.setPreferredSize(new java.awt.Dimension(25, 25));
         box1_6.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -573,9 +697,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_6FocusLost(evt);
             }
         });
+        add(box1_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 136, -1, -1));
 
         box1_7.setEditable(false);
         box1_7.setBackground(new java.awt.Color(255, 255, 255));
+        box1_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_7.setForeground(new java.awt.Color(255, 51, 51));
         box1_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_7.setActionCommand("<Not Set>");
         box1_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -590,9 +717,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_7FocusLost(evt);
             }
         });
+        add(box1_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 136, -1, -1));
 
         box1_8.setEditable(false);
         box1_8.setBackground(new java.awt.Color(255, 255, 255));
+        box1_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box1_8.setForeground(new java.awt.Color(255, 51, 51));
         box1_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box1_8.setActionCommand("<Not Set>");
         box1_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -607,9 +737,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_8FocusLost(evt);
             }
         });
+        add(box1_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 136, -1, -1));
 
         box2_0.setEditable(false);
         box2_0.setBackground(new java.awt.Color(255, 255, 255));
+        box2_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box2_0.setForeground(new java.awt.Color(255, 51, 51));
         box2_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box2_0.setActionCommand("<Not Set>");
         box2_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -624,13 +757,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_0FocusLost(evt);
             }
         });
+        add(box2_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 161, -1, -1));
 
         box2_1.setEditable(false);
         box2_1.setBackground(new java.awt.Color(255, 255, 255));
+        box2_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box2_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_1.setText("1");
         box2_1.setActionCommand("<Not Set>");
         box2_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box2_1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_1.setFocusable(false);
         box2_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box2_1.setPreferredSize(new java.awt.Dimension(25, 25));
         box2_1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -641,9 +778,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_1FocusLost(evt);
             }
         });
+        add(box2_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 161, -1, -1));
 
         box2_2.setEditable(false);
         box2_2.setBackground(new java.awt.Color(255, 255, 255));
+        box2_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box2_2.setForeground(new java.awt.Color(255, 51, 51));
         box2_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box2_2.setActionCommand("<Not Set>");
         box2_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -658,9 +798,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_2FocusLost(evt);
             }
         });
+        add(box2_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 161, -1, -1));
 
         box2_3.setEditable(false);
         box2_3.setBackground(new java.awt.Color(255, 255, 255));
+        box2_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box2_3.setForeground(new java.awt.Color(255, 51, 51));
         box2_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box2_3.setActionCommand("<Not Set>");
         box2_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -675,9 +818,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_3FocusLost(evt);
             }
         });
+        add(box2_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 161, -1, -1));
 
         box2_4.setEditable(false);
         box2_4.setBackground(new java.awt.Color(255, 255, 255));
+        box2_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box2_4.setForeground(new java.awt.Color(255, 51, 51));
         box2_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box2_4.setActionCommand("<Not Set>");
         box2_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -692,9 +838,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_4FocusLost(evt);
             }
         });
+        add(box2_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 161, -1, -1));
 
         box2_5.setEditable(false);
         box2_5.setBackground(new java.awt.Color(255, 255, 255));
+        box2_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box2_5.setForeground(new java.awt.Color(255, 51, 51));
         box2_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box2_5.setActionCommand("<Not Set>");
         box2_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -709,13 +858,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_5FocusLost(evt);
             }
         });
+        add(box2_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 161, -1, -1));
 
         box2_6.setEditable(false);
         box2_6.setBackground(new java.awt.Color(255, 255, 255));
+        box2_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box2_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_6.setText("6");
         box2_6.setActionCommand("<Not Set>");
         box2_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box2_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_6.setFocusable(false);
         box2_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box2_6.setPreferredSize(new java.awt.Dimension(25, 25));
         box2_6.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -726,13 +879,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_6FocusLost(evt);
             }
         });
+        add(box2_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 161, -1, -1));
 
         box2_7.setEditable(false);
         box2_7.setBackground(new java.awt.Color(255, 255, 255));
+        box2_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box2_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box2_7.setText("5");
         box2_7.setActionCommand("<Not Set>");
         box2_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box2_7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box2_7.setFocusable(false);
         box2_7.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box2_7.setPreferredSize(new java.awt.Dimension(25, 25));
         box2_7.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -743,9 +900,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_7FocusLost(evt);
             }
         });
+        add(box2_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 161, -1, -1));
 
         box2_8.setEditable(false);
         box2_8.setBackground(new java.awt.Color(255, 255, 255));
+        box2_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box2_8.setForeground(new java.awt.Color(255, 51, 51));
         box2_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box2_8.setActionCommand("<Not Set>");
         box2_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -760,13 +920,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box2_8FocusLost(evt);
             }
         });
+        add(box2_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 161, -1, -1));
 
         box3_0.setEditable(false);
         box3_0.setBackground(new java.awt.Color(255, 255, 255));
+        box3_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box3_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_0.setText("5");
         box3_0.setActionCommand("<Not Set>");
         box3_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box3_0.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_0.setFocusable(false);
         box3_0.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box3_0.setPreferredSize(new java.awt.Dimension(25, 25));
         box3_0.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -777,9 +941,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_0FocusLost(evt);
             }
         });
+        add(box3_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 193, -1, -1));
 
         box3_1.setEditable(false);
         box3_1.setBackground(new java.awt.Color(255, 255, 255));
+        box3_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box3_1.setForeground(new java.awt.Color(255, 51, 51));
         box3_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box3_1.setActionCommand("<Not Set>");
         box3_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -794,13 +961,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_1FocusLost(evt);
             }
         });
+        add(box3_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 193, -1, -1));
 
         box3_2.setEditable(false);
         box3_2.setBackground(new java.awt.Color(255, 255, 255));
+        box3_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box3_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_2.setText("9");
         box3_2.setActionCommand("<Not Set>");
         box3_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box3_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_2.setFocusable(false);
         box3_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box3_2.setPreferredSize(new java.awt.Dimension(25, 25));
         box3_2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -811,9 +982,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_2FocusLost(evt);
             }
         });
+        add(box3_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 193, -1, -1));
 
         box3_3.setEditable(false);
         box3_3.setBackground(new java.awt.Color(255, 255, 255));
+        box3_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box3_3.setForeground(new java.awt.Color(255, 51, 51));
         box3_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box3_3.setActionCommand("<Not Set>");
         box3_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -828,13 +1002,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_3FocusLost(evt);
             }
         });
+        add(box3_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 193, -1, -1));
 
         box3_4.setEditable(false);
         box3_4.setBackground(new java.awt.Color(255, 255, 255));
+        box3_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box3_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_4.setText("3");
         box3_4.setActionCommand("<Not Set>");
         box3_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box3_4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_4.setFocusable(false);
         box3_4.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box3_4.setPreferredSize(new java.awt.Dimension(25, 25));
         box3_4.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -845,9 +1023,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_4FocusLost(evt);
             }
         });
+        add(box3_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 193, -1, -1));
 
         box3_5.setEditable(false);
         box3_5.setBackground(new java.awt.Color(255, 255, 255));
+        box3_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box3_5.setForeground(new java.awt.Color(255, 51, 51));
         box3_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box3_5.setActionCommand("<Not Set>");
         box3_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -862,13 +1043,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_5FocusLost(evt);
             }
         });
+        add(box3_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 193, -1, -1));
 
         box3_6.setEditable(false);
         box3_6.setBackground(new java.awt.Color(255, 255, 255));
+        box3_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box3_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_6.setText("7");
         box3_6.setActionCommand("<Not Set>");
         box3_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box3_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_6.setFocusable(false);
         box3_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box3_6.setPreferredSize(new java.awt.Dimension(25, 25));
         box3_6.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -879,13 +1064,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_6FocusLost(evt);
             }
         });
+        add(box3_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 193, -1, -1));
 
         box3_7.setEditable(false);
         box3_7.setBackground(new java.awt.Color(255, 255, 255));
+        box3_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box3_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box3_7.setText("8");
         box3_7.setActionCommand("<Not Set>");
         box3_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box3_7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box3_7.setFocusable(false);
         box3_7.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box3_7.setPreferredSize(new java.awt.Dimension(25, 25));
         box3_7.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -896,9 +1085,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_7FocusLost(evt);
             }
         });
+        add(box3_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 193, -1, -1));
 
         box3_8.setEditable(false);
         box3_8.setBackground(new java.awt.Color(255, 255, 255));
+        box3_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box3_8.setForeground(new java.awt.Color(255, 51, 51));
         box3_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box3_8.setActionCommand("<Not Set>");
         box3_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -913,9 +1105,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box3_8FocusLost(evt);
             }
         });
+        add(box3_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 193, -1, -1));
 
         box4_0.setEditable(false);
         box4_0.setBackground(new java.awt.Color(255, 255, 255));
+        box4_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_0.setForeground(new java.awt.Color(255, 51, 51));
         box4_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_0.setActionCommand("<Not Set>");
         box4_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -930,9 +1125,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_0FocusLost(evt);
             }
         });
+        add(box4_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 218, -1, -1));
 
         box4_1.setEditable(false);
         box4_1.setBackground(new java.awt.Color(255, 255, 255));
+        box4_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_1.setForeground(new java.awt.Color(255, 51, 51));
         box4_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_1.setActionCommand("<Not Set>");
         box4_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -947,9 +1145,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_1FocusLost(evt);
             }
         });
+        add(box4_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 218, -1, -1));
 
         box4_2.setEditable(false);
         box4_2.setBackground(new java.awt.Color(255, 255, 255));
+        box4_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_2.setForeground(new java.awt.Color(255, 51, 51));
         box4_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_2.setActionCommand("<Not Set>");
         box4_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -964,9 +1165,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_2FocusLost(evt);
             }
         });
+        add(box4_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 218, -1, -1));
 
         box4_3.setEditable(false);
         box4_3.setBackground(new java.awt.Color(255, 255, 255));
+        box4_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_3.setForeground(new java.awt.Color(255, 51, 51));
         box4_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_3.setActionCommand("<Not Set>");
         box4_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -981,13 +1185,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_3FocusLost(evt);
             }
         });
+        add(box4_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 218, -1, -1));
 
         box4_4.setEditable(false);
         box4_4.setBackground(new java.awt.Color(255, 255, 255));
+        box4_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box4_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box4_4.setText("7");
         box4_4.setActionCommand("<Not Set>");
         box4_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box4_4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box4_4.setFocusable(false);
         box4_4.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box4_4.setPreferredSize(new java.awt.Dimension(25, 25));
         box4_4.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -998,9 +1206,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_4FocusLost(evt);
             }
         });
+        add(box4_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 218, -1, -1));
 
         box4_5.setEditable(false);
         box4_5.setBackground(new java.awt.Color(255, 255, 255));
+        box4_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_5.setForeground(new java.awt.Color(255, 51, 51));
         box4_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_5.setActionCommand("<Not Set>");
         box4_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1015,9 +1226,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_5FocusLost(evt);
             }
         });
+        add(box4_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 218, -1, -1));
 
         box4_6.setEditable(false);
         box4_6.setBackground(new java.awt.Color(255, 255, 255));
+        box4_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_6.setForeground(new java.awt.Color(255, 51, 51));
         box4_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_6.setActionCommand("<Not Set>");
         box4_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1032,9 +1246,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_6FocusLost(evt);
             }
         });
+        add(box4_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 218, -1, -1));
 
         box4_7.setEditable(false);
         box4_7.setBackground(new java.awt.Color(255, 255, 255));
+        box4_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_7.setForeground(new java.awt.Color(255, 51, 51));
         box4_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_7.setActionCommand("<Not Set>");
         box4_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1049,9 +1266,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_7FocusLost(evt);
             }
         });
+        add(box4_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 218, -1, -1));
 
         box4_8.setEditable(false);
         box4_8.setBackground(new java.awt.Color(255, 255, 255));
+        box4_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box4_8.setForeground(new java.awt.Color(255, 51, 51));
         box4_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box4_8.setActionCommand("<Not Set>");
         box4_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1066,9 +1286,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box4_8FocusLost(evt);
             }
         });
+        add(box4_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 218, -1, -1));
 
         box5_0.setEditable(false);
         box5_0.setBackground(new java.awt.Color(255, 255, 255));
+        box5_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box5_0.setForeground(new java.awt.Color(255, 51, 51));
         box5_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box5_0.setActionCommand("<Not Set>");
         box5_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1083,13 +1306,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_0FocusLost(evt);
             }
         });
+        add(box5_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 243, -1, -1));
 
         box5_1.setEditable(false);
         box5_1.setBackground(new java.awt.Color(255, 255, 255));
+        box5_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box5_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box5_1.setText("4");
         box5_1.setActionCommand("<Not Set>");
         box5_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box5_1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box5_1.setFocusable(false);
         box5_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box5_1.setPreferredSize(new java.awt.Dimension(25, 25));
         box5_1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1100,13 +1327,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_1FocusLost(evt);
             }
         });
+        add(box5_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 243, -1, -1));
 
         box5_2.setEditable(false);
         box5_2.setBackground(new java.awt.Color(255, 255, 255));
+        box5_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box5_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box5_2.setText("8");
         box5_2.setActionCommand("<Not Set>");
         box5_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box5_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box5_2.setFocusable(false);
         box5_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box5_2.setPreferredSize(new java.awt.Dimension(25, 25));
         box5_2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1117,9 +1348,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_2FocusLost(evt);
             }
         });
+        add(box5_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 243, -1, -1));
 
         box5_3.setEditable(false);
         box5_3.setBackground(new java.awt.Color(255, 255, 255));
+        box5_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box5_3.setForeground(new java.awt.Color(255, 51, 51));
         box5_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box5_3.setActionCommand("<Not Set>");
         box5_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1134,13 +1368,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_3FocusLost(evt);
             }
         });
+        add(box5_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 243, -1, -1));
 
         box5_4.setEditable(false);
         box5_4.setBackground(new java.awt.Color(255, 255, 255));
+        box5_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box5_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box5_4.setText("2");
         box5_4.setActionCommand("<Not Set>");
         box5_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box5_4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box5_4.setFocusable(false);
         box5_4.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box5_4.setPreferredSize(new java.awt.Dimension(25, 25));
         box5_4.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1151,9 +1389,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_4FocusLost(evt);
             }
         });
+        add(box5_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 243, -1, -1));
 
         box5_5.setEditable(false);
         box5_5.setBackground(new java.awt.Color(255, 255, 255));
+        box5_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box5_5.setForeground(new java.awt.Color(255, 51, 51));
         box5_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box5_5.setActionCommand("<Not Set>");
         box5_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1168,13 +1409,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_5FocusLost(evt);
             }
         });
+        add(box5_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 243, -1, -1));
 
         box5_6.setEditable(false);
         box5_6.setBackground(new java.awt.Color(255, 255, 255));
+        box5_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box5_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box5_6.setText("1");
         box5_6.setActionCommand("<Not Set>");
         box5_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box5_6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box5_6.setFocusable(false);
         box5_6.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box5_6.setPreferredSize(new java.awt.Dimension(25, 25));
         box5_6.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1185,9 +1430,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_6FocusLost(evt);
             }
         });
+        add(box5_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 243, -1, -1));
 
         box5_7.setEditable(false);
         box5_7.setBackground(new java.awt.Color(255, 255, 255));
+        box5_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box5_7.setForeground(new java.awt.Color(255, 51, 51));
         box5_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box5_7.setActionCommand("<Not Set>");
         box5_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1202,13 +1450,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_7FocusLost(evt);
             }
         });
+        add(box5_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 243, -1, -1));
 
         box5_8.setEditable(false);
         box5_8.setBackground(new java.awt.Color(255, 255, 255));
+        box5_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box5_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box5_8.setText("3");
         box5_8.setActionCommand("<Not Set>");
         box5_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box5_8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box5_8.setFocusable(false);
         box5_8.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box5_8.setPreferredSize(new java.awt.Dimension(25, 25));
         box5_8.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1219,9 +1471,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box5_8FocusLost(evt);
             }
         });
+        add(box5_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 243, -1, -1));
 
         box6_0.setEditable(false);
         box6_0.setBackground(new java.awt.Color(255, 255, 255));
+        box6_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box6_0.setForeground(new java.awt.Color(255, 51, 51));
         box6_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box6_0.setActionCommand("<Not Set>");
         box6_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1236,13 +1491,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_0FocusLost(evt);
             }
         });
+        add(box6_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 275, -1, -1));
 
         box6_1.setEditable(false);
         box6_1.setBackground(new java.awt.Color(255, 255, 255));
+        box6_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box6_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box6_1.setText("5");
         box6_1.setActionCommand("<Not Set>");
         box6_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box6_1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box6_1.setFocusable(false);
         box6_1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box6_1.setPreferredSize(new java.awt.Dimension(25, 25));
         box6_1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1253,13 +1512,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_1FocusLost(evt);
             }
         });
+        add(box6_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 275, -1, -1));
 
         box6_2.setEditable(false);
         box6_2.setBackground(new java.awt.Color(255, 255, 255));
+        box6_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box6_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box6_2.setText("2");
         box6_2.setActionCommand("<Not Set>");
         box6_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box6_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box6_2.setFocusable(false);
         box6_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box6_2.setPreferredSize(new java.awt.Dimension(25, 25));
         box6_2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1270,9 +1533,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_2FocusLost(evt);
             }
         });
+        add(box6_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 275, -1, -1));
 
         box6_3.setEditable(false);
         box6_3.setBackground(new java.awt.Color(255, 255, 255));
+        box6_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box6_3.setForeground(new java.awt.Color(255, 51, 51));
         box6_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box6_3.setActionCommand("<Not Set>");
         box6_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1287,9 +1553,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_3FocusLost(evt);
             }
         });
+        add(box6_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 275, -1, -1));
 
         box6_4.setEditable(false);
         box6_4.setBackground(new java.awt.Color(255, 255, 255));
+        box6_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box6_4.setForeground(new java.awt.Color(255, 51, 51));
         box6_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box6_4.setActionCommand("<Not Set>");
         box6_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1304,9 +1573,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_4FocusLost(evt);
             }
         });
+        add(box6_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 275, -1, -1));
 
         box6_5.setEditable(false);
         box6_5.setBackground(new java.awt.Color(255, 255, 255));
+        box6_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box6_5.setForeground(new java.awt.Color(255, 51, 51));
         box6_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box6_5.setActionCommand("<Not Set>");
         box6_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1321,9 +1593,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_5FocusLost(evt);
             }
         });
+        add(box6_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 275, -1, -1));
 
         box6_6.setEditable(false);
         box6_6.setBackground(new java.awt.Color(255, 255, 255));
+        box6_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box6_6.setForeground(new java.awt.Color(255, 51, 51));
         box6_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box6_6.setActionCommand("<Not Set>");
         box6_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1338,13 +1613,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_6FocusLost(evt);
             }
         });
+        add(box6_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 275, -1, -1));
 
         box6_7.setEditable(false);
         box6_7.setBackground(new java.awt.Color(255, 255, 255));
+        box6_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box6_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box6_7.setText("9");
         box6_7.setActionCommand("<Not Set>");
         box6_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box6_7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box6_7.setFocusable(false);
         box6_7.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box6_7.setPreferredSize(new java.awt.Dimension(25, 25));
         box6_7.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1355,9 +1634,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_7FocusLost(evt);
             }
         });
+        add(box6_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 275, -1, -1));
 
         box6_8.setEditable(false);
         box6_8.setBackground(new java.awt.Color(255, 255, 255));
+        box6_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box6_8.setForeground(new java.awt.Color(255, 51, 51));
         box6_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box6_8.setActionCommand("<Not Set>");
         box6_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1372,9 +1654,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box6_8FocusLost(evt);
             }
         });
+        add(box6_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 275, -1, -1));
 
         box7_0.setEditable(false);
         box7_0.setBackground(new java.awt.Color(255, 255, 255));
+        box7_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_0.setForeground(new java.awt.Color(255, 51, 51));
         box7_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_0.setActionCommand("<Not Set>");
         box7_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1389,9 +1674,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_0FocusLost(evt);
             }
         });
+        add(box7_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 300, -1, -1));
 
         box7_1.setEditable(false);
         box7_1.setBackground(new java.awt.Color(255, 255, 255));
+        box7_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_1.setForeground(new java.awt.Color(255, 51, 51));
         box7_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_1.setActionCommand("<Not Set>");
         box7_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1406,13 +1694,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_1FocusLost(evt);
             }
         });
+        add(box7_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 300, -1, -1));
 
         box7_2.setEditable(false);
         box7_2.setBackground(new java.awt.Color(255, 255, 255));
+        box7_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box7_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box7_2.setText("1");
         box7_2.setActionCommand("<Not Set>");
         box7_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box7_2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box7_2.setFocusable(false);
         box7_2.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box7_2.setPreferredSize(new java.awt.Dimension(25, 25));
         box7_2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1423,9 +1715,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_2FocusLost(evt);
             }
         });
+        add(box7_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 300, -1, -1));
 
         box7_3.setEditable(false);
         box7_3.setBackground(new java.awt.Color(255, 255, 255));
+        box7_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_3.setForeground(new java.awt.Color(255, 51, 51));
         box7_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_3.setActionCommand("<Not Set>");
         box7_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1440,9 +1735,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_3FocusLost(evt);
             }
         });
+        add(box7_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 300, -1, -1));
 
         box7_4.setEditable(false);
         box7_4.setBackground(new java.awt.Color(255, 255, 255));
+        box7_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_4.setForeground(new java.awt.Color(255, 51, 51));
         box7_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_4.setActionCommand("<Not Set>");
         box7_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1457,9 +1755,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_4FocusLost(evt);
             }
         });
+        add(box7_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 300, -1, -1));
 
         box7_5.setEditable(false);
         box7_5.setBackground(new java.awt.Color(255, 255, 255));
+        box7_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_5.setForeground(new java.awt.Color(255, 51, 51));
         box7_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_5.setActionCommand("<Not Set>");
         box7_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1474,9 +1775,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_5FocusLost(evt);
             }
         });
+        add(box7_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 300, -1, -1));
 
         box7_6.setEditable(false);
         box7_6.setBackground(new java.awt.Color(255, 255, 255));
+        box7_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_6.setForeground(new java.awt.Color(255, 51, 51));
         box7_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_6.setActionCommand("<Not Set>");
         box7_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1491,9 +1795,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_6FocusLost(evt);
             }
         });
+        add(box7_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 300, -1, -1));
 
         box7_7.setEditable(false);
         box7_7.setBackground(new java.awt.Color(255, 255, 255));
+        box7_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_7.setForeground(new java.awt.Color(255, 51, 51));
         box7_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_7.setActionCommand("<Not Set>");
         box7_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1508,9 +1815,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_7FocusLost(evt);
             }
         });
+        add(box7_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 300, -1, -1));
 
         box7_8.setEditable(false);
         box7_8.setBackground(new java.awt.Color(255, 255, 255));
+        box7_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box7_8.setForeground(new java.awt.Color(255, 51, 51));
         box7_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box7_8.setActionCommand("<Not Set>");
         box7_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1525,13 +1835,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box7_8FocusLost(evt);
             }
         });
+        add(box7_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 300, -1, -1));
 
         box8_0.setEditable(false);
         box8_0.setBackground(new java.awt.Color(255, 255, 255));
+        box8_0.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box8_0.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box8_0.setText("3");
         box8_0.setActionCommand("<Not Set>");
         box8_0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box8_0.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box8_0.setFocusable(false);
         box8_0.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box8_0.setPreferredSize(new java.awt.Dimension(25, 25));
         box8_0.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1542,9 +1856,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_0FocusLost(evt);
             }
         });
+        add(box8_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 325, -1, -1));
 
         box8_1.setEditable(false);
         box8_1.setBackground(new java.awt.Color(255, 255, 255));
+        box8_1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box8_1.setForeground(new java.awt.Color(255, 51, 51));
         box8_1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box8_1.setActionCommand("<Not Set>");
         box8_1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1559,9 +1876,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_1FocusLost(evt);
             }
         });
+        add(box8_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 325, -1, -1));
 
         box8_2.setEditable(false);
         box8_2.setBackground(new java.awt.Color(255, 255, 255));
+        box8_2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box8_2.setForeground(new java.awt.Color(255, 51, 51));
         box8_2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box8_2.setActionCommand("<Not Set>");
         box8_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1576,13 +1896,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_2FocusLost(evt);
             }
         });
+        add(box8_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 325, -1, -1));
 
         box8_3.setEditable(false);
         box8_3.setBackground(new java.awt.Color(255, 255, 255));
+        box8_3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box8_3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box8_3.setText("9");
         box8_3.setActionCommand("<Not Set>");
         box8_3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box8_3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box8_3.setFocusable(false);
         box8_3.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box8_3.setPreferredSize(new java.awt.Dimension(25, 25));
         box8_3.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1593,9 +1917,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_3FocusLost(evt);
             }
         });
+        add(box8_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 325, -1, -1));
 
         box8_4.setEditable(false);
         box8_4.setBackground(new java.awt.Color(255, 255, 255));
+        box8_4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box8_4.setForeground(new java.awt.Color(255, 51, 51));
         box8_4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box8_4.setActionCommand("<Not Set>");
         box8_4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1610,13 +1937,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_4FocusLost(evt);
             }
         });
+        add(box8_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 325, -1, -1));
 
         box8_5.setEditable(false);
         box8_5.setBackground(new java.awt.Color(255, 255, 255));
+        box8_5.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box8_5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box8_5.setText("2");
         box8_5.setActionCommand("<Not Set>");
         box8_5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box8_5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box8_5.setFocusable(false);
         box8_5.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box8_5.setPreferredSize(new java.awt.Dimension(25, 25));
         box8_5.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1627,9 +1958,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_5FocusLost(evt);
             }
         });
+        add(box8_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 325, -1, -1));
 
         box8_6.setEditable(false);
         box8_6.setBackground(new java.awt.Color(255, 255, 255));
+        box8_6.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box8_6.setForeground(new java.awt.Color(255, 51, 51));
         box8_6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box8_6.setActionCommand("<Not Set>");
         box8_6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1644,9 +1978,12 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_6FocusLost(evt);
             }
         });
+        add(box8_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 325, -1, -1));
 
         box8_7.setEditable(false);
         box8_7.setBackground(new java.awt.Color(255, 255, 255));
+        box8_7.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        box8_7.setForeground(new java.awt.Color(255, 51, 51));
         box8_7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         box8_7.setActionCommand("<Not Set>");
         box8_7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -1661,13 +1998,17 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_7FocusLost(evt);
             }
         });
+        add(box8_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 325, -1, -1));
 
         box8_8.setEditable(false);
         box8_8.setBackground(new java.awt.Color(255, 255, 255));
+        box8_8.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         box8_8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        box8_8.setText("5");
         box8_8.setActionCommand("<Not Set>");
         box8_8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         box8_8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        box8_8.setFocusable(false);
         box8_8.setMargin(new java.awt.Insets(0, 0, 0, 0));
         box8_8.setPreferredSize(new java.awt.Dimension(25, 25));
         box8_8.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -1678,319 +2019,78 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box8_8FocusLost(evt);
             }
         });
+        add(box8_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 325, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(num1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(num2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(num4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(num5)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(num6)
-                            .addComponent(num3)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(num7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num9)))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(box1_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box1_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box1_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box1_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box1_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box1_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box1_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box1_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box1_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(box2_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(box2_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(box4_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box3_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box5_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box6_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box7_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box8_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box3_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box3_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box3_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box3_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box3_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box3_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box3_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box3_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box4_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box4_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box4_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box4_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box4_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box4_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box4_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box4_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box5_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box5_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box5_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box5_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box5_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box5_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box5_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box5_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box6_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box6_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box6_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box6_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box6_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box6_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box6_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box6_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box7_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box7_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box7_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box7_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box7_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box7_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box7_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box7_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(box8_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box8_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box8_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box8_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box8_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box8_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box8_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(box8_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(num1)
-                            .addComponent(num2)
-                            .addComponent(num3))
-                        .addGap(7, 7, 7)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(num4)
-                            .addComponent(num5)
-                            .addComponent(num6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(box0_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box0_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(box1_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(box1_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(num7)
-                    .addComponent(num8)
-                    .addComponent(num9)
-                    .addComponent(box2_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box2_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(box3_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box3_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(box4_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box4_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(box5_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box5_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(box6_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box6_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(box7_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box7_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(box8_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(box8_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
-        );
+        jLabel1.setFont(new java.awt.Font("Stencil", 0, 48)); // NOI18N
+        jLabel1.setText("SUDOKU");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+
+        scoreCheckButton.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        scoreCheckButton.setText("CHECK SCORE");
+        scoreCheckButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scoreCheckButtonActionPerformed(evt);
+            }
+        });
+        add(scoreCheckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 169, -1, -1));
+
+        scoreDisplay.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        scoreDisplay.setText("Score: " + score);
+        add(scoreDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 197, -1, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 186, 239, 7));
+
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator4.setPreferredSize(new java.awt.Dimension(7, 50));
+        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 111, -1, 75));
+
+        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator5.setPreferredSize(new java.awt.Dimension(7, 50));
+        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 111, -1, 75));
+
+        jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator6.setPreferredSize(new java.awt.Dimension(7, 50));
+        add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 275, -1, 75));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator2.setPreferredSize(new java.awt.Dimension(50, 5));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 268, 239, 7));
+
+        jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator7.setPreferredSize(new java.awt.Dimension(7, 50));
+        add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 193, -1, 75));
+
+        jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator8.setPreferredSize(new java.awt.Dimension(7, 50));
+        add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 193, -1, 75));
+
+        jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jSeparator9.setPreferredSize(new java.awt.Dimension(7, 50));
+        add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 275, -1, 75));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -2485,6 +2585,8 @@ public class SudokuPanel extends javax.swing.JPanel {
             box4_6.setText("e");
             box4_7.setText("n");
             box4_8.setText(".");
+            
+            score = 540 + 42069;
         }
     }
     //IF YOU SEE THIS, IGNORE IT.
@@ -2984,6 +3086,10 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_8.setBorder(blackBorder);
     }//GEN-LAST:event_box8_8FocusLost
 
+    private void scoreCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreCheckButtonActionPerformed
+        checkScore();
+    }//GEN-LAST:event_scoreCheckButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JTextField box0_0;
@@ -3067,6 +3173,15 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static javax.swing.JTextField box8_6;
     private static javax.swing.JTextField box8_7;
     private static javax.swing.JTextField box8_8;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JButton num1;
     private javax.swing.JButton num2;
     private javax.swing.JButton num3;
@@ -3076,5 +3191,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     private javax.swing.JButton num7;
     private javax.swing.JButton num8;
     private javax.swing.JButton num9;
+    private javax.swing.JButton scoreCheckButton;
+    private static javax.swing.JLabel scoreDisplay;
     // End of variables declaration//GEN-END:variables
 }
