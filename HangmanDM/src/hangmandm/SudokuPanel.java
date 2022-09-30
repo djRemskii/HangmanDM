@@ -6,6 +6,7 @@ package hangmandm;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 /**
@@ -14,22 +15,35 @@ import javax.swing.border.Border;
  */
 public class SudokuPanel extends javax.swing.JPanel {
 
-    private static final int[][] solution = new int[9][];
+    private static final int[][] solutionBoard = new int[9][9];
+    private static int[][] currentBoard = new int[9][9];
+    private static int[] focusedBox = new int[2];
+    private static JTextField[][] boxes = new JTextField[9][9]; 
     
     /**
      * Creates new form SudokuPanel
      */
     public SudokuPanel() {
-        solution[0] = new int[]{ 8,3,5,4,1,6,9,2,7 };
-        solution[1] = new int[]{ 2,9,6,8,5,7,4,3,1 };
-        solution[2] = new int[]{ 4,1,7,2,9,3,6,5,8 };
-        solution[3] = new int[]{ 5,6,9,1,3,4,7,8,2 };
-        solution[4] = new int[]{ 1,2,3,6,7,8,5,4,9 };
-        solution[5] = new int[]{ 7,4,8,5,2,9,1,6,3 };
-        solution[6] = new int[]{ 6,5,2,7,8,1,3,9,4 };
-        solution[7] = new int[]{ 9,8,1,3,4,5,2,7,6 };
-        solution[8] = new int[]{ 3,7,4,9,6,2,8,1,5 };
+        solutionBoard[0] = new int[]{ 8,3,5,4,1,6,9,2,7 };
+        solutionBoard[1] = new int[]{ 2,9,6,8,5,7,4,3,1 };
+        solutionBoard[2] = new int[]{ 4,1,7,2,9,3,6,5,8 };
+        solutionBoard[3] = new int[]{ 5,6,9,1,3,4,7,8,2 };
+        solutionBoard[4] = new int[]{ 1,2,3,6,7,8,5,4,9 };
+        solutionBoard[5] = new int[]{ 7,4,8,5,2,9,1,6,3 };
+        solutionBoard[6] = new int[]{ 6,5,2,7,8,1,3,9,4 };
+        solutionBoard[7] = new int[]{ 9,8,1,3,4,5,2,7,6 };
+        solutionBoard[8] = new int[]{ 3,7,4,9,6,2,8,1,5 };
+        
+        focusedBox[0] = 100;
+        focusedBox[1] = 100;
+        
         initComponents();
+        
+        boxAssigner();
+    }
+    
+    private static void boxAssigner(){
+        boxes[0][0] = box0_0;
     }
 
     /**
@@ -100,11 +114,22 @@ public class SudokuPanel extends javax.swing.JPanel {
 
     
     
-    
+    private static void setBox (int i){
+        int row = focusedBox[0];
+        int column = focusedBox[1];
+        if (row < 9 && column < 9){
+            currentBoard[row][column] = i;
+            System.out.println(currentBoard[row][column]);
+        } else {
+            System.out.println("No box selected");
+        }
+    }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        box0_0.setText("2");
+        setBox(2);
+        //boxes[focusedBox[0]][focusedBox[1]].setText("2");
+        boxes[0][0].setText("2");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     Border blackBorder = BorderFactory.createLineBorder(Color.BLACK);
@@ -118,6 +143,9 @@ public class SudokuPanel extends javax.swing.JPanel {
     private void box0_0FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_0FocusGained
         // TODO add your handling code here:
         box0_0.setBorder(redBorder);
+        focusedBox[0] = 0;
+        focusedBox[1] = 0;
+        System.out.println(focusedBox[0] + " " + focusedBox[1]);
     }//GEN-LAST:event_box0_0FocusGained
 
     private void box0_0FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_box0_0FocusLost
@@ -127,7 +155,7 @@ public class SudokuPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField box0_0;
+    private static javax.swing.JTextField box0_0;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
