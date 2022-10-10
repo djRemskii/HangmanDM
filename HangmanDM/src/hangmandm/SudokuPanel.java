@@ -7,6 +7,9 @@ package hangmandm;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -3272,6 +3275,16 @@ public class SudokuPanel extends javax.swing.JPanel {
 
     private void scoreCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreCheckButtonActionPerformed
         checkScore();
+        try {
+            HighScorePanel.scoreCheck(score);
+        } catch (IOException ex) {
+            Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            HighScorePanel.savedData();
+        } catch (IOException ex) {
+            Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_scoreCheckButtonActionPerformed
 
     private void box0_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_2ActionPerformed
