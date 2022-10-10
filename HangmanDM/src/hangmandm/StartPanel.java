@@ -4,6 +4,16 @@
  */
 package hangmandm;
 
+
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.KeyStroke;
+
 /***************************************************************  
 *  file: StartPanel.java 
 *  author: J. Ong 
@@ -17,9 +27,25 @@ package hangmandm;
 ****************************************************************/ 
 public class StartPanel extends javax.swing.JPanel {
 
+    private JLabel label;
     //method: StartPanel
     //purpose: constructor. initializes components
     public StartPanel() {
+        AbstractAction credits = new AbstractAction("goToCredits"){
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("it worked");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            }
+        };
+        label = new JLabel();
+        label.setOpaque(false);
+        label.setBounds(0, 0, 1, 1);
+        
+        
+        label.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('a'), "goToCredits");
+        label.getActionMap().put("goToCredits", credits);
         initComponents();
     }
 

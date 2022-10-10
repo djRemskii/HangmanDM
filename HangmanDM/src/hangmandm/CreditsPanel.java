@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package hangmandm;
+import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 /***************************************************************  
@@ -16,12 +17,14 @@ import javax.swing.*;
 *  purpose: This panel holds the credits for the HangmanDM game. Names and Bronco IDS are included.
 *  
 ****************************************************************/ 
-public class CreditsPanel extends javax.swing.JPanel {
+public class CreditsPanel extends javax.swing.JPanel  {
 
+    
     //method: CreditsPanel
     //purpose: constructor. initializes components
     public CreditsPanel() {
         initComponents();
+        
     }
 
     /**
@@ -127,6 +130,11 @@ public class CreditsPanel extends javax.swing.JPanel {
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+    
+    
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -9,6 +9,9 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import javax.swing.JPanel;
 import javax.swing.*;
@@ -32,7 +35,7 @@ public class HangmanDM{
     
     public static JFrame frame;
     public static CardLayout cardLayout;
-    
+
     
     // constructor: HangmanDM
     // purpose: Creates the frame and adds the panels as cards in cardLayout.
@@ -47,6 +50,8 @@ public class HangmanDM{
                 }
             }
         });
+        
+        
         
         //creates the frame
         frame = new JFrame("HangmanDM");
@@ -66,7 +71,8 @@ public class HangmanDM{
         frame.add(new HighScorePanel(), "high scores");
         frame.add(new GamePanel(), "game");
         frame.add(new SudokuPanel(), "sudoku");
-         
+        
+        
         
         
         //add the end page tied to the skip button
@@ -87,14 +93,23 @@ public class HangmanDM{
         } catch (InterruptedException ex) {
             Logger.getLogger(HangmanDM.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+
+       
+        
+        
         cardLayout.show(frame.getContentPane(), "menu");
+        
     }
     
     
     // method: main  
     // purpose: creates a new HangmanDM object, essentially starting the program.
     public static void main(String[]args) throws IOException{
+        
+        
         new HangmanDM();
+        
         HighScorePanel.loadSavedData();
     }
 }

@@ -6,7 +6,15 @@ package hangmandm;
 
 
 import static hangmandm.HangmanDM.frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.KeyStroke;
 
 /***************************************************************  
 *  file: MenuPanel.java 
@@ -20,13 +28,28 @@ import javax.swing.JFrame;
 *  High Score, and Credits buttons. It also has a picture in it.
 *  
 ****************************************************************/  
-public class MenuPanel extends javax.swing.JPanel {
+public class MenuPanel extends javax.swing.JPanel implements KeyListener {
 
+    private JLabel label;
     //method: MenuPanel
     //purpose: constructor. initializes components.
     public MenuPanel() {
         initComponents();
+        AbstractAction credits = new AbstractAction("goToCredits"){
         
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("it worked");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            }
+        };
+        label = new JLabel();
+        label.setOpaque(false);
+        label.setBounds(0, 0, 1, 1);
+        
+        
+        label.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('a'), "goToCredits");
+        label.getActionMap().put("goToCredits", credits);
     }
 
     // method: initComponents  
@@ -177,6 +200,7 @@ public class MenuPanel extends javax.swing.JPanel {
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "sudoku");
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -188,4 +212,28 @@ public class MenuPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_F1)
+        {
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_F1)
+        {
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+        }    
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_F1)
+        {
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+        }    
+    }
 }
