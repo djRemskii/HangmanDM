@@ -6,6 +6,7 @@ package hangmandm;
 
 
 import static hangmandm.HangmanDM.frame;
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -40,7 +41,14 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
         @Override
         public void actionPerformed(ActionEvent e){
             System.out.println("it worked");
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            CardLayout cards = new CardLayout();
+            jDialog1.setLayout(cards);
+            jDialog1.add(new CreditsPanelNoMenu(), "credits");
+            cards.show(jDialog1.getContentPane(), "credits");
+            jDialog1.setModal(true);
+            jDialog1.pack();
+            jDialog1.setLocationRelativeTo(null);
+            jDialog1.setVisible(true);
             }
         };
        
@@ -63,6 +71,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -71,6 +80,17 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -215,6 +235,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

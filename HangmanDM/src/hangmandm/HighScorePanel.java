@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -55,7 +56,14 @@ public class HighScorePanel extends javax.swing.JPanel {
         @Override
         public void actionPerformed(ActionEvent e){
             System.out.println("it worked");
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            CardLayout cards = new CardLayout();
+            jDialog1.setLayout(cards);
+            jDialog1.add(new CreditsPanelNoMenu(), "credits");
+            cards.show(jDialog1.getContentPane(), "credits");
+            jDialog1.setModal(true);
+            jDialog1.pack();
+            jDialog1.setLocationRelativeTo(null);
+            jDialog1.setVisible(true);
             }
         };
        
@@ -205,6 +213,7 @@ public class HighScorePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         highScore1 = new javax.swing.JLabel();
         nameLabel1 = new javax.swing.JLabel();
@@ -218,6 +227,17 @@ public class HighScorePanel extends javax.swing.JPanel {
         highScore5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -263,8 +283,6 @@ public class HighScorePanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setText("jLabel2");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -302,7 +320,7 @@ public class HighScorePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -343,6 +361,7 @@ public class HighScorePanel extends javax.swing.JPanel {
     private static javax.swing.JLabel highScore4;
     private static javax.swing.JLabel highScore5;
     private static javax.swing.JButton jButton2;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private static javax.swing.JLabel nameLabel1;

@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
@@ -66,7 +67,14 @@ public class SudokuPanel extends javax.swing.JPanel {
         @Override
         public void actionPerformed(ActionEvent e){
             System.out.println("it worked");
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            CardLayout cards = new CardLayout();
+            jDialog1.setLayout(cards);
+            jDialog1.add(new CreditsPanelNoMenu(), "credits");
+            cards.show(jDialog1.getContentPane(), "credits");
+            jDialog1.setModal(true);
+            jDialog1.pack();
+            jDialog1.setLocationRelativeTo(null);
+            jDialog1.setVisible(true);
             }
         };
        
@@ -197,6 +205,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         num1 = new javax.swing.JButton();
         num2 = new javax.swing.JButton();
         num3 = new javax.swing.JButton();
@@ -3195,6 +3204,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static javax.swing.JTextField box8_6;
     private static javax.swing.JTextField box8_7;
     private static javax.swing.JTextField box8_8;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;

@@ -5,6 +5,7 @@
 package hangmandm;
 
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -67,7 +68,14 @@ public class GamePanel extends javax.swing.JPanel {
         @Override
         public void actionPerformed(ActionEvent e){
             System.out.println("it worked");
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            CardLayout cards = new CardLayout();
+            jDialog1.setLayout(cards);
+            jDialog1.add(new CreditsPanelNoMenu(), "credits");
+            cards.show(jDialog1.getContentPane(), "credits");
+            jDialog1.setModal(true);
+            jDialog1.pack();
+            jDialog1.setLocationRelativeTo(null);
+            jDialog1.setVisible(true);
             }
         };
        
@@ -146,6 +154,7 @@ public class GamePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         skipButton = new javax.swing.JButton();
         buttonA = new javax.swing.JButton();
         buttonB = new javax.swing.JButton();
@@ -187,6 +196,17 @@ public class GamePanel extends javax.swing.JPanel {
         letter9 = new javax.swing.JLabel();
         letter10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -1071,6 +1091,7 @@ public class GamePanel extends javax.swing.JPanel {
     private static javax.swing.JButton buttonY;
     private static javax.swing.JButton buttonZ;
     public static javax.swing.JLabel hangmanSprite;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
