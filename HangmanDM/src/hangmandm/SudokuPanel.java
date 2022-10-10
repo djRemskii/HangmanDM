@@ -59,8 +59,26 @@ public class SudokuPanel extends javax.swing.JPanel {
         score = 540;
         scoreChecked = false;
         
-        
         initComponents();
+        
+        num1.setToolTipText("Choose 1");
+        num2.setToolTipText("Choose 2"); 
+        num3.setToolTipText("Choose 3");
+        num4.setToolTipText("Choose 4"); 
+        num5.setToolTipText("Choose 5"); 
+        num6.setToolTipText("Choose 6"); 
+        num7.setToolTipText("Choose 7"); 
+        num8.setToolTipText("Choose 8"); 
+        num9.setToolTipText("Choose 9"); 
+        scoreCheckButton.setToolTipText("Check Score");
+       
+        boxTT();
+        
+        
+        
+        
+        
+        
         
         AbstractAction credits = new AbstractAction("goToCredits"){
         
@@ -89,6 +107,101 @@ public class SudokuPanel extends javax.swing.JPanel {
         
     }
     
+    private void boxTT()
+    {
+        //first row
+        box0_0.setToolTipText("Can't enter here");
+        box0_1.setToolTipText("Enter here");
+        box0_2.setToolTipText("Enter here");
+        box0_3.setToolTipText("Can't enter here");
+        box0_4.setToolTipText("Enter here");
+        box0_5.setToolTipText("Can't enter here");
+        box0_6.setToolTipText("Enter here");
+        box0_7.setToolTipText("Enter here");
+        box0_8.setToolTipText("Can't enter here");
+      
+        box1_0.setToolTipText("Enter here");
+        box1_1.setToolTipText("Enter here");
+        box1_2.setToolTipText("Enter here");
+        box1_3.setToolTipText("Enter here");
+        box1_4.setToolTipText("Enter here");
+        box1_5.setToolTipText("Enter here");
+        box1_6.setToolTipText("Can't enter here");
+        box1_7.setToolTipText("Enter here");
+        box1_8.setToolTipText("Enter here");
+       
+        box2_0.setToolTipText("Enter here");
+        box2_1.setToolTipText("Can't enter here");
+        box2_2.setToolTipText("Enter here");
+        box2_3.setToolTipText("Enter here");
+        box2_4.setToolTipText("Enter here");
+        box2_5.setToolTipText("Enter here");
+        box2_6.setToolTipText("Can't enter here");
+        box2_7.setToolTipText("Can't enter here");
+        box2_8.setToolTipText("Enter here");
+        
+        //Second row
+        box3_0.setToolTipText("Can't enter here");
+        box3_1.setToolTipText("Enter here");
+        box3_2.setToolTipText("Can't enter here");
+        box3_3.setToolTipText("Enter here");
+        box3_4.setToolTipText("Can't enter here");
+        box3_5.setToolTipText("Enter here");
+        box3_6.setToolTipText("Can't enter here");
+        box3_7.setToolTipText("Can't enter here");
+        box3_8.setToolTipText("Enter here");
+      
+        box4_0.setToolTipText("Enter here");
+        box4_1.setToolTipText("Enter here");
+        box4_2.setToolTipText("Enter here");
+        box4_3.setToolTipText("Enter here");
+        box4_4.setToolTipText("Can't enter here");
+        box4_5.setToolTipText("Enter here");
+        box4_6.setToolTipText("Enter here");
+        box4_7.setToolTipText("Enter here");
+        box4_8.setToolTipText("Enter here");
+       
+        box5_0.setToolTipText("Enter here");
+        box5_1.setToolTipText("Can't enter here");
+        box5_2.setToolTipText("Can't enter here");
+        box5_3.setToolTipText("Enter here");
+        box5_4.setToolTipText("Can't enter here");
+        box5_5.setToolTipText("Enter here");
+        box5_6.setToolTipText("Can't enter here");
+        box5_7.setToolTipText("Enter here");
+        box5_8.setToolTipText("Can't enter here");
+        
+        //third row
+        box6_0.setToolTipText("Enter here");
+        box6_1.setToolTipText("Can't enter here");
+        box6_2.setToolTipText("Can't enter here");
+        box6_3.setToolTipText("Enter here");
+        box6_4.setToolTipText("Enter here");
+        box6_5.setToolTipText("Enter here");
+        box6_6.setToolTipText("Enter here");
+        box6_7.setToolTipText("Can't enter here");
+        box6_8.setToolTipText("Enter here");
+      
+        box7_0.setToolTipText("Enter here");
+        box7_1.setToolTipText("Enter here");
+        box7_2.setToolTipText("Can't enter here");
+        box7_3.setToolTipText("Enter here");
+        box7_4.setToolTipText("Enter here");
+        box7_5.setToolTipText("Enter here");
+        box7_6.setToolTipText("Enter here");
+        box7_7.setToolTipText("Enter here");
+        box7_8.setToolTipText("Enter here");
+       
+        box8_0.setToolTipText("Can't enter here");
+        box8_1.setToolTipText("Enter here");
+        box8_2.setToolTipText("Enter here");
+        box8_3.setToolTipText("Can't enter here");
+        box8_4.setToolTipText("Enter here");
+        box8_5.setToolTipText("Can't enter here");
+        box8_6.setToolTipText("Enter here");
+        box8_7.setToolTipText("Enter here");
+        box8_8.setToolTipText("Can't enter here");
+    }
     private static void boxAssigner(){
         boxes[0][0] = box0_0;
         boxes[0][1] = box0_1;
@@ -443,6 +556,11 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_1FocusLost(evt);
             }
         });
+        box0_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box0_1ActionPerformed(evt);
+            }
+        });
         add(box0_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 111, -1, -1));
 
         box0_2.setEditable(false);
@@ -461,6 +579,11 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 box0_2FocusLost(evt);
+            }
+        });
+        box0_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box0_2ActionPerformed(evt);
             }
         });
         add(box0_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 111, -1, -1));
@@ -482,6 +605,11 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 box0_3FocusLost(evt);
+            }
+        });
+        box0_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box0_3ActionPerformed(evt);
             }
         });
         add(box0_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(251, 111, -1, -1));
@@ -523,6 +651,11 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 box0_5FocusLost(evt);
+            }
+        });
+        box0_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box0_5ActionPerformed(evt);
             }
         });
         add(box0_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 111, -1, -1));
@@ -586,6 +719,11 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box0_8FocusLost(evt);
             }
         });
+        box0_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box0_8ActionPerformed(evt);
+            }
+        });
         add(box0_8, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 111, -1, -1));
 
         box1_0.setEditable(false);
@@ -626,6 +764,11 @@ public class SudokuPanel extends javax.swing.JPanel {
                 box1_1FocusLost(evt);
             }
         });
+        box1_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box1_1ActionPerformed(evt);
+            }
+        });
         add(box1_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 136, -1, -1));
 
         box1_2.setEditable(false);
@@ -644,6 +787,11 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 box1_2FocusLost(evt);
+            }
+        });
+        box1_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box1_2ActionPerformed(evt);
             }
         });
         add(box1_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 136, -1, -1));
@@ -1294,6 +1442,11 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 box4_7FocusLost(evt);
+            }
+        });
+        box4_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                box4_7ActionPerformed(evt);
             }
         });
         add(box4_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(358, 218, -1, -1));
@@ -3120,6 +3273,38 @@ public class SudokuPanel extends javax.swing.JPanel {
     private void scoreCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreCheckButtonActionPerformed
         checkScore();
     }//GEN-LAST:event_scoreCheckButtonActionPerformed
+
+    private void box0_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box0_2ActionPerformed
+
+    private void box0_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box0_1ActionPerformed
+
+    private void box1_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box1_2ActionPerformed
+
+    private void box1_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box1_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box1_1ActionPerformed
+
+    private void box0_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box0_8ActionPerformed
+
+    private void box4_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box4_7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box4_7ActionPerformed
+
+    private void box0_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box0_3ActionPerformed
+
+    private void box0_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_box0_5ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
