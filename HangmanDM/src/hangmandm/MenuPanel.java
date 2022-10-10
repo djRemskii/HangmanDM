@@ -30,7 +30,7 @@ import javax.swing.KeyStroke;
 ****************************************************************/  
 public class MenuPanel extends javax.swing.JPanel implements KeyListener {
 
-    private JLabel label;
+   
     //method: MenuPanel
     //purpose: constructor. initializes components.
     public MenuPanel() {
@@ -43,13 +43,13 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
             }
         };
-        label = new JLabel();
-        label.setOpaque(false);
-        label.setBounds(0, 0, 1, 1);
+       
+        jLabel3.setOpaque(false);
+        jLabel3.setBounds(0, 0, 1, 1);
         
         
-        label.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke('a'), "goToCredits");
-        label.getActionMap().put("goToCredits", credits);
+        jLabel3.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
+        jLabel3.getActionMap().put("goToCredits", credits);
     }
 
     // method: initComponents  
@@ -70,6 +70,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -149,7 +150,11 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addContainerGap(116, Short.MAX_VALUE))))
+                        .addContainerGap(119, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +164,9 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
                         .addGap(40, 40, 40)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel3)
+                        .addGap(105, 105, 105)
                         .addComponent(jLabel1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,6 +217,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 

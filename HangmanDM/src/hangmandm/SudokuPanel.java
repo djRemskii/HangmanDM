@@ -5,8 +5,12 @@
 package hangmandm;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
+import javax.swing.JComponent;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 import javax.swing.border.Border;
 
 /**
@@ -56,6 +60,22 @@ public class SudokuPanel extends javax.swing.JPanel {
         
         
         initComponents();
+        
+        AbstractAction credits = new AbstractAction("goToCredits"){
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("it worked");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            }
+        };
+       
+        jLabel2.setOpaque(false);
+        jLabel2.setBounds(0, 0, 1, 1);
+        
+        
+        jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
+        jLabel2.getActionMap().put("goToCredits", credits);
         
         boxAssigner();
         
@@ -278,6 +298,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
 
         setForeground(new java.awt.Color(255, 51, 51));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -2091,6 +2112,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         jSeparator9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
         jSeparator9.setPreferredSize(new java.awt.Dimension(7, 50));
         add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 275, -1, 75));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -3174,6 +3196,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static javax.swing.JTextField box8_7;
     private static javax.swing.JTextField box8_8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;

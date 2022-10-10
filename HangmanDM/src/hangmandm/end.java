@@ -4,6 +4,11 @@
  */
 package hangmandm;
 
+import java.awt.event.ActionEvent;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
+
 /*************************************************************** 
 * file: DoubleIt.java 
 * author: D. Menkir 
@@ -27,6 +32,22 @@ public class end extends javax.swing.JPanel {
        score = ("" + points);
        
         initComponents();
+        
+        AbstractAction credits = new AbstractAction("goToCredits"){
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("it worked");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            }
+        };
+       
+        jLabel2.setOpaque(false);
+        jLabel2.setBounds(0, 0, 1, 1);
+        
+        
+        jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
+        jLabel2.getActionMap().put("goToCredits", credits);
     }
 
     //method: getScore
@@ -48,6 +69,7 @@ public class end extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         label1 = new java.awt.Label();
         button1 = new java.awt.Button();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -83,12 +105,18 @@ public class end extends javax.swing.JPanel {
                                 .addGap(59, 59, 59)
                                 .addComponent(jLabel1))
                             .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(138, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jLabel1)
@@ -109,6 +137,7 @@ public class end extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
 

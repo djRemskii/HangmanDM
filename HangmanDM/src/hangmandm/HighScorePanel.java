@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,8 +16,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /***************************************************************  
 *  file: HighScoresPanel.java 
@@ -46,6 +50,21 @@ public class HighScorePanel extends javax.swing.JPanel {
     public HighScorePanel() {
         main();
         initComponents();
+        AbstractAction credits = new AbstractAction("goToCredits"){
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("it worked");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            }
+        };
+       
+        jLabel2.setOpaque(false);
+        jLabel2.setBounds(0, 0, 1, 1);
+        
+        
+        jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
+        jLabel2.getActionMap().put("goToCredits", credits);
     }
    
     //method:savedData
@@ -198,6 +217,7 @@ public class HighScorePanel extends javax.swing.JPanel {
         highScore4 = new javax.swing.JLabel();
         highScore5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -243,37 +263,46 @@ public class HighScorePanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jButton2)
-                .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(24, 24, 24)
+                        .addComponent(jButton2)
+                        .addGap(74, 74, 74)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nameLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nameLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nameLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nameLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(highScore5)
-                            .addComponent(highScore4)
-                            .addComponent(highScore3)
-                            .addComponent(highScore2)
-                            .addComponent(highScore1))))
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nameLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(nameLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(highScore5)
+                                    .addComponent(highScore4)
+                                    .addComponent(highScore3)
+                                    .addComponent(highScore2)
+                                    .addComponent(highScore1)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel2)))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -315,6 +344,7 @@ public class HighScorePanel extends javax.swing.JPanel {
     private static javax.swing.JLabel highScore5;
     private static javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private static javax.swing.JLabel nameLabel1;
     private static javax.swing.JLabel nameLabel2;
     private static javax.swing.JLabel nameLabel3;

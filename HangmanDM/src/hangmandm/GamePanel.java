@@ -12,8 +12,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.KeyStroke;
 import javax.swing.Timer;
 
 
@@ -59,6 +62,21 @@ public class GamePanel extends javax.swing.JPanel {
         
         spriteReset();
         letterReset();
+        AbstractAction credits = new AbstractAction("goToCredits"){
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("it worked");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "credits");
+            }
+        };
+       
+        jLabel2.setOpaque(false);
+        jLabel2.setBounds(0, 0, 1, 1);
+        
+        
+        jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
+        jLabel2.getActionMap().put("goToCredits", credits);
     }
     
     //CODE TO SWITCH IMAGES
@@ -168,6 +186,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter8 = new javax.swing.JLabel();
         letter9 = new javax.swing.JLabel();
         letter10 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(600, 400));
 
@@ -581,6 +600,7 @@ public class GamePanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(hangmanSprite)
@@ -602,7 +622,7 @@ public class GamePanel extends javax.swing.JPanel {
                     .addComponent(hangmanSprite))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonA)
                     .addComponent(buttonB)
@@ -634,7 +654,9 @@ public class GamePanel extends javax.swing.JPanel {
                     .addComponent(buttonX)
                     .addComponent(buttonY)
                     .addComponent(buttonZ))
-                .addGap(47, 47, 47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1050,6 +1072,7 @@ public class GamePanel extends javax.swing.JPanel {
     private static javax.swing.JButton buttonZ;
     public static javax.swing.JLabel hangmanSprite;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private static javax.swing.JLabel letter1;
     private static javax.swing.JLabel letter10;
