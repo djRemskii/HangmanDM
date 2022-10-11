@@ -62,6 +62,12 @@ public class ColorGamePanel extends javax.swing.JPanel {
         randomize.add(3);
         randomize.add(4);
         repeat();
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }
+    };
         AbstractAction credits = new AbstractAction("goToCredits"){
         
         @Override
@@ -85,6 +91,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         
         jLabel3.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
         jLabel3.getActionMap().put("goToCredits", credits);
+        jLabel3.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel3.getActionMap().put("escape", esc);
     }
     
     //method: repeat

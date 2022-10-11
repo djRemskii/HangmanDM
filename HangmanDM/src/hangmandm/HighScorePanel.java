@@ -51,9 +51,16 @@ public class HighScorePanel extends javax.swing.JPanel {
     public HighScorePanel() {
         main();
         initComponents();
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }
+    };
         AbstractAction credits = new AbstractAction("goToCredits"){
         
         @Override
+        
         public void actionPerformed(ActionEvent e){
             System.out.println("it worked");
             CardLayout cards = new CardLayout();
@@ -73,6 +80,9 @@ public class HighScorePanel extends javax.swing.JPanel {
         
         jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
         jLabel2.getActionMap().put("goToCredits", credits);
+        
+        jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel2.getActionMap().put("escape", esc);
     }
    
     //method:savedData

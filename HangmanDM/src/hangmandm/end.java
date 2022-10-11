@@ -34,6 +34,13 @@ public class end extends javax.swing.JPanel {
        
         initComponents();
         
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }
+    };
+        
         AbstractAction credits = new AbstractAction("goToCredits"){
         
         @Override
@@ -56,6 +63,9 @@ public class end extends javax.swing.JPanel {
         
         jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
         jLabel2.getActionMap().put("goToCredits", credits);
+        
+        jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel2.getActionMap().put("escape", esc);
     }
 
     //method: getScore
