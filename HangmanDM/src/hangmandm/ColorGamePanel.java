@@ -38,7 +38,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
     LocalDateTime now = LocalDateTime.now();
     private int randomVessel;
     private int randomVessel2;
-    private static int score;
+    public static int score;
     private String colorL;
     private String color;
     private int round;
@@ -160,10 +160,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
 
             //resetGame();
             System.out.println("game ends");
-            HighScorePanel.scoreCheck(getScore());
-            HighScorePanel.savedData();
-            HangmanDM.frame.add(new end(getScore()),"endPanel");
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "sudoku");
         }          
     }
     

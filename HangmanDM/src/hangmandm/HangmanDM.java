@@ -74,7 +74,6 @@ public class HangmanDM{
         
         
         
-        
         //add the end page tied to the skip button
         //frame.add(new GamingPanel(), "end");
         //sets the panel on top

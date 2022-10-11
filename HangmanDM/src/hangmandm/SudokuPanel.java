@@ -319,7 +319,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         System.out.println(score);
         scoreDisplay.setText("Score: " + score);
         try {
-            HighScorePanel.scoreCheck(score);
+            HighScorePanel.scoreCheck(getScoreSudoku());
         } 
         catch (IOException ex) {
             Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -330,6 +330,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         catch (IOException ex) {
             Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
+        HangmanDM.frame.add(new end(getScoreSudoku()),"endPanel");
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+        
     }
 
     /**
@@ -2315,6 +2318,11 @@ public class SudokuPanel extends javax.swing.JPanel {
             codeCheck();
             return false;
         }
+        
+    }
+        private static int getScoreSudoku(){
+        int finalScore = score + ColorGamePanel.score;
+        return finalScore;
     }
     
     Border blackBorder = BorderFactory.createLineBorder(Color.BLACK,2);
