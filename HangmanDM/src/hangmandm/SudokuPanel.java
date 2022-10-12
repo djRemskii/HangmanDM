@@ -29,7 +29,6 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static int[] focusedBox = new int[2];
     private static JTextField[][] boxes = new JTextField[9][9]; 
     private static int score;
-    private static boolean scoreChecked;
     
     
     /**
@@ -60,7 +59,6 @@ public class SudokuPanel extends javax.swing.JPanel {
         focusedBox[1] = 100;
         
         score = 540;
-        scoreChecked = false;
         
         initComponents();
         
@@ -213,6 +211,74 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_7.setToolTipText("Enter here");
         box8_8.setToolTipText("Can't enter here");
     }
+    
+    private static void reset(){
+        currentBoard[0] = new int[]{ 8,0,0,4,0,6,0,0,7 };
+        currentBoard[1] = new int[]{ 0,0,0,0,0,0,4,0,0 };
+        currentBoard[2] = new int[]{ 0,1,0,0,0,0,6,5,0 };
+        currentBoard[3] = new int[]{ 5,0,9,0,3,0,7,8,0 };
+        currentBoard[4] = new int[]{ 0,0,0,0,7,0,0,0,0 };
+        currentBoard[5] = new int[]{ 0,4,8,0,2,0,1,0,3 };
+        currentBoard[6] = new int[]{ 0,5,2,0,0,0,0,9,0 };
+        currentBoard[7] = new int[]{ 0,0,1,0,0,0,0,0,0 };
+        currentBoard[8] = new int[]{ 3,0,0,9,0,2,0,0,5 };
+        box0_1.setText("");
+        box0_2.setText("");
+        box0_4.setText("");
+        box0_6.setText("");
+        box0_7.setText("");
+        box1_0.setText("");
+        box1_1.setText("");
+        box1_2.setText("");
+        box1_4.setText("");
+        box1_5.setText("");
+        box1_7.setText("");
+        box1_8.setText("");
+        box2_0.setText("");
+        box2_2.setText("");
+        box2_3.setText("");
+        box2_4.setText("");
+        box2_5.setText("");
+        box2_8.setText("");
+        box3_1.setText("");
+        box3_3.setText("");
+        box3_5.setText("");
+        box3_8.setText("");
+        box4_0.setText("");
+        box4_1.setText("");
+        box4_2.setText("");
+        box4_3.setText("");
+        box4_5.setText("");
+        box4_6.setText("");
+        box4_7.setText("");
+        box4_8.setText("");
+        box5_0.setText("");
+        box5_3.setText("");
+        box5_5.setText("");
+        box6_0.setText("");
+        box6_3.setText("");
+        box6_4.setText("");
+        box6_5.setText("");
+        box6_6.setText("");
+        box6_8.setText("");
+        box7_2.setText("");
+        box7_0.setText("");
+        box7_1.setText("");
+        box7_3.setText("");
+        box7_4.setText("");
+        box7_5.setText("");
+        box7_6.setText("");
+        box7_7.setText("");
+        box7_8.setText("");
+        box8_1.setText("");
+        box8_2.setText("");
+        box8_4.setText("");
+        box8_6.setText("");
+        box8_7.setText("");
+        score = 540;
+        scoreDisplay.setText("Score: " + score);
+    }
+    
     private static void boxAssigner(){
         boxes[0][0] = box0_0;
         boxes[0][1] = box0_1;
@@ -306,16 +372,13 @@ public class SudokuPanel extends javax.swing.JPanel {
     }
     
     private static void checkScore(){
-        if (!scoreChecked){
             for(int i=0; i<9; i++){
                 for(int j=0; j<9; j++){
                     if(solutionBoard[i][j] != currentBoard[i][j]){
                         score -= 10;
-                    }
                 }
             }
         }
-        scoreChecked = true;
         System.out.println(score);
         scoreDisplay.setText("Score: " + score);
         try {
@@ -332,6 +395,8 @@ public class SudokuPanel extends javax.swing.JPanel {
         }
         HangmanDM.frame.add(new end(getScoreSudoku()),"endPanel");
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+        
+        reset();
         
     }
 
