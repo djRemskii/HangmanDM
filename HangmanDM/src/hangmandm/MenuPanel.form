@@ -141,6 +141,7 @@
               <Font name="Stencil" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="PLAY"/>
+            <Property name="toolTipText" type="java.lang.String" value="PLAY"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
@@ -152,6 +153,7 @@
               <Font name="Stencil" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="HIGH SCORES"/>
+            <Property name="toolTipText" type="java.lang.String" value="HIGH SCORES"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
@@ -163,6 +165,7 @@
               <Font name="Stencil" size="12" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="CREDITS"/>
+            <Property name="toolTipText" type="java.lang.String" value="CREDITS"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -181,6 +184,7 @@
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
         <Property name="text" type="java.lang.String" value="sudokupanel"/>
+        <Property name="toolTipText" type="java.lang.String" value="sudokupanel"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>

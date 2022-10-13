@@ -55,6 +55,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         initComponents();
+        boxTT();
         locations = new Point[]{jButton1.getLocation(), jButton2.getLocation(), jButton3.getLocation(), jButton4.getLocation(), jButton5.getLocation()};
         randomize.add(0);
         randomize.add(1);
@@ -86,7 +87,19 @@ public class ColorGamePanel extends javax.swing.JPanel {
         jLabel3.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
         jLabel3.getActionMap().put("goToCredits", credits);
     }
-    
+    //Method boxTT
+    //Purpose: Adds tool tips
+    private void boxTT()
+    {
+        //first row
+        jButton1.setToolTipText("Red");
+        jButton2.setToolTipText("Purple");
+        jButton3.setToolTipText("Yellow");
+        jButton4.setToolTipText("Blue");
+        jButton5.setToolTipText("Green");
+    }
+      
+        
     //method: repeat
     //purpose: randomizes button location, word color, and word text
     private void repeat()
@@ -268,6 +281,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
         add(jLabel2);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RedButton.png"))); // NOI18N
+        jButton1.setToolTipText("");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

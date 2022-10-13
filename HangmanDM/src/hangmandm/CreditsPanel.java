@@ -26,7 +26,8 @@ public class CreditsPanel extends javax.swing.JPanel  {
         initComponents();
         
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,6 +49,7 @@ public class CreditsPanel extends javax.swing.JPanel  {
 
         jButton1.setFont(new java.awt.Font("Stencil", 0, 14)); // NOI18N
         jButton1.setText("MENU");
+        jButton1.setToolTipText("Menu");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

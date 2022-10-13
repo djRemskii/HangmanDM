@@ -100,6 +100,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
 
         jButton3.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton3.setText("PLAY");
+        jButton3.setToolTipText("PLAY");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -108,6 +109,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
 
         jButton2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton2.setText("HIGH SCORES");
+        jButton2.setToolTipText("HIGH SCORES");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -116,6 +118,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
 
         jButton1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton1.setText("CREDITS");
+        jButton1.setToolTipText("CREDITS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -149,6 +152,7 @@ public class MenuPanel extends javax.swing.JPanel implements KeyListener {
         jLabel1.setText("DM MINIGAMES");
 
         jButton4.setText("sudokupanel");
+        jButton4.setToolTipText("sudokupanel");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

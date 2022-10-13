@@ -180,6 +180,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SKIP"/>
+        <Property name="toolTipText" type="java.lang.String" value="SKIP"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="skipButtonActionPerformed"/>
@@ -191,6 +192,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="toolTipText" type="java.lang.String" value="A"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonAActionPerformed"/>
@@ -205,6 +207,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="B"/>
+        <Property name="toolTipText" type="java.lang.String" value="B"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonBActionPerformed"/>
@@ -219,6 +222,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="C"/>
+        <Property name="toolTipText" type="java.lang.String" value="C"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCActionPerformed"/>
@@ -233,6 +237,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="D"/>
+        <Property name="toolTipText" type="java.lang.String" value="D"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonDActionPerformed"/>
@@ -247,6 +252,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="E"/>
+        <Property name="toolTipText" type="java.lang.String" value="E"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonEActionPerformed"/>
@@ -261,6 +267,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="F"/>
+        <Property name="toolTipText" type="java.lang.String" value="F"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonFActionPerformed"/>
@@ -275,6 +282,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="G"/>
+        <Property name="toolTipText" type="java.lang.String" value="G"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGActionPerformed"/>
@@ -289,6 +297,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="H"/>
+        <Property name="toolTipText" type="java.lang.String" value="H"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonHActionPerformed"/>
@@ -303,6 +312,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="I"/>
+        <Property name="toolTipText" type="java.lang.String" value="I"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonIActionPerformed"/>
@@ -317,6 +327,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="J"/>
+        <Property name="toolTipText" type="java.lang.String" value="J"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonJActionPerformed"/>
@@ -331,6 +342,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="K"/>
+        <Property name="toolTipText" type="java.lang.String" value="K"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonKActionPerformed"/>
@@ -345,6 +357,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="L"/>
+        <Property name="toolTipText" type="java.lang.String" value="L"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLActionPerformed"/>
@@ -359,6 +372,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="M"/>
+        <Property name="toolTipText" type="java.lang.String" value="M"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonMActionPerformed"/>
@@ -373,6 +387,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="N"/>
+        <Property name="toolTipText" type="java.lang.String" value="N"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonNActionPerformed"/>
@@ -387,6 +402,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="O"/>
+        <Property name="toolTipText" type="java.lang.String" value="O"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonOActionPerformed"/>
@@ -401,6 +417,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="P"/>
+        <Property name="toolTipText" type="java.lang.String" value="P"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonPActionPerformed"/>
@@ -415,6 +432,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Q"/>
+        <Property name="toolTipText" type="java.lang.String" value="Q"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonQActionPerformed"/>
@@ -429,6 +447,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="R"/>
+        <Property name="toolTipText" type="java.lang.String" value="R"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonRActionPerformed"/>
@@ -443,6 +462,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="S"/>
+        <Property name="toolTipText" type="java.lang.String" value="S"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonSActionPerformed"/>
@@ -457,6 +477,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="T"/>
+        <Property name="toolTipText" type="java.lang.String" value="T"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonTActionPerformed"/>
@@ -471,6 +492,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="U"/>
+        <Property name="toolTipText" type="java.lang.String" value="U"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonUActionPerformed"/>
@@ -485,6 +507,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="V"/>
+        <Property name="toolTipText" type="java.lang.String" value="V"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonVActionPerformed"/>
@@ -499,6 +522,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="W"/>
+        <Property name="toolTipText" type="java.lang.String" value="W"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonWActionPerformed"/>
@@ -513,6 +537,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="X"/>
+        <Property name="toolTipText" type="java.lang.String" value="X"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonXActionPerformed"/>
@@ -527,6 +552,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Y"/>
+        <Property name="toolTipText" type="java.lang.String" value="Y"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonYActionPerformed"/>
@@ -541,6 +567,7 @@
           <Font name="Stencil" size="12" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Z"/>
+        <Property name="toolTipText" type="java.lang.String" value="Z"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonZActionPerformed"/>

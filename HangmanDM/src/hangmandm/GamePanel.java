@@ -212,6 +212,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         skipButton.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         skipButton.setText("SKIP");
+        skipButton.setToolTipText("SKIP");
         skipButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 skipButtonActionPerformed(evt);
@@ -220,6 +221,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonA.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonA.setText("A");
+        buttonA.setToolTipText("A");
         buttonA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAActionPerformed(evt);
@@ -228,6 +230,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonB.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonB.setText("B");
+        buttonB.setToolTipText("B");
         buttonB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBActionPerformed(evt);
@@ -236,6 +239,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonC.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonC.setText("C");
+        buttonC.setToolTipText("C");
         buttonC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCActionPerformed(evt);
@@ -244,6 +248,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonD.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonD.setText("D");
+        buttonD.setToolTipText("D");
         buttonD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonDActionPerformed(evt);
@@ -252,6 +257,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonE.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonE.setText("E");
+        buttonE.setToolTipText("E");
         buttonE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonEActionPerformed(evt);
@@ -260,6 +266,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonF.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonF.setText("F");
+        buttonF.setToolTipText("F");
         buttonF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonFActionPerformed(evt);
@@ -268,6 +275,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonG.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonG.setText("G");
+        buttonG.setToolTipText("G");
         buttonG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonGActionPerformed(evt);
@@ -276,6 +284,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonH.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonH.setText("H");
+        buttonH.setToolTipText("H");
         buttonH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonHActionPerformed(evt);
@@ -284,6 +293,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonI.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonI.setText("I");
+        buttonI.setToolTipText("I");
         buttonI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonIActionPerformed(evt);
@@ -292,6 +302,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonJ.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonJ.setText("J");
+        buttonJ.setToolTipText("J");
         buttonJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonJActionPerformed(evt);
@@ -300,6 +311,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonK.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonK.setText("K");
+        buttonK.setToolTipText("K");
         buttonK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonKActionPerformed(evt);
@@ -308,6 +320,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonL.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonL.setText("L");
+        buttonL.setToolTipText("L");
         buttonL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonLActionPerformed(evt);
@@ -316,6 +329,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonM.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonM.setText("M");
+        buttonM.setToolTipText("M");
         buttonM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMActionPerformed(evt);
@@ -324,6 +338,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonN.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonN.setText("N");
+        buttonN.setToolTipText("N");
         buttonN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonNActionPerformed(evt);
@@ -332,6 +347,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonO.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonO.setText("O");
+        buttonO.setToolTipText("O");
         buttonO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonOActionPerformed(evt);
@@ -340,6 +356,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonP.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonP.setText("P");
+        buttonP.setToolTipText("P");
         buttonP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonPActionPerformed(evt);
@@ -348,6 +365,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonQ.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonQ.setText("Q");
+        buttonQ.setToolTipText("Q");
         buttonQ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonQActionPerformed(evt);
@@ -356,6 +374,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonR.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonR.setText("R");
+        buttonR.setToolTipText("R");
         buttonR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonRActionPerformed(evt);
@@ -364,6 +383,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonS.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonS.setText("S");
+        buttonS.setToolTipText("S");
         buttonS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonSActionPerformed(evt);
@@ -372,6 +392,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonT.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonT.setText("T");
+        buttonT.setToolTipText("T");
         buttonT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonTActionPerformed(evt);
@@ -380,6 +401,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonU.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonU.setText("U");
+        buttonU.setToolTipText("U");
         buttonU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonUActionPerformed(evt);
@@ -388,6 +410,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonV.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonV.setText("V");
+        buttonV.setToolTipText("V");
         buttonV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonVActionPerformed(evt);
@@ -396,6 +419,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonW.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonW.setText("W");
+        buttonW.setToolTipText("W");
         buttonW.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonWActionPerformed(evt);
@@ -404,6 +428,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonX.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonX.setText("X");
+        buttonX.setToolTipText("X");
         buttonX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonXActionPerformed(evt);
@@ -412,6 +437,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonY.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonY.setText("Y");
+        buttonY.setToolTipText("Y");
         buttonY.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonYActionPerformed(evt);
@@ -420,6 +446,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         buttonZ.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         buttonZ.setText("Z");
+        buttonZ.setToolTipText("Z");
         buttonZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonZActionPerformed(evt);

@@ -277,6 +277,7 @@ public class HighScorePanel extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jButton2.setText("BACK");
+        jButton2.setToolTipText("BACK");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
