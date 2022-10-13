@@ -38,7 +38,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
     LocalDateTime now = LocalDateTime.now();
     private int randomVessel;
     private int randomVessel2;
-    private static int score;
+    public static int score;
     private String colorL;
     private String color;
     private int round;
@@ -63,6 +63,12 @@ public class ColorGamePanel extends javax.swing.JPanel {
         randomize.add(3);
         randomize.add(4);
         repeat();
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }
+    };
         AbstractAction credits = new AbstractAction("goToCredits"){
         
         @Override
@@ -86,6 +92,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         
         jLabel3.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
         jLabel3.getActionMap().put("goToCredits", credits);
+        jLabel3.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel3.getActionMap().put("escape", esc);
     }
     //Method boxTT
     //Purpose: Adds tool tips
@@ -165,10 +173,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
 
             //resetGame();
             System.out.println("game ends");
-            HighScorePanel.scoreCheck(getScore());
-            HighScorePanel.savedData();
-            HangmanDM.frame.add(new end(getScore()),"endPanel");
-            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "sudoku");
         }          
     }
     

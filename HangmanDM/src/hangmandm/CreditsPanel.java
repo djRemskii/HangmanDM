@@ -24,6 +24,14 @@ public class CreditsPanel extends javax.swing.JPanel  {
     //purpose: constructor. initializes components
     public CreditsPanel() {
         initComponents();
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }
+    };
+        jLabel3.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel3.getActionMap().put("escape", esc);
         
     }
     

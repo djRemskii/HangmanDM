@@ -7,6 +7,9 @@ package hangmandm;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -26,7 +29,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static int[] focusedBox = new int[2];
     private static JTextField[][] boxes = new JTextField[9][9]; 
     private static int score;
-    private static boolean scoreChecked;
+    private static boolean scoreChecked = false;
     
     
     /**
@@ -57,7 +60,6 @@ public class SudokuPanel extends javax.swing.JPanel {
         focusedBox[1] = 100;
         
         score = 540;
-        scoreChecked = false;
         
         initComponents();
         
@@ -70,14 +72,19 @@ public class SudokuPanel extends javax.swing.JPanel {
         num7.setToolTipText("Choose 7"); 
         num8.setToolTipText("Choose 8"); 
         num9.setToolTipText("Choose 9"); 
-        scoreCheckButton.setToolTipText("Check Score");
+        quit.setToolTipText("Check Score");
        
         boxTT();
         
         
         
         
-        
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }
+    };
         
         
         AbstractAction credits = new AbstractAction("goToCredits"){
@@ -102,6 +109,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         
         jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
         jLabel2.getActionMap().put("goToCredits", credits);
+        
+        jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel2.getActionMap().put("escape", esc);
         
         boxAssigner();
         
@@ -202,6 +212,77 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_7.setToolTipText("Enter here");
         box8_8.setToolTipText("Can't enter here");
     }
+    
+    private static void reset(){
+        currentBoard[0] = new int[]{ 8,0,0,4,0,6,0,0,7 };
+        currentBoard[1] = new int[]{ 0,0,0,0,0,0,4,0,0 };
+        currentBoard[2] = new int[]{ 0,1,0,0,0,0,6,5,0 };
+        currentBoard[3] = new int[]{ 5,0,9,0,3,0,7,8,0 };
+        currentBoard[4] = new int[]{ 0,0,0,0,7,0,0,0,0 };
+        currentBoard[5] = new int[]{ 0,4,8,0,2,0,1,0,3 };
+        currentBoard[6] = new int[]{ 0,5,2,0,0,0,0,9,0 };
+        currentBoard[7] = new int[]{ 0,0,1,0,0,0,0,0,0 };
+        currentBoard[8] = new int[]{ 3,0,0,9,0,2,0,0,5 };
+        box0_1.setText("");
+        box0_2.setText("");
+        box0_4.setText("");
+        box0_6.setText("");
+        box0_7.setText("");
+        box1_0.setText("");
+        box1_1.setText("");
+        box1_2.setText("");
+        box1_3.setText("");
+        box1_4.setText("");
+        box1_5.setText("");
+        box1_7.setText("");
+        box1_8.setText("");
+        box2_0.setText("");
+        box2_2.setText("");
+        box2_3.setText("");
+        box2_4.setText("");
+        box2_5.setText("");
+        box2_8.setText("");
+        box3_1.setText("");
+        box3_3.setText("");
+        box3_5.setText("");
+        box3_8.setText("");
+        box4_0.setText("");
+        box4_1.setText("");
+        box4_2.setText("");
+        box4_3.setText("");
+        box4_5.setText("");
+        box4_6.setText("");
+        box4_7.setText("");
+        box4_8.setText("");
+        box5_0.setText("");
+        box5_3.setText("");
+        box5_5.setText("");
+        box5_7.setText("");
+        box6_0.setText("");
+        box6_3.setText("");
+        box6_4.setText("");
+        box6_5.setText("");
+        box6_6.setText("");
+        box6_8.setText("");
+        box7_2.setText("");
+        box7_0.setText("");
+        box7_1.setText("");
+        box7_3.setText("");
+        box7_4.setText("");
+        box7_5.setText("");
+        box7_6.setText("");
+        box7_7.setText("");
+        box7_8.setText("");
+        box8_1.setText("");
+        box8_2.setText("");
+        box8_4.setText("");
+        box8_6.setText("");
+        box8_7.setText("");
+        score = 540;
+        scoreDisplay.setText("Score: " + score);
+        scoreChecked = false;
+    }
+    
     private static void boxAssigner(){
         boxes[0][0] = box0_0;
         boxes[0][1] = box0_1;
@@ -295,18 +376,32 @@ public class SudokuPanel extends javax.swing.JPanel {
     }
     
     private static void checkScore(){
-        if (!scoreChecked){
+        if(scoreChecked == false){
             for(int i=0; i<9; i++){
                 for(int j=0; j<9; j++){
                     if(solutionBoard[i][j] != currentBoard[i][j]){
                         score -= 10;
-                    }
                 }
             }
         }
-        scoreChecked = true;
+        }
         System.out.println(score);
         scoreDisplay.setText("Score: " + score);
+        if(scoreChecked == false){
+        try {
+            HighScorePanel.scoreCheck(getScoreSudoku());
+        } 
+        catch (IOException ex) {
+            Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            HighScorePanel.savedData();
+        } 
+        catch (IOException ex) {
+            Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        scoreChecked = true;
     }
 
     /**
@@ -410,7 +505,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_7 = new javax.swing.JTextField();
         box8_8 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        scoreCheckButton = new javax.swing.JButton();
+        quit = new javax.swing.JButton();
         scoreDisplay = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -421,6 +516,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
+        scoreCheckButton1 = new javax.swing.JButton();
 
         setForeground(new java.awt.Color(255, 51, 51));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -2208,14 +2304,14 @@ public class SudokuPanel extends javax.swing.JPanel {
         jLabel1.setText("SUDOKU");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
 
-        scoreCheckButton.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
-        scoreCheckButton.setText("CHECK SCORE");
-        scoreCheckButton.addActionListener(new java.awt.event.ActionListener() {
+        quit.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        quit.setText("QUIT");
+        quit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                scoreCheckButtonActionPerformed(evt);
+                quitActionPerformed(evt);
             }
         });
-        add(scoreCheckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 169, -1, -1));
+        add(quit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
 
         scoreDisplay.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         scoreDisplay.setText("Score: " + score);
@@ -2275,6 +2371,15 @@ public class SudokuPanel extends javax.swing.JPanel {
         jSeparator9.setPreferredSize(new java.awt.Dimension(7, 50));
         add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 275, -1, 75));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, -1, -1));
+
+        scoreCheckButton1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        scoreCheckButton1.setText("CHECK SCORE");
+        scoreCheckButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scoreCheckButton1ActionPerformed(evt);
+            }
+        });
+        add(scoreCheckButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 169, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -2292,6 +2397,11 @@ public class SudokuPanel extends javax.swing.JPanel {
             codeCheck();
             return false;
         }
+        
+    }
+        private static int getScoreSudoku(){
+        int finalScore = score + ColorGamePanel.score;
+        return finalScore;
     }
     
     Border blackBorder = BorderFactory.createLineBorder(Color.BLACK,2);
@@ -3270,9 +3380,12 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_8.setBorder(blackBorder);
     }//GEN-LAST:event_box8_8FocusLost
 
-    private void scoreCheckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreCheckButtonActionPerformed
-        checkScore();
-    }//GEN-LAST:event_scoreCheckButtonActionPerformed
+    private void quitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitActionPerformed
+        HangmanDM.frame.add(new end(getScoreSudoku()),"endPanel");
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
+        
+        reset();
+    }//GEN-LAST:event_quitActionPerformed
 
     private void box0_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_2ActionPerformed
         // TODO add your handling code here:
@@ -3305,6 +3418,10 @@ public class SudokuPanel extends javax.swing.JPanel {
     private void box0_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_box0_5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_box0_5ActionPerformed
+
+    private void scoreCheckButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scoreCheckButton1ActionPerformed
+        checkScore();
+    }//GEN-LAST:event_scoreCheckButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -3409,7 +3526,8 @@ public class SudokuPanel extends javax.swing.JPanel {
     private javax.swing.JButton num7;
     private javax.swing.JButton num8;
     private javax.swing.JButton num9;
-    private javax.swing.JButton scoreCheckButton;
+    private javax.swing.JButton quit;
+    private javax.swing.JButton scoreCheckButton1;
     private static javax.swing.JLabel scoreDisplay;
     // End of variables declaration//GEN-END:variables
 }
