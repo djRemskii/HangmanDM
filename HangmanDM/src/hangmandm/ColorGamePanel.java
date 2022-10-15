@@ -22,12 +22,12 @@ import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 /***************************************************************  
-*  file: HangmanDM.java 
+*  file: ColorGamePanel.java 
 *  authors: J. Ong, D Menkir, S. Araya, Kevin Hoang
 *  class: CS 2450 – User Interface Design and Programming 
 *  
-*  assignment: Program 1.0  
-*  date last modified: 9/28/2022 
+*  assignment: Program 1.1  
+*  date last modified: 10/15/2022 
 *  
 *  purpose: Displays the colors game.
 *  
@@ -167,8 +167,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
     {
         if (round >= 5)
         {
-            frame.add(new end(getScore()),"endColor");
-
+            frame.add(new SudokuPanel(getScore()), "sudoku");
+            System.out.println(getScore());
             resetGame();
 
             //resetGame();
