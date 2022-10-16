@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+
 import static hangmandm.HangmanDM.frame;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,6 +14,8 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /***************************************************************  
 *  file: GameLogic.java 
@@ -80,6 +83,8 @@ public class GameLogic {
         } else {
             incorrectGuesses++;
             currentScore -= 10;
+            JFrame wrong = new JFrame();
+            JOptionPane.showMessageDialog(wrong, "Wrong Letter, Try Again.", "Wrong Letter.", JOptionPane.INFORMATION_MESSAGE);
            
             if (incorrectGuesses > 5){
                 gameOverFlag = true;
