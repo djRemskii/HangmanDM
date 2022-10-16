@@ -44,7 +44,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     
     
     /**
-     * Creates new form SudokuPanel
+     * Creates new form SudokuPanel, initializes the board and starts the game.
      * @param prevScore
      */
     public SudokuPanel(int prevScore) {
@@ -142,6 +142,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         
     }
     
+    /**
+     * Creates tool tips for each box
+     */
     private void boxTT()
     {
         //first row
@@ -238,6 +241,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_8.setToolTipText("Can't enter here");
     }
     
+    /**
+     * Resets the board and score of the sudoku game.
+     */
     private static void reset(){
         currentBoard[0] = new int[]{ 8,0,0,4,0,6,0,0,7 };
         currentBoard[1] = new int[]{ 0,0,0,0,0,0,4,0,0 };
@@ -318,6 +324,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         
     }
     
+    /**
+     * Puts all the boxes in an more easily accessible 2d array.
+     */
     private static void boxAssigner(){
         boxes[0][0] = box0_0;
         boxes[0][1] = box0_1;
@@ -410,6 +419,10 @@ public class SudokuPanel extends javax.swing.JPanel {
         boxes[8][8] = box8_8;
     }
     
+    /**
+     * Checks each box to see if they contain the correct number, and removes 10 points for each incorrect answer. 
+     * Ends the game if all boxes contain the correct numbers, or prompts the user to try again.
+     */
     private static void checkScore(){
         int boxesWrong = 0;
         
@@ -2439,7 +2452,10 @@ public class SudokuPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
+    /**
+     * Changes the number inside the selected box to a different int.
+     * @param int i the number to be place inside the box.
+     */
     private static boolean setBox (int i){
         int row = focusedBox[0];
         int column = focusedBox[1];
@@ -2456,6 +2472,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         
     }
         
+    /**
+     * Returns the overall score for the game, from previous mini-games and the current sudoku game.
+     */
     private static int getScoreSudoku(){
         int finalScore = score + totalScore;
         return finalScore;
@@ -2463,6 +2482,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     
     Border blackBorder = BorderFactory.createLineBorder(Color.BLACK,2);
     Border redBorder = BorderFactory.createLineBorder(Color.RED,3);
+    
     
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
         if(setBox(1)){
@@ -2914,7 +2934,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         box3_8.setBorder(blackBorder);
     }//GEN-LAST:event_box3_8FocusLost
 
-    //IF YOU SEE THIS, IGNORE IT.
+    //IF YOU SEE THIS, IGNORE IT. JUST HIDING A LITTLE DUMB EASTER EGG
     private static String code = "";
     private static void codeCheck(){
         if (code.matches("7952")){
