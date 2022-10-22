@@ -11,8 +11,12 @@ import javax.swing.BorderFactory;
 import java.awt.Color; 
 import java.awt.Dimension; 
 import java.awt.Graphics; 
+import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 /**
  *
  * @author danie
@@ -38,6 +42,24 @@ public class PongPanel extends javax.swing.JPanel {
         xDirection = true;
         startFlag = false;
         
+        jLabel1.setOpaque(false);
+        jLabel1.setBounds(0, 0, 1, 1);
+        
+        
+        AbstractAction pongStart = new AbstractAction("startGame"){
+                
+             @Override
+        public void actionPerformed(ActionEvent e){
+            startFlag = true;
+                }
+        
+       
+                
+                };
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
+        jLabel1.getActionMap().put("startGame", pongStart);
+        
+        
     }
 
     @Override
@@ -46,7 +68,11 @@ public class PongPanel extends javax.swing.JPanel {
         super.paint(g);
         
         g.fillOval(x, y, border, border);
-        moveBall();
+        if(startFlag)
+        {
+            moveBall();
+        }
+        
         repaint();
         try {
                 Thread.sleep(10);
@@ -101,54 +127,31 @@ public class PongPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
-
-        jButton1.setText("Start Ball Movement");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(241, 241, 241)
-                .addComponent(jButton1)
-                .addContainerGap(222, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(555, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jButton1)
-                .addContainerGap(345, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addContainerGap(376, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        startFlag = !startFlag;
-        while(startFlag)
-        {
-            
-            repaint();
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(PongPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            jButton1.setText("Stop Ball Movement");
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
