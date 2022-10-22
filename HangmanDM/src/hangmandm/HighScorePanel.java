@@ -29,7 +29,7 @@ import javax.swing.KeyStroke;
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.1  
-*  date last modified: 9/28/2022 
+*  date last modified: 10/15/2022 
 *  
 *  purpose: This panel shows the highscores.
 *  
@@ -45,9 +45,8 @@ public class HighScorePanel extends javax.swing.JPanel {
     private static javax.swing.JLabel[] scoreLables = new javax.swing.JLabel[5];
     private static javax.swing.JLabel[] nameLabels = new javax.swing.JLabel[5];
     
-        /**
-     * Creates new form HighScorePanel
-     */
+    //method: HighScorePanel()
+    //purpose: is the constructor of the class. initializes variables.
     public HighScorePanel() {
         main();
         initComponents();
@@ -128,15 +127,17 @@ public class HighScorePanel extends javax.swing.JPanel {
 
         
     }
-        //method:writeFile
-        //purpose: Writes on scores file
+    
+    //method:writeFile
+    //purpose: Writes on scores file
     public static void writeFile(String a) throws IOException{
         BufferedWriter writer = new BufferedWriter(new FileWriter(new File("scores.txt"),true));
         writer.write(a + "\r\n");
         writer.close();
     }
-        //method:getScore
-        //purpose: Retrieves the last score on the file to compare
+    
+    //method:getScore
+    //purpose: Retrieves the last score on the file to compare
     public static int getScore() throws FileNotFoundException, IOException{
         InputStreamReader streamReader = new InputStreamReader(new FileInputStream("scores.txt"));
         BufferedReader br = new BufferedReader(streamReader);
@@ -149,14 +150,16 @@ public class HighScorePanel extends javax.swing.JPanel {
         }
         return newScore;
     }
-        //method:optionPane()
-        //purpose: Gives the user a message when they get a highscore.
+       
+    //method:optionPane()
+    //purpose: Gives the user a message when they get a highscore.
     public static void optionPane(){
         JFrame frame = new JFrame();
         name = JOptionPane.showInputDialog(frame, "You set a new high score. Input your initials");
 }
-        //method:scoreCheck()
-        //purpose: checks the newest score to see if it's a highscore
+        
+    //method:scoreCheck()
+    //purpose: checks the newest score to see if it's a highscore
     public static void scoreCheck(int s) throws IOException{
         
         //I have no idea why this code only works when placed right here, but for the love of god dont move it.
@@ -203,9 +206,10 @@ public class HighScorePanel extends javax.swing.JPanel {
             System.out.println(highScores[k]);
         }
     }
-        //method: main
-        //purpose: initializes some variables
-        public static void main(){
+        
+    //method: main
+    //purpose: initializes some variables  
+    public static void main(){
         for(int i=0; i<highScores.length; i++){
             highScores[i]=0;
         }
@@ -359,6 +363,8 @@ public class HighScorePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    //method: jButton2ActionPerformed
+    //purpose: navigates back to the menu when pressed
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");

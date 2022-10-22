@@ -23,10 +23,12 @@ import javax.swing.Timer;
 
 /**
  * *************************************************************
- * file: GamePanel.java authors: S. Araya, D. Menkir, J Ong 
+ * file: GamePanel.java 
+ * authors: S. Araya, D. Menkir, J Ong 
  * class: CS 2450 – User Interface Design and Programming 
  *
- * assignment: program 1 date last modified: 9/28/2022
+ * assignment: program 1 
+ * date last modified: 10/15/2022
  *
  * purpose: This panel hosts the hangman game visuals. Logic is handled in GameLogic.java.
  *
@@ -205,6 +207,7 @@ public class GamePanel extends javax.swing.JPanel {
         letter9 = new javax.swing.JLabel();
         letter10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -593,6 +596,8 @@ public class GamePanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -660,10 +665,16 @@ public class GamePanel extends javax.swing.JPanel {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(hangmanSprite)
-                        .addGap(125, 125, 125)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(skipButton))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(125, 125, 125)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(skipButton)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3)
+                                .addGap(17, 17, 17)))))
                 .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
@@ -671,11 +682,13 @@ public class GamePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hangmanSprite)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(skipButton))
-                    .addComponent(hangmanSprite))
+                        .addComponent(skipButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
@@ -736,11 +749,13 @@ public class GamePanel extends javax.swing.JPanel {
             // Assumes clock is a JLabel
             now = LocalDateTime.now();
             jLabel1.setText(dtf.format(now)); 
+            jLabel3.setText("Score: " + GameLogic.currentScore);
             //spriteCheck();
             //letterCheck();
             if(GameLogic.winFlag || GameLogic.gameOverFlag){
                 spriteReset();
                 letterReset();
+                
             }
         }
     };
@@ -1130,6 +1145,7 @@ public class GamePanel extends javax.swing.JPanel {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private static javax.swing.JLabel letter1;
     private static javax.swing.JLabel letter10;

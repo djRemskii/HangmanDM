@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+
 import static hangmandm.HangmanDM.frame;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,6 +14,8 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /***************************************************************  
 *  file: GameLogic.java 
@@ -20,7 +23,7 @@ import java.util.logging.Logger;
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.1  
-*  date last modified: 9/28/2022 
+*  date last modified: 10/15/2022 
 *  
 *  purpose: Contains the logic handling for the hangman game, visuals shown by panel GamePanel.java
 *  
@@ -35,7 +38,7 @@ public class GameLogic {
     public static boolean winFlag = false;
     
     
-    //Returns a random word from WORD_LIST
+    
     //method: randomWord
     //purpose: returns a random word from WORD_LIST
     private static String randomWord(){
@@ -44,7 +47,7 @@ public class GameLogic {
         return WORD_LIST[randomInt];
     }
     
-    //Returns boolean value if currentWord contains the letter (must be a String) and increments incorrectGuesses.
+   
     //method: isCorrect
     //purpose: returns true if the argument has a letter that is within the guessing word,
     // otherwise subtracts 10 points and returns false. If there are no more blank  
@@ -71,7 +74,7 @@ public class GameLogic {
                 GamePanel.letterReset();
                 
                 
-                //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+               
                 frame.add(new ColorGamePanel(currentScore), "color game");
                 
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
@@ -80,7 +83,9 @@ public class GameLogic {
         } else {
             incorrectGuesses++;
             currentScore -= 10;
-            //GamePanel.hangmanSprite.setIcon(new javax.swing.ImageIcon(("/hangmanSprites/HangmanSprite_1.png")));
+            JFrame wrong = new JFrame();
+            JOptionPane.showMessageDialog(wrong, "Wrong Letter, Try Again.", "Wrong Letter.", JOptionPane.INFORMATION_MESSAGE);
+           
             if (incorrectGuesses > 5){
                 gameOverFlag = true;
                 System.out.println("game lost");
@@ -88,7 +93,7 @@ public class GameLogic {
                 GamePanel.letterReset();
                
                 
-                //HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "high scores");
+                
                 frame.add(new ColorGamePanel(currentScore), "color game");
                 
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");

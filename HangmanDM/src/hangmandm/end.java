@@ -11,7 +11,7 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
 /*************************************************************** 
-* file: DoubleIt.java 
+* file: End.java 
 * author: D. Menkir 
 * class: CS 141 – Programming and Problem Solving 
 * 
@@ -22,13 +22,13 @@ import javax.swing.KeyStroke;
 * them to exit to the main menu. 
 * 
 ****************************************************************/
-public class end extends javax.swing.JPanel {
+public class End extends javax.swing.JPanel {
 
     private String score;
     
-    //method: end
+    //method: End
     //purpose: constructor. initializes components.
-    public end(int points) {
+    public End(int points) {
       
        score = ("" + points);
        

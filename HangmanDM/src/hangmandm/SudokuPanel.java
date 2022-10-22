@@ -13,29 +13,41 @@ import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.border.Border;
 
-/**
- *
- * @author djRemskii
- * I'm doing this all in one night cause i cant sleep.
- */
+/***************************************************************  
+*  file: SudokuPanel.java 
+*  authors: J. Ong, D Menkir
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.2  
+*  date last modified: 10/15/2022 
+*  
+*  purpose: Displays the sudoku game.
+*  
+****************************************************************/ 
 public class SudokuPanel extends javax.swing.JPanel {
 
     private static final int[][] solutionBoard = new int[9][9];
     private static int[][] currentBoard = new int[9][9];
     private static int[] focusedBox = new int[2];
+    private static int[][] checkedOnce = new int[9][9];
     private static JTextField[][] boxes = new JTextField[9][9]; 
     private static int score;
     private static boolean scoreChecked = false;
+    private static int totalScore;
+    
     
     
     /**
-     * Creates new form SudokuPanel
+     * Creates new form SudokuPanel, initializes the board and starts the game.
+     * @param prevScore
      */
-    public SudokuPanel() {
+    public SudokuPanel(int prevScore) {
         solutionBoard[0] = new int[]{ 8,3,5,4,1,6,9,2,7 };
         solutionBoard[1] = new int[]{ 2,9,6,8,5,7,4,3,1 };
         solutionBoard[2] = new int[]{ 4,1,7,2,9,3,6,5,8 };
@@ -56,9 +68,20 @@ public class SudokuPanel extends javax.swing.JPanel {
         currentBoard[7] = new int[]{ 0,0,1,0,0,0,0,0,0 };
         currentBoard[8] = new int[]{ 3,0,0,9,0,2,0,0,5 };
         
+        checkedOnce[0] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[1] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[2] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[3] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[4] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[5] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[6] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[7] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[8] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        
         focusedBox[0] = 100;
         focusedBox[1] = 100;
         
+        totalScore = prevScore;
         score = 540;
         
         initComponents();
@@ -72,8 +95,10 @@ public class SudokuPanel extends javax.swing.JPanel {
         num7.setToolTipText("Choose 7"); 
         num8.setToolTipText("Choose 8"); 
         num9.setToolTipText("Choose 9"); 
-        quit.setToolTipText("Check Score");
+        scoreCheckButton1.setToolTipText("Check Score");
+        quit.setToolTipText("Quit");
        
+        
         boxTT();
         
         
@@ -118,6 +143,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         
     }
     
+    /**
+     * Creates tool tips for each box
+     */
     private void boxTT()
     {
         //first row
@@ -214,6 +242,9 @@ public class SudokuPanel extends javax.swing.JPanel {
         box8_8.setToolTipText("Can't enter here");
     }
     
+    /**
+     * Resets the board and score of the sudoku game.
+     */
     private static void reset(){
         currentBoard[0] = new int[]{ 8,0,0,4,0,6,0,0,7 };
         currentBoard[1] = new int[]{ 0,0,0,0,0,0,4,0,0 };
@@ -224,6 +255,15 @@ public class SudokuPanel extends javax.swing.JPanel {
         currentBoard[6] = new int[]{ 0,5,2,0,0,0,0,9,0 };
         currentBoard[7] = new int[]{ 0,0,1,0,0,0,0,0,0 };
         currentBoard[8] = new int[]{ 3,0,0,9,0,2,0,0,5 };
+        checkedOnce[0] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[1] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[2] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[3] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[4] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[5] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[6] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[7] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        checkedOnce[8] = new int[]{ 0,0,0,0,0,0,0,0,0 };
         box0_1.setText("");
         box0_2.setText("");
         box0_4.setText("");
@@ -282,8 +322,12 @@ public class SudokuPanel extends javax.swing.JPanel {
         score = 540;
         scoreDisplay.setText("Score: " + score);
         scoreChecked = false;
+        
     }
     
+    /**
+     * Puts all the boxes in an more easily accessible 2d array.
+     */
     private static void boxAssigner(){
         boxes[0][0] = box0_0;
         boxes[0][1] = box0_1;
@@ -376,21 +420,45 @@ public class SudokuPanel extends javax.swing.JPanel {
         boxes[8][8] = box8_8;
     }
     
+    /**
+     * Checks each box to see if they contain the correct number, and removes 10 points for each incorrect answer. 
+     * Ends the game if all boxes contain the correct numbers, or prompts the user to try again.
+     */
     private static void checkScore(){
+        int boxesWrong = 0;
+        
         if(scoreChecked == false){
             for(int i=0; i<9; i++){
                 for(int j=0; j<9; j++){
                     if(solutionBoard[i][j] != currentBoard[i][j]){
-                        score -= 10;
+                        if(checkedOnce[i][j] != 1)
+                        {
+                            score -= 10;
+                            checkedOnce[i][j] = 1;
+                        }
+                        
+                        boxesWrong += 1;
                 }
             }
         }
         }
+        if(boxesWrong == 0)
+        {
+            scoreChecked = true;
+        }
+        else
+        {
+            JFrame wrong = new JFrame();
+            JOptionPane.showMessageDialog(wrong, "Some boxes in the sudoku are incorrect, please fix it.", "Wrong Answer", JOptionPane.INFORMATION_MESSAGE);
+        }
         System.out.println(score);
         scoreDisplay.setText("Score: " + score);
-        if(scoreChecked == false){
+        if(scoreChecked == true){
         try {
             HighScorePanel.scoreCheck(getScoreSudoku());
+            HangmanDM.frame.add(new End(getScoreSudoku()),"end");
+            reset();
+            HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
         } 
         catch (IOException ex) {
             Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
@@ -402,7 +470,7 @@ public class SudokuPanel extends javax.swing.JPanel {
             Logger.getLogger(SudokuPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
-        scoreChecked = true;
+        
     }
 
     /**
@@ -520,6 +588,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         scoreCheckButton1 = new javax.swing.JButton();
 
         setForeground(new java.awt.Color(255, 51, 51));
+        setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
         setPreferredSize(new java.awt.Dimension(600, 400));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2312,7 +2381,7 @@ public class SudokuPanel extends javax.swing.JPanel {
                 quitActionPerformed(evt);
             }
         });
-        add(quit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, -1, -1));
+        add(quit, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, -1, -1));
 
         scoreDisplay.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         scoreDisplay.setText("Score: " + score);
@@ -2384,7 +2453,10 @@ public class SudokuPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
+    /**
+     * Changes the number inside the selected box to a different int.
+     * @param int i the number to be place inside the box.
+     */
     private static boolean setBox (int i){
         int row = focusedBox[0];
         int column = focusedBox[1];
@@ -2400,13 +2472,18 @@ public class SudokuPanel extends javax.swing.JPanel {
         }
         
     }
-        private static int getScoreSudoku(){
-        int finalScore = score + ColorGamePanel.score;
+        
+    /**
+     * Returns the overall score for the game, from previous mini-games and the current sudoku game.
+     */
+    private static int getScoreSudoku(){
+        int finalScore = score + totalScore;
         return finalScore;
     }
     
     Border blackBorder = BorderFactory.createLineBorder(Color.BLACK,2);
     Border redBorder = BorderFactory.createLineBorder(Color.RED,3);
+    
     
     private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
         if(setBox(1)){
@@ -2858,7 +2935,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         box3_8.setBorder(blackBorder);
     }//GEN-LAST:event_box3_8FocusLost
 
-    //IF YOU SEE THIS, IGNORE IT.
+    //IF YOU SEE THIS, IGNORE IT. JUST HIDING A LITTLE DUMB EASTER EGG
     private static String code = "";
     private static void codeCheck(){
         if (code.matches("7952")){
@@ -3382,7 +3459,10 @@ public class SudokuPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_box8_8FocusLost
 
     private void quitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitActionPerformed
-        HangmanDM.frame.add(new end(getScoreSudoku()),"endPanel");
+        score = 0;
+        System.out.println(getScoreSudoku());
+        HangmanDM.frame.add(new End(getScoreSudoku()),"endPanel");
+        reset();
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
         
         reset();

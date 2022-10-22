@@ -22,12 +22,12 @@ import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 /***************************************************************  
-*  file: HangmanDM.java 
+*  file: ColorGamePanel.java 
 *  authors: J. Ong, D Menkir, S. Araya, Kevin Hoang
 *  class: CS 2450 – User Interface Design and Programming 
 *  
-*  assignment: Program 1.0  
-*  date last modified: 9/28/2022 
+*  assignment: Program 1.1  
+*  date last modified: 10/15/2022 
 *  
 *  purpose: Displays the colors game.
 *  
@@ -167,8 +167,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
     {
         if (round >= 5)
         {
-            frame.add(new end(getScore()),"endColor");
-
+            frame.add(new SudokuPanel(getScore()), "sudoku");
+            System.out.println(getScore());
             resetGame();
 
             //resetGame();
@@ -264,6 +264,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -326,6 +327,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         });
         jButton1.setBounds(420, 70, 106, 106);
 
+        jLabel4.setText("jLabel4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -352,9 +355,15 @@ public class ColorGamePanel extends javax.swing.JPanel {
                         .addGap(104, 104, 104))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addGap(93, 93, 93))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton5)
+                                .addGap(93, 93, 93))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(347, 347, 347)
+                                .addComponent(jLabel4)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel3)
@@ -365,13 +374,13 @@ public class ColorGamePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jButton1)))
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -509,7 +518,8 @@ public class ColorGamePanel extends javax.swing.JPanel {
         public void actionPerformed(ActionEvent e) {
             // Assumes clock is a JLabel
             now = LocalDateTime.now();
-            jLabel1.setText(dtf.format(now)); 
+            jLabel1.setText(dtf.format(now));
+            jLabel4.setText("Score: " + score);
         }
     };
 
@@ -526,5 +536,6 @@ public class ColorGamePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
