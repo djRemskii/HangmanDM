@@ -107,6 +107,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         jLabel2.setBounds(0, 0, 1, 1);
         
         
+        
         jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
         jLabel2.getActionMap().put("goToCredits", credits);
         
