@@ -49,8 +49,8 @@ public class PongPanel extends javax.swing.JPanel {
         jButton2.setEnabled(false);
         jLabel1.setOpaque(false);
         jLabel1.setBounds(0, 0, 1, 1);
-        
-        
+        jLabel2.setVisible(false);
+        jLabel3.setVisible(false);
         AbstractAction pongStart = new AbstractAction("startGame"){
                 
              @Override
@@ -153,11 +153,13 @@ public class PongPanel extends javax.swing.JPanel {
     private void gameWon(int side){
         if (side == 0){
             System.out.println("LEFT SIDE WINS");
+            jLabel3.setVisible(true);
             jButton2.setVisible(true);
             jButton2.setEnabled(true);
              startFlag = false;
         } else if (side == 1){
             System.out.println("RIGHT SIDE WINS");
+            jLabel2.setVisible(true);
             jButton2.setVisible(true);
             jButton2.setEnabled(true);
             startFlag = false;
@@ -180,6 +182,8 @@ public class PongPanel extends javax.swing.JPanel {
         rightScoreDisplay = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -204,6 +208,10 @@ public class PongPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("Left Wins!!!!!!!");
+
+        jLabel3.setText("Right Wins!!!!!!!");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -215,31 +223,39 @@ public class PongPanel extends javax.swing.JPanel {
                 .addComponent(rightScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(45, 45, 45))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addGap(17, 17, 17)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton2)
+                            .addComponent(jButton1))
+                        .addGap(17, 17, 17))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel1))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leftScoreDisplay)
                     .addComponent(rightScoreDisplay))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         leftScoreDisplay.getAccessibleContext().setAccessibleName("leftScoreDisplay");
@@ -249,13 +265,16 @@ public class PongPanel extends javax.swing.JPanel {
 
        
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
-        
+        jLabel2.setVisible(false);
+        jLabel3.setVisible(false);
       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
+        jLabel2.setVisible(false);
+        jLabel3.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
@@ -263,6 +282,8 @@ public class PongPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel leftScoreDisplay;
     private javax.swing.JLabel rightScoreDisplay;
     // End of variables declaration//GEN-END:variables
