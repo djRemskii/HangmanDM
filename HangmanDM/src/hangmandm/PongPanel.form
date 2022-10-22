@@ -93,6 +93,9 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="leftScoreDisplay"/>
       </AccessibilityProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="PongPanel_leftScoreDisplay"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="rightScoreDisplay">
       <Properties>
