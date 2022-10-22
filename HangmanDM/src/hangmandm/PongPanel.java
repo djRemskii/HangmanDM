@@ -68,23 +68,23 @@ public class PongPanel extends javax.swing.JPanel {
         }
         
         
-        if (y==getHeight()-border-1 || !yDirection)
+        if (y>=getHeight()-border-1 || !yDirection)
         {
             y = y-1;
             yDirection = false;
         }
-        if(y == border || yDirection)
+        if(y <=23-border || yDirection)
         {
             y = y+1;
             yDirection = true;
         }
         
-        if(x==getWidth()-border-1 || !xDirection)
+        if(x>=getWidth()-border-1 || !xDirection)
         {
             x = x-1;
             xDirection = false;
         }
-        if(x ==border || xDirection)
+        if(x <=21-border || xDirection)
         {
             x = x+1;
             xDirection = true;
