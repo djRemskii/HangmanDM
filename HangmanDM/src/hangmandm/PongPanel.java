@@ -29,6 +29,8 @@ public class PongPanel extends javax.swing.JPanel {
     private boolean yDirection; //true is up, false is down
     private boolean xDirection; // true is right, false is left
     private boolean startFlag;
+    private int leftScore;
+    private int rightScore;
     
     /**
      * Creates new form PongPanel
@@ -41,6 +43,8 @@ public class PongPanel extends javax.swing.JPanel {
         yDirection = true;
         xDirection = true;
         startFlag = false;
+        leftScore = 0;
+        rightScore = 0;
         
         jLabel1.setOpaque(false);
         jLabel1.setBounds(0, 0, 1, 1);
@@ -49,17 +53,13 @@ public class PongPanel extends javax.swing.JPanel {
         AbstractAction pongStart = new AbstractAction("startGame"){
                 
              @Override
-        public void actionPerformed(ActionEvent e){
-            startFlag = true;
-                }
+            public void actionPerformed(ActionEvent e){
+                startFlag = true;
+            }
+        };
         
-       
-                
-                };
         jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
-        jLabel1.getActionMap().put("startGame", pongStart);
-        
-        
+        jLabel1.getActionMap().put("startGame", pongStart);    
     }
 
     @Override
@@ -71,6 +71,15 @@ public class PongPanel extends javax.swing.JPanel {
         if(startFlag)
         {
             moveBall();
+            
+            if(x>=getWidth()-border-5){
+                System.out.println("HIT RIGHT");
+                sideHit(1);
+            }
+            if (x <=25-border){
+                System.out.println("HIT LEFT");
+                sideHit(0);
+            }
         }
         
         repaint();
@@ -117,7 +126,20 @@ public class PongPanel extends javax.swing.JPanel {
         }
     }
     
-   
+    private void sideHit(int side){
+        if (side == 0){
+            rightScore += 10;
+        } else if (side == 1){
+            leftScore += 10;
+        }
+        startFlag = false;
+        x = 300;
+        y = 200;
+        System.out.println("Left Score: " + leftScore);
+        System.out.println("Right Score: " + rightScore);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
