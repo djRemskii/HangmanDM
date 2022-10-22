@@ -45,7 +45,8 @@ public class PongPanel extends javax.swing.JPanel {
         startFlag = false;
         leftScore = 0;
         rightScore = 0;
-        
+        jButton2.setVisible(false);
+        jButton2.setEnabled(false);
         jLabel1.setOpaque(false);
         jLabel1.setBounds(0, 0, 1, 1);
         
@@ -130,13 +131,13 @@ public class PongPanel extends javax.swing.JPanel {
         if (side == 0){ //BALL HIT LEFT SIDE
             rightScore += 10;
             rightScoreDisplay.setText(rightScore + "");
-            if (rightScore >= 100){
+            if (rightScore >= 10){
                 gameWon(1);
             }
         } else if (side == 1){ //BALL HIT RIGHT SIDE
             leftScore += 10;
             leftScoreDisplay.setText(leftScore + "");
-            if (leftScore >= 100){
+            if (leftScore >= 10){
                 gameWon(0);
             }
         }
@@ -152,8 +153,16 @@ public class PongPanel extends javax.swing.JPanel {
     private void gameWon(int side){
         if (side == 0){
             System.out.println("LEFT SIDE WINS");
+            jButton2.setVisible(true);
+            jButton2.setEnabled(true);
+             startFlag = false;
         } else if (side == 1){
             System.out.println("RIGHT SIDE WINS");
+            jButton2.setVisible(true);
+            jButton2.setEnabled(true);
+            startFlag = false;
+            
+            
         }
     }
     
@@ -169,6 +178,8 @@ public class PongPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         leftScoreDisplay = new javax.swing.JLabel();
         rightScoreDisplay = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -179,20 +190,41 @@ public class PongPanel extends javax.swing.JPanel {
         rightScoreDisplay.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
         rightScoreDisplay.setText(rightScore + "");
 
+        jButton1.setText("Quit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("End");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(555, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(45, 45, 45))
             .addGroup(layout.createSequentialGroup()
                 .addGap(147, 147, 147)
                 .addComponent(leftScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
                 .addComponent(rightScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(45, 45, 45))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jButton1)
+                            .addGap(17, 17, 17)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,14 +235,33 @@ public class PongPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leftScoreDisplay)
                     .addComponent(rightScoreDisplay))
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(33, 33, 33)
+                .addComponent(jButton2)
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         leftScoreDisplay.getAccessibleContext().setAccessibleName("leftScoreDisplay");
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+       
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
+        
+      
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel leftScoreDisplay;
     private javax.swing.JLabel rightScoreDisplay;
