@@ -127,12 +127,18 @@ public class PongPanel extends javax.swing.JPanel {
     }
     
     private void sideHit(int side){
-        if (side == 0){
+        if (side == 0){ //BALL HIT LEFT SIDE
             rightScore += 10;
             rightScoreDisplay.setText(rightScore + "");
-        } else if (side == 1){
+            if (rightScore >= 100){
+                gameWon(1);
+            }
+        } else if (side == 1){ //BALL HIT RIGHT SIDE
             leftScore += 10;
             leftScoreDisplay.setText(leftScore + "");
+            if (leftScore >= 100){
+                gameWon(0);
+            }
         }
         xDirection = !xDirection;
         yDirection = !yDirection;
@@ -143,6 +149,13 @@ public class PongPanel extends javax.swing.JPanel {
         System.out.println("Right Score: " + rightScore);
     }
     
+    private void gameWon(int side){
+        if (side == 0){
+            System.out.println("LEFT SIDE WINS");
+        } else if (side == 1){
+            System.out.println("RIGHT SIDE WINS");
+        }
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -176,10 +189,10 @@ public class PongPanel extends javax.swing.JPanel {
                 .addGap(45, 45, 45))
             .addGroup(layout.createSequentialGroup()
                 .addGap(147, 147, 147)
-                .addComponent(leftScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(leftScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(rightScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(138, 138, 138))
+                .addComponent(rightScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
