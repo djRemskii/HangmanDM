@@ -139,25 +139,11 @@ public class PongPanel extends javax.swing.JPanel {
         }
     
     }
-    
-<<<<<<< HEAD
-    private void sideHit(int side){
-        if (side == 0 && gameO == true){ //BALL HIT LEFT SIDE
-            rightScore += 10;
-            rightScoreDisplay.setText(rightScore + "");
-            if (rightScore >= 10){
-                gameWon(1);
-            }
-        } else if (side == 1 && gameO == true){ //BALL HIT RIGHT SIDE
-            leftScore += 10;
-            leftScoreDisplay.setText(leftScore + "");
-            if (leftScore >= 10){
-                gameWon(0);
-            }
-        }
-=======
+
+  
+
     private void resetBall(){
->>>>>>> 2b73dfc749893009dc27052e6278a7267deaeb87
+
         xDirection = !xDirection;
         yDirection = !yDirection;
         startFlag = false;
@@ -177,16 +163,16 @@ public class PongPanel extends javax.swing.JPanel {
     }
     
     private void sideHit(int side){
-        if (side == 0){ //BALL HIT LEFT SIDE
+        if (side == 0 && gameO == true){ //BALL HIT LEFT SIDE
             rightScore += 10;
             rightScoreDisplay.setText(rightScore + "");
-            if (rightScore >= 100){
+            if (rightScore >= 10){
                 gameWon(1);
             }
-        } else if (side == 1){ //BALL HIT RIGHT SIDE
+        } else if (side == 1 && gameO == true){ //BALL HIT RIGHT SIDE
             leftScore += 10;
             leftScoreDisplay.setText(leftScore + "");
-            if (leftScore >= 100){
+            if (leftScore >= 10){
                 gameWon(0);
             }
         }
@@ -198,21 +184,21 @@ public class PongPanel extends javax.swing.JPanel {
     private void gameWon(int side){
         if (side == 0){
             System.out.println("LEFT SIDE WINS");
-<<<<<<< HEAD
-            jLabel3.setVisible(true);
-            jButton2.setVisible(true);
-            jButton2.setEnabled(true);
+
+            leftWinLabel.setVisible(true);
+            endButton.setVisible(true);
+            endButton.setEnabled(true);
             gameO = false;
             //gameO = false; //sets gameO to false which prevents the use of a space bar to play
             
         } else if (side == 1){
             System.out.println("RIGHT SIDE WINS");
-            jLabel2.setVisible(true);
-            jButton2.setVisible(true);
-            jButton2.setEnabled(true);
+            rightWinLabel.setVisible(true);
+            endButton.setVisible(true);
+            endButton.setEnabled(true);
             gameO = false;
           //  gameO = false; //sets gameO to false which prevents the use of the spacebar to play the game
-=======
+
             rightWinLabel.setVisible(true);
             endButton.setVisible(true);
             endButton.setEnabled(true);
@@ -226,7 +212,7 @@ public class PongPanel extends javax.swing.JPanel {
             endButton.setEnabled(true);
             
             gameO = false; //sets gameO to false which prevents the use of the spacebar to play the game
->>>>>>> 2b73dfc749893009dc27052e6278a7267deaeb87
+
             
         }
     }
@@ -333,7 +319,7 @@ public class PongPanel extends javax.swing.JPanel {
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
 
-<<<<<<< HEAD
+
         rightScore = rightScore*0; 
         leftScore = leftScore*0;
         x = 300;
@@ -341,32 +327,31 @@ public class PongPanel extends javax.swing.JPanel {
         ballStop = false;
         rightScoreDisplay.setText(rightScore + "");
         leftScoreDisplay.setText(leftScore + "");
-        jLabel2.setVisible(false);
-        jLabel3.setVisible(false);
+        leftWinLabel.setVisible(false);
+        rightWinLabel.setVisible(false);
         gameO = true; //sets gameO to true for the next game
-=======
+
         resetGame();
->>>>>>> 2b73dfc749893009dc27052e6278a7267deaeb87
+
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_quitButtonActionPerformed
 
-<<<<<<< HEAD
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        rightScore = 0; 
+
+   
+
+    private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
+          rightScore = 0; 
         leftScore = 0;
         x = 300;
         y = 200;
         ballStop = false;
         rightScoreDisplay.setText(rightScore + "");
         leftScoreDisplay.setText(leftScore + "");
-        jLabel2.setVisible(false);
-        jLabel3.setVisible(false);
+        leftWinLabel.setVisible(false);
+        rightWinLabel.setVisible(false);
         gameO = true; //sets gameO to true for the next game
-=======
-    private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
-        
         resetGame();
->>>>>>> 2b73dfc749893009dc27052e6278a7267deaeb87
+
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_endButtonActionPerformed
 
