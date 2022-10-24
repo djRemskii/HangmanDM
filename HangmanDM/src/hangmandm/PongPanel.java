@@ -68,6 +68,15 @@ public class PongPanel extends javax.swing.JPanel{
                 startFlag = true;
             }
         };
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }};
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel1.getActionMap().put("escape", esc);
+        
         
         jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
         jLabel1.getActionMap().put("startGame", pongStart);
@@ -277,6 +286,7 @@ public class PongPanel extends javax.swing.JPanel{
         else if(x >= 525){
             if(y >= p2.getY2() && y <= p2.getY2() + 80){
                 xDirection = false;
+                x+= 100;
             }
         }
     }
