@@ -22,13 +22,13 @@ import javax.swing.KeyStroke;
 * them to exit to the main menu. 
 * 
 ****************************************************************/
-public class End extends javax.swing.JPanel {
+public class end extends javax.swing.JPanel {
 
     private String score;
     
-    //method: End
+    //method: end
     //purpose: constructor. initializes components.
-    public End(int points) {
+    public end(int points) {
       
        score = ("" + points);
        

@@ -456,7 +456,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         if(scoreChecked == true){
         try {
             HighScorePanel.scoreCheck(getScoreSudoku());
-            HangmanDM.frame.add(new End(getScoreSudoku()),"end");
+            HangmanDM.frame.add(new end(getScoreSudoku()),"end");
             reset();
             HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "end");
         } 
@@ -3461,7 +3461,7 @@ public class SudokuPanel extends javax.swing.JPanel {
     private void quitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitActionPerformed
         score = 0;
         System.out.println(getScoreSudoku());
-        HangmanDM.frame.add(new End(getScoreSudoku()),"endPanel");
+        HangmanDM.frame.add(new end(getScoreSudoku()),"endPanel");
         reset();
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "endPanel");
         

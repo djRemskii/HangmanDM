@@ -4,6 +4,7 @@
  */
 package hangmandm;
 
+import static hangmandm.GamePanel.letterReset;
 import javax.swing.SwingUtilities; 
 import javax.swing.JFrame; 
 import javax.swing.JPanel; 
@@ -12,210 +13,106 @@ import java.awt.Color;
 import java.awt.Dimension; 
 import java.awt.Graphics; 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import javax.swing.Timer;
 /**
  *
  * @author danie
  */
 public class PongPanel extends javax.swing.JPanel {
-
-    private int x;
-    private int y;
-    private final int border;
-    private boolean yDirection; //true is up, false is down
-    private boolean xDirection; // true is right, false is left
-    private boolean startFlag;
-    private int leftScore;
-    private int rightScore;
-    private boolean gameO;
-    private boolean ballStop;
+    
+    private int gameO;
+    
     /**
      * Creates new form PongPanel
      */
     public PongPanel() {
+        Timer t = new Timer(1000, updateClockAction);
+        t.start();
+        
         initComponents();
-        x = 300;
-        y = 200;
-        border = 25;
-        yDirection = true;
-        xDirection = true;
-        startFlag = false;
-        gameO = true;
-        ballStop = false;
-        leftScore = 0;
-        rightScore = 0;
+       
+        gameO = 0;
+        
+        
         endButton.setVisible(false);
         endButton.setEnabled(false);
         jLabel1.setOpaque(false);
         jLabel1.setBounds(0, 0, 1, 1);
         leftWinLabel.setVisible(false);
         rightWinLabel.setVisible(false);
-        if(gameO = true){
+        
         AbstractAction pongStart = new AbstractAction("startGame"){
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                startFlag = true;
+                if(gameO < 1)
+                {
+                    pongScreen1.setStartFlag(true);
+                    gameO++;
+                }
+                else
+                {
+                    pongScreen1.setStartFlag(false);
+                }
+                
             }
         };
         
         jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
-        jLabel1.getActionMap().put("startGame", pongStart);    
+        jLabel1.getActionMap().put("startGame", pongStart);       
     }
-    }
+        
+    private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
+    private LocalDateTime now = LocalDateTime.now();
+    
+    ActionListener updateClockAction = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            // Assumes clock is a JLabel
+            now = LocalDateTime.now();
+            jLabel2.setText(dtf.format(now)); 
+            
+            
+            
+            
+        }
+    };
+
+  
     @Override
     public void paint(Graphics g)
     {
         super.paint(g);
+        leftScoreDisplay.setText(pongScreen1.getLeftScore()+"");
+        rightScoreDisplay.setText(""+pongScreen1.getRightScore());
         
-        g.fillOval(x, y, border, border);
-        if(startFlag)
+        if(pongScreen1.getLeftScore() == 10)
         {
-            moveBall(ballStop);
-            
-            if(x>=getWidth()-border-5){
-                System.out.println("HIT RIGHT");
-                sideHit(1);
-            }
-            if (x <=25-border){
-                System.out.println("HIT LEFT");
-                sideHit(0);
-            }
+            leftWinLabel.setVisible(true);
+            endButton.setVisible(true);
+            endButton.setEnabled(true);
         }
-        
+        if(pongScreen1.getRightScore() == 10)
+        {
+            rightWinLabel.setVisible(true);
+            endButton.setVisible(true);
+            endButton.setEnabled(true);
+        }
+            
         repaint();
-        try {
-                Thread.sleep(10);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(PongPanel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }
-    
-    private void moveBall(boolean ballStop)
-    {
-        if(ballStop = true){  //attempt to make the ball stop moving when then the game is won.
-        if(xDirection)
-        {
-            x = x+1;
-        }
         
-        if(yDirection)
-        {
-            y = y+1;
-        }
-        
-        
-        if (y>=getHeight()-border-1 || !yDirection)
-        {
-            y = y-1;
-            yDirection = false;
-        }
-        if(y <=23-border || yDirection)
-        {
-            y = y+1;
-            yDirection = true;
-        }
-        
-        if(x>=getWidth()-border-1 || !xDirection)
-        {
-            x = x-1;
-            xDirection = false;
-        }
-        if(x <=21-border || xDirection)
-        {
-            x = x+1;
-            xDirection = true;
-        }
-        }
-        else
-        {
-            x = 300;
-            y = 200;
-        
-        }
+    }
+
     
-    }
-
-  
-
-    private void resetBall(){
-
-        xDirection = !xDirection;
-        yDirection = !yDirection;
-        startFlag = false;
-        x = 300;
-        y = 200;
-    }
     
-    private void resetGame(){
-        resetBall();
-        rightScore = 0; 
-        leftScore = 0;
-        rightScoreDisplay.setText(rightScore + "");
-        leftScoreDisplay.setText(leftScore + "");
-        leftWinLabel.setVisible(false);
-        rightWinLabel.setVisible(false);
-        gameO = true; //sets gameO to true for the next game
-    }
     
-    private void sideHit(int side){
-        if (side == 0 && gameO == true){ //BALL HIT LEFT SIDE
-            rightScore += 10;
-            rightScoreDisplay.setText(rightScore + "");
-            if (rightScore >= 10){
-                gameWon(1);
-            }
-        } else if (side == 1 && gameO == true){ //BALL HIT RIGHT SIDE
-            leftScore += 10;
-            leftScoreDisplay.setText(leftScore + "");
-            if (leftScore >= 10){
-                gameWon(0);
-            }
-        }
-        resetBall();
-        System.out.println("Left Score: " + leftScore);
-        System.out.println("Right Score: " + rightScore);
-    }
-    
-    private void gameWon(int side){
-        if (side == 0){
-            System.out.println("LEFT SIDE WINS");
-
-            leftWinLabel.setVisible(true);
-            endButton.setVisible(true);
-            endButton.setEnabled(true);
-            gameO = false;
-            //gameO = false; //sets gameO to false which prevents the use of a space bar to play
-            
-        } else if (side == 1){
-            System.out.println("RIGHT SIDE WINS");
-            rightWinLabel.setVisible(true);
-            endButton.setVisible(true);
-            endButton.setEnabled(true);
-            gameO = false;
-          //  gameO = false; //sets gameO to false which prevents the use of the spacebar to play the game
-
-            rightWinLabel.setVisible(true);
-            endButton.setVisible(true);
-            endButton.setEnabled(true);
-            
-            gameO = false; //sets gameO to false which prevents the use of a space bar to play
-            
-        } else if (side == 1){
-            System.out.println("RIGHT SIDE WINS");
-            leftWinLabel.setVisible(true);
-            endButton.setVisible(true);
-            endButton.setEnabled(true);
-            
-            gameO = false; //sets gameO to false which prevents the use of the spacebar to play the game
-
-            
-        }
-    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -233,15 +130,18 @@ public class PongPanel extends javax.swing.JPanel {
         endButton = new javax.swing.JButton();
         leftWinLabel = new javax.swing.JLabel();
         rightWinLabel = new javax.swing.JLabel();
+        pongScreen1 = new hangmandm.PongScreen();
+        jLabel2 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
 
-        leftScoreDisplay.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
-        leftScoreDisplay.setText(leftScore + "");
+        leftScoreDisplay.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        leftScoreDisplay.setText(0 + "");
 
-        rightScoreDisplay.setFont(new java.awt.Font("Stencil", 0, 36)); // NOI18N
-        rightScoreDisplay.setText(rightScore + "");
+        rightScoreDisplay.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
+        rightScoreDisplay.setText(0 + "");
 
         quitButton.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         quitButton.setText("Quit");
@@ -270,68 +170,82 @@ public class PongPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(leftScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(leftWinLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(quitButton)))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(leftScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
-                        .addComponent(rightScoreDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pongScreen1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(leftWinLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rightWinLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
+                        .addGap(99, 99, 99)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(45, 45, 45))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(quitButton)
-                .addGap(18, 18, 18)
-                .addComponent(endButton)
-                .addGap(244, 244, 244))
+                        .addGap(142, 142, 142))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(endButton))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(rightScoreDisplay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rightWinLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel1))
+                        .addGap(93, 93, 93)
+                        .addComponent(leftWinLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(leftScoreDisplay)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(quitButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rightWinLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(leftWinLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(66, 66, 66)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(leftScoreDisplay)
-                    .addComponent(rightScoreDisplay))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(endButton)
-                    .addComponent(quitButton))
-                .addContainerGap())
+                        .addGap(104, 104, 104)
+                        .addComponent(rightWinLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(rightScoreDisplay)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(endButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)
+                        .addComponent(pongScreen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(43, 43, 43))
         );
 
-        leftScoreDisplay.getAccessibleContext().setAccessibleName("leftScoreDisplay");
+        leftScoreDisplay.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
 
 
-        rightScore = rightScore*0; 
-        leftScore = leftScore*0;
-        x = 300;
-        y = 200;
-        ballStop = false;
-        rightScoreDisplay.setText(rightScore + "");
-        leftScoreDisplay.setText(leftScore + "");
+        
+        rightScoreDisplay.setText(0 + "");
+        leftScoreDisplay.setText(0 + "");
         leftWinLabel.setVisible(false);
         rightWinLabel.setVisible(false);
-        gameO = true; //sets gameO to true for the next game
-
-        resetGame();
+        
+        gameO = 0;
+        pongScreen1.resetGame();
 
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_quitButtonActionPerformed
@@ -340,17 +254,13 @@ public class PongPanel extends javax.swing.JPanel {
    
 
     private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
-          rightScore = 0; 
-        leftScore = 0;
-        x = 300;
-        y = 200;
-        ballStop = false;
-        rightScoreDisplay.setText(rightScore + "");
-        leftScoreDisplay.setText(leftScore + "");
+         
+        rightScoreDisplay.setText(0 + "");
+        leftScoreDisplay.setText(0 + "");
         leftWinLabel.setVisible(false);
         rightWinLabel.setVisible(false);
-        gameO = true; //sets gameO to true for the next game
-        resetGame();
+        gameO = 0;
+        pongScreen1.resetGame();
 
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
     }//GEN-LAST:event_endButtonActionPerformed
@@ -359,8 +269,10 @@ public class PongPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton endButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel leftScoreDisplay;
     private javax.swing.JLabel leftWinLabel;
+    private hangmandm.PongScreen pongScreen1;
     private javax.swing.JButton quitButton;
     private javax.swing.JLabel rightScoreDisplay;
     private javax.swing.JLabel rightWinLabel;
