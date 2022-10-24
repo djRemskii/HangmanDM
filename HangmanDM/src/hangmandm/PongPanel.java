@@ -12,6 +12,8 @@ import java.awt.Color;
 import java.awt.Dimension; 
 import java.awt.Graphics; 
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
@@ -21,7 +23,7 @@ import javax.swing.KeyStroke;
  *
  * @author danie
  */
-public class PongPanel extends javax.swing.JPanel {
+public class PongPanel extends javax.swing.JPanel implements Runnable,KeyListener {
 
     private int x;
     private int y;
@@ -33,6 +35,9 @@ public class PongPanel extends javax.swing.JPanel {
     private int rightScore;
     private boolean gameO;
     private boolean ballStop;
+    Paddle p1;
+    Paddle p2;
+    
     /**
      * Creates new form PongPanel
      */
@@ -54,6 +59,9 @@ public class PongPanel extends javax.swing.JPanel {
         jLabel1.setBounds(0, 0, 1, 1);
         leftWinLabel.setVisible(false);
         rightWinLabel.setVisible(false);
+        this.addKeyListener(this);
+        p1 = new Paddle(1);
+        p2 = new Paddle(2);
         if(gameO = true){
         AbstractAction pongStart = new AbstractAction("startGame"){
                 
@@ -71,6 +79,8 @@ public class PongPanel extends javax.swing.JPanel {
     public void paint(Graphics g)
     {
         super.paint(g);
+        p1.draw(g);
+        p2.draw(g);
         
         g.fillOval(x, y, border, border);
         if(startFlag)
@@ -365,4 +375,42 @@ public class PongPanel extends javax.swing.JPanel {
     private javax.swing.JLabel rightScoreDisplay;
     private javax.swing.JLabel rightWinLabel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_UP){
+            p1.setUpAccel(true);
+        }
+        else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+            p1.setDownAccel(true);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_UP){
+            p1.setUpAccel(false);
+        }
+        else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+            p1.setDownAccel(false);
+        }
+    }
+
+    @Override
+    public void run() {
+       for(;;){
+           p1.move();
+        repaint();   
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    }
 }
