@@ -57,6 +57,9 @@ public class Paddle {
     public int getY(){
         return (int)y;
     }
+    public int getY2(){
+        return (int)y2;
+    }
     
     
 }

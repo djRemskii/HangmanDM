@@ -139,7 +139,7 @@ public class PongPanel extends javax.swing.JPanel{
                 sideHit(0);
             }
         }
-        
+        checkPaddleCollision(p1,p2);
         repaint();
         try {
                 Thread.sleep(10);
@@ -267,6 +267,16 @@ public class PongPanel extends javax.swing.JPanel{
             gameO = false; //sets gameO to false which prevents the use of the spacebar to play the game
 
             
+        }
+    }
+    public void checkPaddleCollision(Paddle p1, Paddle p2){
+        if(x <= 40){
+            if(y >= p1.getY() && y <= p1.getY() + 80)
+                x = -x;
+        }
+        else if(x >= 525){
+            if(y >= p2.getY2() && y <= p2.getY2() + 80)
+                x = -x;
         }
     }
     
