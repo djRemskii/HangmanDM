@@ -150,13 +150,13 @@ public class PongPanel extends javax.swing.JPanel {
         leftScoreDisplay.setText(pongScreen1.getLeftScore()+"");
         rightScoreDisplay.setText(""+pongScreen1.getRightScore());
         
-        if(pongScreen1.getLeftScore() == 10)
+        if(pongScreen1.getLeftScore() == 100)
         {
             leftWinLabel.setVisible(true);
             endButton.setVisible(true);
             endButton.setEnabled(true);
         }
-        if(pongScreen1.getRightScore() == 10)
+        if(pongScreen1.getRightScore() == 100)
         {
             rightWinLabel.setVisible(true);
             endButton.setVisible(true);

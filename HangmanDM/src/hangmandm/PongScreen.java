@@ -174,7 +174,9 @@ public class PongScreen extends javax.swing.JPanel {
     {
         return rightScore;
     }
-         public void checkPaddleCollision(Paddle p1, Paddle p2){
+        
+     
+    public void checkPaddleCollision(Paddle p1, Paddle p2){
         if(x <= 20){
             if(y >= p1.getY() && y <= p1.getY() + 80){
                 xDirection = true;
