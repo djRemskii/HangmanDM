@@ -27,6 +27,8 @@ import javax.swing.Timer;
  * @author danie
  */
 public class PongPanel extends javax.swing.JPanel {
+
+    
     
     private int gameO;
     
@@ -67,7 +69,9 @@ public class PongPanel extends javax.swing.JPanel {
         };
         
         jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
-        jLabel1.getActionMap().put("startGame", pongStart);       
+        jLabel1.getActionMap().put("startGame", pongStart);    
+    
+        
     }
         
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
