@@ -442,6 +442,7 @@ public class SudokuPanel extends javax.swing.JPanel {
             }
         }
         }
+        scoreChecked = true;
         if(boxesWrong == 0)
         {
             scoreChecked = true;
