@@ -13,7 +13,6 @@ import java.awt.Dimension;
 import java.awt.Graphics; 
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
@@ -23,7 +22,7 @@ import javax.swing.KeyStroke;
  *
  * @author danie
  */
-public class PongPanel extends javax.swing.JPanel implements Runnable,KeyListener {
+public class PongPanel extends javax.swing.JPanel{
 
     private int x;
     private int y;
@@ -37,6 +36,7 @@ public class PongPanel extends javax.swing.JPanel implements Runnable,KeyListene
     private boolean ballStop;
     Paddle p1;
     Paddle p2;
+    Thread thread;
     
     /**
      * Creates new form PongPanel
@@ -59,7 +59,6 @@ public class PongPanel extends javax.swing.JPanel implements Runnable,KeyListene
         jLabel1.setBounds(0, 0, 1, 1);
         leftWinLabel.setVisible(false);
         rightWinLabel.setVisible(false);
-        this.addKeyListener(this);
         p1 = new Paddle(1);
         p2 = new Paddle(2);
         if(gameO = true){
@@ -72,7 +71,51 @@ public class PongPanel extends javax.swing.JPanel implements Runnable,KeyListene
         };
         
         jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
-        jLabel1.getActionMap().put("startGame", pongStart);    
+        jLabel1.getActionMap().put("startGame", pongStart);
+        
+        AbstractAction moveUp = new AbstractAction("moveUp"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                Paddle.moveUp();
+            }
+        };
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("UP"), "moveUp");
+        jLabel1.getActionMap().put("moveUp", moveUp); 
+        
+                AbstractAction moveDown = new AbstractAction("moveDown"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                Paddle.moveDown();
+            }
+        };
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("DOWN"), "moveDown");
+        jLabel1.getActionMap().put("moveDown", moveDown); 
+        
+        AbstractAction moveDown2 = new AbstractAction("moveDown2"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                Paddle.moveDown2();
+            }
+        };
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("s"), "moveDown2");
+        jLabel1.getActionMap().put("moveDown2", moveDown2); 
+        
+        AbstractAction moveUp2 = new AbstractAction("moveUp2"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                Paddle.moveUp2();
+            }
+        };
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("w"), "moveUp2");
+        jLabel1.getActionMap().put("moveUp2", moveUp2); 
     }
     }
     @Override
@@ -376,41 +419,4 @@ public class PongPanel extends javax.swing.JPanel implements Runnable,KeyListene
     private javax.swing.JLabel rightWinLabel;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void keyTyped(KeyEvent e) {
-        
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-            p1.setUpAccel(true);
-        }
-        else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-            p1.setDownAccel(true);
-        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-            p1.setUpAccel(false);
-        }
-        else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-            p1.setDownAccel(false);
-        }
-    }
-
-    @Override
-    public void run() {
-       for(;;){
-           p1.move();
-        repaint();   
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-    }
 }

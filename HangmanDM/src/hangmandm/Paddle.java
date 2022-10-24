@@ -9,12 +9,11 @@ import java.awt.Graphics;
  * @author kevin
  */
 public class Paddle {
-    double y, yVel;
-    boolean upAccel, downAccel;
+    static double y, y2;
     int player, x;
     public Paddle(int player){
-        upAccel = false; downAccel = false;
-        y = 200; yVel = 0;
+        y = 200;
+        y2= 200;
         if(player == 1)
             x = 20;
         else
@@ -23,23 +22,19 @@ public class Paddle {
     public void draw(Graphics g){
         g.fillRect(x,(int)y, 20, 80);
     }
-    public void move(){
-        if(upAccel){
-            yVel -= 2;  
-        }
-        else if(downAccel){
-            yVel += 2;  
-        }
-        else if(!upAccel && !downAccel){
-            yVel *= .94;
-        }
-        y += yVel;
+    public static void moveUp(){
+        y -= 20;
+
     }
-    public void setUpAccel(boolean input){
-        upAccel = input;
+    public static void moveDown(){
+        y += 20;
     }
-    public void setDownAccel(boolean input){
-        downAccel = input;
+    public static void moveUp2(){
+        y2 -= 20;
+
+    }
+    public static void moveDown2(){
+        y2 += 20;
     }
     public int getY(){
         return (int)y;
