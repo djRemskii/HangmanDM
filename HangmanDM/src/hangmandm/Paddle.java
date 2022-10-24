@@ -4,10 +4,17 @@ package hangmandm;
 import java.awt.Graphics;
 
 
-/**
- *
- * @author kevin
- */
+/***************************************************************  
+*  file: GameLogic.java 
+*  author: Kevin 
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.3  
+*  date last modified: 10/24/2022 
+*  
+*  purpose: Class for the creation of Paddle objects, used for the Pong game.
+*  
+****************************************************************/ 
 public class Paddle {
     static double y,y2;
     int player, x;

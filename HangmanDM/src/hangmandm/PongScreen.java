@@ -12,13 +12,20 @@ import javax.swing.AbstractAction;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 
-/**
- *
- * @author danie
- */
+/***************************************************************  
+*  file: PongScreen.java 
+*  author:  
+*  class: CS 2450 – User Interface Design and Programming 
+*  
+*  assignment: Program 1.3  
+*  date last modified: 10/24/2022 
+*  
+*  purpose: Contains the ball and paddles for the pong game.
+*  
+****************************************************************/ 
 public class PongScreen extends javax.swing.JPanel {
 
-     private int x;
+    private int x;
     private int y;
     private final int border;
     private boolean yDirection; //true is up, false is down
