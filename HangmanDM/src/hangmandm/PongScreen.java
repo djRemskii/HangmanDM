@@ -26,6 +26,8 @@ public class PongScreen extends javax.swing.JPanel {
     private boolean startFlag;
     private int leftScore;
     private int rightScore;
+    public static Paddle p1;
+    public static Paddle p2;
     
     
     /**
@@ -44,6 +46,9 @@ public class PongScreen extends javax.swing.JPanel {
         leftScore = 0;
         rightScore = 0;
         
+        p1 = new Paddle(1);
+        p2 = new Paddle(2);
+        
         
         
     }
@@ -52,6 +57,8 @@ public class PongScreen extends javax.swing.JPanel {
     public void paint(Graphics g)
     {
         super.paint(g);
+        p1.draw(g);
+        p2.draw2(g);
         g.drawRect(0, 0, getWidth()-1, getHeight()-1);
         g.fillOval(x, y, border, border);
         if(startFlag)
@@ -66,10 +73,11 @@ public class PongScreen extends javax.swing.JPanel {
                 System.out.println("HIT LEFT");
                 sideHit(0);
             }
+            checkPaddleCollision(p1,p2);
         }
         else
             resetBall();
-        
+
         repaint();
         try {
                 Thread.sleep(10);
@@ -165,6 +173,18 @@ public class PongScreen extends javax.swing.JPanel {
      int getRightScore()
     {
         return rightScore;
+    }
+         public void checkPaddleCollision(Paddle p1, Paddle p2){
+        if(x <= 20){
+            if(y >= p1.getY() && y <= p1.getY() + 80){
+                xDirection = true;
+            }
+        }
+        else if(x >= 280){
+            if(y >= p2.getY2() && y <= p2.getY2() + 80){
+                xDirection = false;
+            }
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.

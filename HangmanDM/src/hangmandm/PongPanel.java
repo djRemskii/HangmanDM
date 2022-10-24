@@ -68,11 +68,64 @@ public class PongPanel extends javax.swing.JPanel {
             }
         };
         
+        
+        
         jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
         jLabel1.getActionMap().put("startGame", pongStart);    
     
+                AbstractAction moveUp = new AbstractAction("moveUp"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                PongScreen.p1.moveUp();
+            }
+        };
         
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("UP"), "moveUp");
+        jLabel1.getActionMap().put("moveUp", moveUp); 
+        
+                AbstractAction moveDown = new AbstractAction("moveDown"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                PongScreen.p1.moveDown();
+            }
+        };
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("DOWN"), "moveDown");
+        jLabel1.getActionMap().put("moveDown", moveDown); 
+        
+        AbstractAction moveDown2 = new AbstractAction("moveDown2"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                PongScreen.p2.moveDown2();
+            }
+        };
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("S"), "moveDown2");
+        jLabel1.getActionMap().put("moveDown2", moveDown2); 
+        
+        AbstractAction moveUp2 = new AbstractAction("moveUp2"){
+                
+             @Override
+            public void actionPerformed(ActionEvent e){
+                PongScreen.p2.moveUp2();
+            }
+        };
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("W"), "moveUp2");
+        jLabel1.getActionMap().put("moveUp2", moveUp2); 
+        AbstractAction esc = new AbstractAction("escape"){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }};
+        
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("ESCAPE"), "escape");
+        jLabel1.getActionMap().put("escape", esc);
     }
+    
         
     private DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd  HH:mm:ss");  
     private LocalDateTime now = LocalDateTime.now();
