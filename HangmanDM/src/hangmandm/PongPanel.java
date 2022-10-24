@@ -286,7 +286,6 @@ public class PongPanel extends javax.swing.JPanel{
         else if(x >= 525){
             if(y >= p2.getY2() && y <= p2.getY2() + 80){
                 xDirection = false;
-                x+= 100;
             }
         }
     }
