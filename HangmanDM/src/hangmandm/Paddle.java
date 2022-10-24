@@ -9,11 +9,10 @@ import java.awt.Graphics;
  * @author kevin
  */
 public class Paddle {
-    static double y, y2;
+    static double y,y2;
     int player, x;
     public Paddle(int player){
         y = 200;
-        y2= 200;
         if(player == 1)
             x = 20;
         else
@@ -22,6 +21,9 @@ public class Paddle {
     public void draw(Graphics g){
         g.fillRect(x,(int)y, 20, 80);
     }
+    public void draw2(Graphics g){
+        g.fillRect(x,(int)y2, 20, 80);
+    }
     public static void moveUp(){
         y -= 20;
 
@@ -29,7 +31,7 @@ public class Paddle {
     public static void moveDown(){
         y += 20;
     }
-    public static void moveUp2(){
+        public static void moveUp2(){
         y2 -= 20;
 
     }

@@ -77,7 +77,7 @@ public class PongPanel extends javax.swing.JPanel{
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                Paddle.moveUp();
+                p1.moveUp();
             }
         };
         
@@ -88,7 +88,7 @@ public class PongPanel extends javax.swing.JPanel{
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                Paddle.moveDown();
+                p1.moveDown();
             }
         };
         
@@ -99,22 +99,22 @@ public class PongPanel extends javax.swing.JPanel{
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                Paddle.moveDown2();
+                p2.moveDown2();
             }
         };
         
-        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("s"), "moveDown2");
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("S"), "moveDown2");
         jLabel1.getActionMap().put("moveDown2", moveDown2); 
         
         AbstractAction moveUp2 = new AbstractAction("moveUp2"){
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                Paddle.moveUp2();
+                p2.moveUp2();
             }
         };
         
-        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("w"), "moveUp2");
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("W"), "moveUp2");
         jLabel1.getActionMap().put("moveUp2", moveUp2); 
     }
     }
@@ -123,7 +123,7 @@ public class PongPanel extends javax.swing.JPanel{
     {
         super.paint(g);
         p1.draw(g);
-        p2.draw(g);
+        p2.draw2(g);
         
         g.fillOval(x, y, border, border);
         if(startFlag)
