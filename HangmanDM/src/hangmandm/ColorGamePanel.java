@@ -280,8 +280,10 @@ public class ColorGamePanel extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
 
+        jLabel1.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jLabel1.setText("jLabel1");
 
+        jLabel2.setFont(new java.awt.Font("Stencil", 0, 18)); // NOI18N
         jLabel2.setText("Color");
         jLabel2.setLocation(280, 160);
         add(jLabel2);
@@ -327,6 +329,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
         });
         jButton1.setBounds(420, 70, 106, 106);
 
+        jLabel4.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         jLabel4.setText("jLabel4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -392,7 +395,7 @@ public class ColorGamePanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(63, 63, 63)
                                 .addComponent(jButton3)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()

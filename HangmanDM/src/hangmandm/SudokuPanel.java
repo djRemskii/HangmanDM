@@ -255,6 +255,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         currentBoard[6] = new int[]{ 0,5,2,0,0,0,0,9,0 };
         currentBoard[7] = new int[]{ 0,0,1,0,0,0,0,0,0 };
         currentBoard[8] = new int[]{ 3,0,0,9,0,2,0,0,5 };
+        
         checkedOnce[0] = new int[]{ 0,0,0,0,0,0,0,0,0 };
         checkedOnce[1] = new int[]{ 0,0,0,0,0,0,0,0,0 };
         checkedOnce[2] = new int[]{ 0,0,0,0,0,0,0,0,0 };
@@ -264,6 +265,7 @@ public class SudokuPanel extends javax.swing.JPanel {
         checkedOnce[6] = new int[]{ 0,0,0,0,0,0,0,0,0 };
         checkedOnce[7] = new int[]{ 0,0,0,0,0,0,0,0,0 };
         checkedOnce[8] = new int[]{ 0,0,0,0,0,0,0,0,0 };
+        
         box0_1.setText("");
         box0_2.setText("");
         box0_4.setText("");
@@ -2940,26 +2942,35 @@ public class SudokuPanel extends javax.swing.JPanel {
     private static String code = "";
     private static void codeCheck(){
         if (code.matches("7952")){
-            box1_1.setText("D");
-            box1_2.setText("i");
-            box1_3.setText("c");
-            box1_4.setText("k");
-            box1_5.setText(",");
+            box1_1.setText("A");
+            box1_2.setText("M");
+            box1_3.setText("O");
+            box1_4.setText("G");
+            box1_5.setText("U");
+            box1_6.setText("S");
             
-            box3_1.setText("B");
-            box3_2.setText("a");
-            box3_3.setText("l");
-            box3_4.setText("l");
-            box3_5.setText("s");
-            box3_6.setText(",");
+            box3_1.setText("S");
+            box3_2.setText("U");
+            box3_3.setText("S");
+            box3_4.setText("S");
+            box3_5.setText("Y");
             
-            box4_4.setText("e");
-            box4_5.setText("v");
-            box4_6.setText("e");
-            box4_7.setText("n");
-            box4_8.setText(".");
+            box4_4.setText("P");
+            box4_5.setText("A");
+            box4_6.setText("S");
+            box4_7.setText("T");
+            box4_8.setText("A");
             
             score = 540 + 42069;
+            code = "";
+        } else if (code.matches("4444")){
+            for (int i=0; i<9; i++){
+                for (int j=0; j<9; j++){
+                    currentBoard[i][j] = solutionBoard[i][j];
+                    boxes[i][j].setText(currentBoard[i][j] + "");
+                }
+            }
+            code = "";
         }
     }
     //IF YOU SEE THIS, IGNORE IT.
