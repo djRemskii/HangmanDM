@@ -36,6 +36,8 @@ import javax.swing.Timer;
  */
 public class GamePanel extends javax.swing.JPanel {
     
+    
+    
     //method: GamePanel
     //purpose: is the constructor of this class. initializes variables
     public GamePanel() {
@@ -107,7 +109,7 @@ public class GamePanel extends javax.swing.JPanel {
     ImageIcon image3 = new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_3.png"));
     ImageIcon image4 = new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_4.png"));
     ImageIcon image5 = new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_5.png"));
-    ImageIcon image6 = new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_0.png"));
+    ImageIcon image6 = new javax.swing.ImageIcon(getClass().getResource("/hangmanSprites/HangmanSprite_6.png"));
     
     
     //method: spriteCheck
@@ -156,7 +158,7 @@ public class GamePanel extends javax.swing.JPanel {
     }
     //LETTER SWITCH CODE END
     
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -73,12 +73,6 @@ public class GameLogic {
                 System.out.println("game won");
                 
                 GamePanel.letterReset();
-                
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(GameLogic.class.getName()).log(Level.SEVERE, null, ex);
-                }
                
                 frame.add(new ColorGamePanel(currentScore), "color game");
                 
@@ -101,12 +95,6 @@ public class GameLogic {
                 System.out.println("game lost");
                 
                 GamePanel.letterReset();
-               
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(GameLogic.class.getName()).log(Level.SEVERE, null, ex);
-                }
                 
                 frame.add(new ColorGamePanel(currentScore), "color game");
                 
