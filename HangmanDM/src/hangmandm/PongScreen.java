@@ -149,6 +149,8 @@ public class PongScreen extends javax.swing.JPanel {
         startFlag = false;
         x = 150;
         y = 150;
+        p1.resetPaddle();
+        p2.resetPaddle();
     }
     
     void resetGame(){

@@ -26,6 +26,12 @@ public class Paddle {
         else
             x = 290;
     }
+    
+    public static void resetPaddle(){
+        
+        y = 100;
+        y2 = 100;
+    }
     public void draw(Graphics g){
         g.fillRect(x,(int)y, 20, 80);
     }
