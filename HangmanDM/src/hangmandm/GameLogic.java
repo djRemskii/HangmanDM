@@ -5,6 +5,7 @@
 package hangmandm;
 
 
+import static hangmandm.GamePanel.hangmanSprite;
 import static hangmandm.HangmanDM.frame;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -73,26 +74,39 @@ public class GameLogic {
                 
                 GamePanel.letterReset();
                 
-                
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(GameLogic.class.getName()).log(Level.SEVERE, null, ex);
+                }
                
                 frame.add(new ColorGamePanel(currentScore), "color game");
                 
                 HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "color game");
             }
+            GamePanel.incorrectText.setVisible(false);
             return true;
         } else {
             incorrectGuesses++;
             currentScore -= 10;
-            JFrame wrong = new JFrame();
-            JOptionPane.showMessageDialog(wrong, "Wrong Letter, Try Again.", "Wrong Letter.", JOptionPane.INFORMATION_MESSAGE);
-           
+            
+            
+            //JFrame wrong = new JFrame();
+            //JOptionPane.showMessageDialog(wrong, "Wrong Letter, Try Again.", "Wrong Letter.", JOptionPane.INFORMATION_MESSAGE);
+            
+            GamePanel.incorrectText.setVisible(true);
+            
             if (incorrectGuesses > 5){
                 gameOverFlag = true;
                 System.out.println("game lost");
                 
                 GamePanel.letterReset();
                
-                
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(GameLogic.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
                 frame.add(new ColorGamePanel(currentScore), "color game");
                 
@@ -114,6 +128,8 @@ public class GameLogic {
         winFlag = false;
         currentWord = randomWord();
         currentWordReverse = new String[currentWord.length()];
+        
+        GamePanel.incorrectText.setVisible(false);
         
         GamePanel.letterReset();
         GamePanel.letterCheck();
