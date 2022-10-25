@@ -93,6 +93,11 @@ public class PongScreen extends javax.swing.JPanel {
             }
     }
     
+    boolean getStartFlag()
+    {
+        return startFlag;
+    }
+    
     void setStartFlag(boolean start)
     {
         startFlag = start;

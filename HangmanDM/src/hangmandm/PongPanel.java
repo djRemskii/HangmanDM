@@ -5,6 +5,7 @@
 package hangmandm;
 
 import static hangmandm.GamePanel.letterReset;
+import java.awt.CardLayout;
 import javax.swing.SwingUtilities; 
 import javax.swing.JFrame; 
 import javax.swing.JPanel; 
@@ -62,7 +63,7 @@ public class PongPanel extends javax.swing.JPanel {
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                if(gameO < 1)
+                if(!(pongScreen1.getLeftScore() >= 100) && !(pongScreen1.getRightScore() >= 100))
                 {
                     pongScreen1.setStartFlag(true);
                     gameO++;
@@ -74,8 +75,24 @@ public class PongPanel extends javax.swing.JPanel {
                 
             }
         };
+        AbstractAction credits = new AbstractAction("goToCredits"){
         
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.out.println("it worked");
+            CardLayout cards = new CardLayout();
+            jDialog1.setLayout(cards);
+            jDialog1.add(new CreditsPanelNoMenu(), "credits");
+            cards.show(jDialog1.getContentPane(), "credits");
+            jDialog1.setModal(true);
+            jDialog1.pack();
+            jDialog1.setLocationRelativeTo(null);
+            jDialog1.setVisible(true);
+            }
+        };
         
+        jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("F1"), "goToCredits");
+        jLabel1.getActionMap().put("goToCredits", credits);
         
         jLabel1.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "startGame");
         jLabel1.getActionMap().put("startGame", pongStart);    
@@ -84,7 +101,11 @@ public class PongPanel extends javax.swing.JPanel {
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                PongScreen.p1.moveUp();
+                if(pongScreen1.getStartFlag())
+                {
+                    PongScreen.p1.moveUp();
+                }
+                
             }
         };
         
@@ -95,7 +116,11 @@ public class PongPanel extends javax.swing.JPanel {
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                PongScreen.p1.moveDown();
+                if(pongScreen1.getStartFlag())
+                {
+                    PongScreen.p1.moveDown();
+                }
+                
             }
         };
         
@@ -106,7 +131,11 @@ public class PongPanel extends javax.swing.JPanel {
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                PongScreen.p2.moveDown2();
+                if(pongScreen1.getStartFlag())
+                {
+                    PongScreen.p2.moveDown2();
+                }
+                
             }
         };
         
@@ -117,7 +146,11 @@ public class PongPanel extends javax.swing.JPanel {
                 
              @Override
             public void actionPerformed(ActionEvent e){
-                PongScreen.p2.moveUp2();
+                if(pongScreen1.getStartFlag())
+                {
+                    PongScreen.p2.moveUp2();
+                }
+                
             }
         };
         
@@ -187,6 +220,7 @@ public class PongPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         leftScoreDisplay = new javax.swing.JLabel();
         rightScoreDisplay = new javax.swing.JLabel();
@@ -196,6 +230,17 @@ public class PongPanel extends javax.swing.JPanel {
         rightWinLabel = new javax.swing.JLabel();
         pongScreen1 = new hangmandm.PongScreen();
         jLabel2 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
@@ -243,9 +288,7 @@ public class PongPanel extends javax.swing.JPanel {
                         .addComponent(quitButton)))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pongScreen1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
+                    .addComponent(pongScreen1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -332,6 +375,7 @@ public class PongPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton endButton;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel leftScoreDisplay;
