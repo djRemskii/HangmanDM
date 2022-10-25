@@ -14,7 +14,7 @@ import javax.swing.KeyStroke;
 
 /***************************************************************  
 *  file: PongScreen.java 
-*  author:  
+*  author:  D.Menkir, J. Ong, Kevin, S. Araya
 *  class: CS 2450 – User Interface Design and Programming 
 *  
 *  assignment: Program 1.3  
@@ -37,9 +37,8 @@ public class PongScreen extends javax.swing.JPanel {
     public static Paddle p2;
     
     
-    /**
-     * Creates new form PongScreen
-     */
+    //method: PongScreen
+    //purpose: is the constructor of this class. initializes variables
     public PongScreen() {
         initComponents();
         x = 150;
@@ -60,6 +59,8 @@ public class PongScreen extends javax.swing.JPanel {
         
     }
     
+    //method: paint
+    //purpose: paints the pong game in a 150 x 150 pixel panel
     @Override
     public void paint(Graphics g)
     {
@@ -93,16 +94,22 @@ public class PongScreen extends javax.swing.JPanel {
             }
     }
     
+    //method: getStartFlag
+    //purpose: returns start flag
     boolean getStartFlag()
     {
         return startFlag;
     }
     
+    //method: setStartFlag
+    //purpose: sets startFlag to start
     void setStartFlag(boolean start)
     {
         startFlag = start;
     }
     
+    //method: moveBall
+    //purpose: moves the ball in a random direction
     private void moveBall()
     {
         
@@ -142,6 +149,8 @@ public class PongScreen extends javax.swing.JPanel {
     
     }
 
+    //method: resetBall
+    //purpose: resets the ball to its original position and helps with ball direction randomization
     private void resetBall(){
 
         xDirection = !xDirection;
@@ -153,6 +162,8 @@ public class PongScreen extends javax.swing.JPanel {
         p2.resetPaddle();
     }
     
+    //method: resetGame
+    //purpose: resets Pong game
     void resetGame(){
         resetBall();
         rightScore = 0; 
@@ -161,6 +172,8 @@ public class PongScreen extends javax.swing.JPanel {
         
     }
     
+    //method: sideHit
+    //purpose: determines which side was hit
     private void sideHit(int side){
         startFlag = false;
         if (side == 0){ //BALL HIT LEFT SIDE
@@ -178,18 +191,22 @@ public class PongScreen extends javax.swing.JPanel {
     }
     
     
-    
+    //method: getLeftScore
+    //purpose: returns left side's score
     int getLeftScore()
     {
         return leftScore;
     }
     
+    //method: getRightScore
+    //purpose: returns right side's score
      int getRightScore()
     {
         return rightScore;
     }
         
-     
+    //method: checkPaddleCollision
+    //purpose: checks to see if the ball hit the paddle
     public void checkPaddleCollision(Paddle p1, Paddle p2){
         if(x <= 20){
             if(y >= p1.getY() && y <= p1.getY() + 80){

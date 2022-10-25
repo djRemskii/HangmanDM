@@ -38,22 +38,21 @@ public class PongPanel extends javax.swing.JPanel {
 
     
     
-    private int gameO;
     
-    /**
-     * Creates new form PongPanel
-     */
+    
+    //method: PongPanel
+    //purpose: is the constructor of this class. initializes variables
     public PongPanel() {
         Timer t = new Timer(1000, updateClockAction);
         t.start();
         
         initComponents();
        
-        gameO = 0;
         
         
-        endButton.setVisible(false);
-        endButton.setEnabled(false);
+        
+        playAgain.setVisible(false);
+        playAgain.setEnabled(false);
         jLabel1.setOpaque(false);
         jLabel1.setBounds(0, 0, 1, 1);
         leftWinLabel.setVisible(false);
@@ -66,7 +65,7 @@ public class PongPanel extends javax.swing.JPanel {
                 if(!(pongScreen1.getLeftScore() >= 100) && !(pongScreen1.getRightScore() >= 100))
                 {
                     pongScreen1.setStartFlag(true);
-                    gameO++;
+                    
                 }
                 else
                 {
@@ -182,7 +181,8 @@ public class PongPanel extends javax.swing.JPanel {
         }
     };
 
-  
+    //method: paint
+    //purpose: paints the pong game in a 150 x 150 pixel panel, updates score, and updates who won
     @Override
     public void paint(Graphics g)
     {
@@ -193,14 +193,14 @@ public class PongPanel extends javax.swing.JPanel {
         if(pongScreen1.getLeftScore() == 100)
         {
             leftWinLabel.setVisible(true);
-            endButton.setVisible(true);
-            endButton.setEnabled(true);
+            playAgain.setVisible(true);
+            playAgain.setEnabled(true);
         }
         if(pongScreen1.getRightScore() == 100)
         {
             rightWinLabel.setVisible(true);
-            endButton.setVisible(true);
-            endButton.setEnabled(true);
+            playAgain.setVisible(true);
+            playAgain.setEnabled(true);
         }
             
         repaint();
@@ -225,7 +225,7 @@ public class PongPanel extends javax.swing.JPanel {
         leftScoreDisplay = new javax.swing.JLabel();
         rightScoreDisplay = new javax.swing.JLabel();
         quitButton = new javax.swing.JButton();
-        endButton = new javax.swing.JButton();
+        playAgain = new javax.swing.JButton();
         leftWinLabel = new javax.swing.JLabel();
         rightWinLabel = new javax.swing.JLabel();
         pongScreen1 = new hangmandm.PongScreen();
@@ -242,6 +242,7 @@ public class PongPanel extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        setFocusCycleRoot(true);
         setMaximumSize(new java.awt.Dimension(600, 400));
         setMinimumSize(new java.awt.Dimension(600, 400));
         setPreferredSize(new java.awt.Dimension(600, 400));
@@ -254,17 +255,19 @@ public class PongPanel extends javax.swing.JPanel {
 
         quitButton.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
         quitButton.setText("Quit");
+        quitButton.setDefaultCapable(false);
+        quitButton.setFocusable(false);
         quitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quitButtonActionPerformed(evt);
             }
         });
 
-        endButton.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
-        endButton.setText("End");
-        endButton.addActionListener(new java.awt.event.ActionListener() {
+        playAgain.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        playAgain.setText("Play Again?");
+        playAgain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                endButtonActionPerformed(evt);
+                playAgainActionPerformed(evt);
             }
         });
 
@@ -302,7 +305,7 @@ public class PongPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(endButton))
+                                .addComponent(playAgain))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(rightScoreDisplay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(rightWinLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -325,7 +328,7 @@ public class PongPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(rightScoreDisplay)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(endButton))
+                        .addComponent(playAgain))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -342,6 +345,8 @@ public class PongPanel extends javax.swing.JPanel {
         leftScoreDisplay.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
+    //method: quitButtonActionPerformed
+    //purpose: quits pong
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
 
 
@@ -351,7 +356,7 @@ public class PongPanel extends javax.swing.JPanel {
         leftWinLabel.setVisible(false);
         rightWinLabel.setVisible(false);
         
-        gameO = 0;
+        
         pongScreen1.resetGame();
 
         HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
@@ -359,27 +364,28 @@ public class PongPanel extends javax.swing.JPanel {
 
 
    
-
-    private void endButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endButtonActionPerformed
+    //method: playAgainButtonActionPerformed
+    //purpose: reset and play pong again
+    private void playAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playAgainActionPerformed
          
         rightScoreDisplay.setText(0 + "");
         leftScoreDisplay.setText(0 + "");
         leftWinLabel.setVisible(false);
         rightWinLabel.setVisible(false);
-        gameO = 0;
+        playAgain.setVisible(false);
         pongScreen1.resetGame();
 
-        HangmanDM.cardLayout.show(HangmanDM.frame.getContentPane(), "menu");
-    }//GEN-LAST:event_endButtonActionPerformed
+        
+    }//GEN-LAST:event_playAgainActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton endButton;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel leftScoreDisplay;
     private javax.swing.JLabel leftWinLabel;
+    private javax.swing.JButton playAgain;
     private hangmandm.PongScreen pongScreen1;
     private javax.swing.JButton quitButton;
     private javax.swing.JLabel rightScoreDisplay;
