@@ -159,6 +159,11 @@ public class GamePanel extends javax.swing.JPanel {
     //LETTER SWITCH CODE END
     
     
+    //CODE TO USE KEYBOARD INPUTS
+    //jLabel2.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("a"), "goToCredits");
+    //jLabel2.getActionMap().put("goToCredits", credits);
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
